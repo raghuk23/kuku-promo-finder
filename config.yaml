@@ -1,9 +1,25 @@
 # All tunable numbers live here, not in code, so they can be argued with.
 
 llm:
-  provider: gemini          # gemini | openai_compatible | mock
-  model: ""                 # set after checking which Flash model your key can use
+  # gemini | openai_compatible | heuristic. Override per run with LLM_PROVIDER /
+  # LLM_MODEL env vars -- swapping models is one env var, no code change.
+  # `heuristic` uses no LLM at all: offline fallback AND the ablation baseline.
+  provider: gemini
+  model: gemini-3.6-flash   # verified by scripts/smoke_test.py on 2026-11-08
+  # Tried in order if the primary stays overloaded. Each result records the model
+  # that actually answered, because mixing models makes scores non-comparable.
+  fallback_models: [gemini-3.8-flash, gemini-3.7-flash, gemini-3.5-flash]
   temperature: 0
+  seed: 7
+  retries: 4                # per model, exponential backoff, transient errors only
+  base_delay_s: 4
+  min_interval_s: 4         # pacing between calls on the free tier
+  openai_compatible:        # OpenRouter, Groq, Anthropic's OpenAI-compatible endpoint, ...
+    base_url: https://openrouter.ai/api/v1
+    api_key_env: OPENAI_COMPAT_API_KEY
+
+judge:
+  context_pad_s: 8          # beats shown before/after each cut so the LLM can move it
 
 window:
   min_s: 20                 # brief: promos are 20-60 seconds
