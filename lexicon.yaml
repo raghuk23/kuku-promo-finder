@@ -1,0 +1,42 @@
+# Trigger words for the Stage 2 heuristics. Plain data so an editor can tune
+# it per genre without touching Python. Patterns are case-insensitive regexes
+# matched on word boundaries. Grounded in a scan of the real input pack.
+
+# Emotion tags the screenwriters attach to dialogue, e.g. (Cold, Commanding).
+tags_high: [screaming, shouting, furious, venomous, threatening, cruel, mocking,
+  scornful, sobbing, weeping, desperate, enraged, vicious, hysterical, horrified,
+  shocked, menacing, snarling, seething, heartbroken, incredulous, defiant, cold,
+  icy, contemptuous, sneering, savage, livid, terrified, anguished]
+tags_medium: [firm, stern, sharp, urgent, demanding, breathless, choked, trembling,
+  tearful, pleading, smug, dismissive, steely, fierce, harsh, bitter, accusing]
+
+# Words in dialogue or action that signal conflict or stakes.
+conflict: ["betray\\w*", "liar", "lies", "lied", "how dare", "get out", "disgrace\\w*",
+  "shame\\w*", "humiliat\\w*", "divorce\\w*", "pregnant", "bastard", "traitor",
+  "murder\\w*", "kill\\w*", "dead", "death", "poison\\w*", "revenge", "secret\\w*",
+  "the truth", "hate", "ruin\\w*", "destroy\\w*", "thief", "steal\\w*", "stole",
+  "beg", "begging", "disown\\w*", "cast out", "scandal\\w*", "curse\\w*", "monster",
+  "coward", "pathetic", "worthless", "beggar", "cripple\\w*", "whore", "witch",
+  "annul\\w*", "arrest\\w*", "guards", "never forgive", "you will pay", "kneel"]
+
+# Physical action in ACTION/CAMERA text. Deliberately excludes "push"
+# (mostly the camera move "push-in") and "tear" (mostly crying).
+physical: ["slap\\w*", "strikes", "struck", "shoves?", "shoving", "grabs?", "seizes?",
+  "kneels?", "kneeling", "collapses?", "faints?", "blood\\w*", "bleeding", "sword",
+  "blade", "knife", "dagger", "chokes?", "shatter\\w*", "smash\\w*", "punch\\w*",
+  "hurls?", "throws?", "rips?", "drags?", "stumbles?", "falls to", "unmask\\w*"]
+
+# Markers near the END of a window that suggest an unresolved cut.
+cliffhanger: ["ominous", "cliffhanger", "cut to black", "smash cut", "sting", "gasps?",
+  "freezes", "frozen", "stunned", "shock\\w*", "reveal\\w*", "dread", "menac\\w*",
+  "looms?", "thunder\\w*", "horror", "realiz\\w*", "eyes widen\\w*"]
+
+# Markers near the END that suggest resolution: the opposite of a cliffhanger.
+# Grounded: episodes 5-8 end on "peaceful, contented", "fading out", "smile".
+resolution: ["fading out", "fades out", "fading to", "peaceful\\w*", "content\\w*",
+  "smil\\w*", "radiant", "warm\\w*", "gentle", "tender\\w*", "embrac\\w*", "relie\\w*",
+  "laugh\\w*", "serene", "grateful"]
+
+# Opening shots that rarely stop a scroll.
+establishing: ["establishing", "wide shot", "aerial", "high wide", "exterior view",
+  "landscape", "panorama\\w*"]
