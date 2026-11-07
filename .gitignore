@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+.streamlit/secrets.toml
+.DS_Store
+# Kuku input pack is confidential (brief: "please don't publish or share it")
+data/
+*.txt
+!requirements.txt
