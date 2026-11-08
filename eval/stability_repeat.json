@@ -1,0 +1,24 @@
+{
+  "n": 54,
+  "spearman_final": 1.0,
+  "mean_abs_diff": {
+    "hook_score": 0.0,
+    "cliffhanger_score": 0.0,
+    "standalone_score": 0.0
+  },
+  "exact_match_rate": 1.0,
+  "floor_agreement": 1.0,
+  "floor_confusion": {
+    "both_pass": 24,
+    "a_only": 0,
+    "b_only": 0,
+    "neither": 30
+  },
+  "top_per_episode_agreement": 1.0,
+  "episodes_compared_for_top": 10,
+  "ranked_overlap": null,
+  "ranked_sizes": [
+    10,
+    10
+  ]
+}

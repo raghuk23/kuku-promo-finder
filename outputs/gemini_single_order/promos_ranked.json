@@ -1,0 +1,369 @@
+{
+  "show": "I Married a Broken Soldier. He was a Duke",
+  "judge": [
+    "gemini-3.8-flash"
+  ],
+  "prompt_version": "judge-v1",
+  "promos": [
+    {
+      "rank": 1,
+      "candidate_id": "ep24_c2",
+      "episode": 24,
+      "segments": [
+        {
+          "episode": 24,
+          "start": "00:28.80",
+          "end": "01:10.50",
+          "duration_s": 41.7
+        }
+      ],
+      "total_duration_s": 41.7,
+      "hook": "A cruel noblewoman sneers 'Then let her suffer' and violently lashes Juliana with a riding crop.",
+      "cliffhanger": "The noblewoman points her riding crop directly into Prudence's face, threatening her with the same brutal punishment.",
+      "why_it_works": "A shocking physical whip crack in the first three seconds guarantees immediate retention.",
+      "rank_reason": "Score 9.4/10 (hook 10, cliffhanger 9, standalone 9). A shocking physical whip crack in the first three seconds guarantees immediate retention.",
+      "final_score": 9.45,
+      "posting_score": 9.45,
+      "hook_score": 10,
+      "cliffhanger_score": 9,
+      "standalone_score": 9,
+      "standalone_reason": "presents an outrageous act of cruelty against a selfless healer who refuses to let someone die",
+      "weakness": "The transition to the hearth cleaning slightly dilutes the immediate shock of the lash.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "refinement ignored: unknown start beat '[b19]'",
+      "original_cut": {
+        "episode": 24,
+        "start_s": 28.8,
+        "end_s": 70.5,
+        "start": "00:28.80",
+        "end": "01:10.50",
+        "duration_s": 41.7
+      },
+      "warnings": []
+    },
+    {
+      "rank": 2,
+      "candidate_id": "ep31_c1",
+      "episode": 31,
+      "segments": [
+        {
+          "episode": 31,
+          "start": "02:10.80",
+          "end": "02:40.00",
+          "duration_s": 29.2
+        }
+      ],
+      "total_duration_s": 29.2,
+      "hook": "Catherine screams \"Enough!\" and presses a red-hot branding iron into Juliana's mother's book.",
+      "cliffhanger": "The glowing poker stops inches from Juliana's eye, reflecting in her trembling pupil.",
+      "why_it_works": "It delivers immediate physical destruction followed by unbearable life-or-death suspense.",
+      "rank_reason": "Score 9.3/10 (hook 9, cliffhanger 10, standalone 9). It delivers immediate physical destruction followed by unbearable life-or-death suspense.",
+      "final_score": 9.3,
+      "posting_score": 9.3,
+      "hook_score": 9,
+      "cliffhanger_score": 10,
+      "standalone_score": 9,
+      "standalone_reason": "a cruel noblewoman burns a shackled captive's heirloom before threatening her face",
+      "weakness": "High physical cruelty may require content caution on sensitive ad platforms.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 31,
+        "start_s": 130.8,
+        "end_s": 160.0,
+        "start": "02:10.80",
+        "end": "02:40.00",
+        "duration_s": 29.2
+      },
+      "warnings": []
+    },
+    {
+      "rank": 3,
+      "candidate_id": "ep23_c1",
+      "episode": 23,
+      "segments": [
+        {
+          "episode": 23,
+          "start": "01:18.50",
+          "end": "01:55.00",
+          "duration_s": 36.5
+        }
+      ],
+      "total_duration_s": 36.5,
+      "hook": "Juliana declares with icy certainty that someone is poisoning the Duchess.",
+      "cliffhanger": "Footsteps echo outside the locked bedroom door as Juliana frantically prepares antidote medicine.",
+      "why_it_works": "Combines a shocking medical revelation with imminent danger of getting caught.",
+      "rank_reason": "Score 9.0/10 (hook 9, cliffhanger 9, standalone 9). Combines a shocking medical revelation with imminent danger of getting caught.",
+      "final_score": 9.0,
+      "posting_score": 9.0,
+      "hook_score": 9,
+      "cliffhanger_score": 9,
+      "standalone_score": 9,
+      "standalone_reason": "immediately conveys an undercover healer treating a poisoned noble while trespassing",
+      "weakness": "The cut ends slightly before the actual door handle turns.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "refinement ignored: unknown start beat '[b39]'",
+      "original_cut": {
+        "episode": 23,
+        "start_s": 78.5,
+        "end_s": 115.0,
+        "start": "01:18.50",
+        "end": "01:55.00",
+        "duration_s": 36.5
+      },
+      "warnings": []
+    },
+    {
+      "rank": 4,
+      "candidate_id": "ep03_c2",
+      "episode": 3,
+      "segments": [
+        {
+          "episode": 3,
+          "start": "00:56.20",
+          "end": "01:31.70",
+          "duration_s": 35.5
+        }
+      ],
+      "total_duration_s": 35.5,
+      "hook": "The Matriarch severs family ties and orders armed guards to remove Juliana.",
+      "cliffhanger": "A bearded warrior knocks a guard flat out and gently asks Juliana if she is hurt.",
+      "why_it_works": "Combines physical action, instant justice, and romantic savior appeal in one punchy sequence.",
+      "rank_reason": "Score 8.6/10 (hook 8, cliffhanger 9, standalone 9) + early-episode boost. Combines physical action, instant justice, and romantic savior appeal in one punchy sequence.",
+      "final_score": 8.55,
+      "posting_score": 9.0,
+      "hook_score": 8,
+      "cliffhanger_score": 9,
+      "standalone_score": 9,
+      "standalone_reason": "a rugged stranger violently rescues a bride being dragged away by guards",
+      "weakness": "The transition from physical brawling to gentle romance happens very quickly.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 3,
+        "start_s": 56.2,
+        "end_s": 91.7,
+        "start": "00:56.20",
+        "end": "01:31.70",
+        "duration_s": 35.5
+      },
+      "warnings": []
+    },
+    {
+      "rank": 5,
+      "candidate_id": "ep04_c4",
+      "episode": 4,
+      "segments": [
+        {
+          "episode": 4,
+          "start": "01:54.80",
+          "end": "02:14.80",
+          "duration_s": 20.0
+        }
+      ],
+      "total_duration_s": 20.0,
+      "hook": "Gerald lunges forward in fury, screaming that Juliana has thrown herself away for a nobody.",
+      "cliffhanger": "Lady Ashcroft screams with venomous fury that Juliana is officially disowned.",
+      "why_it_works": "Explosive confrontation and shouting from start to finish keeps viewers glued.",
+      "rank_reason": "Score 8.6/10 (hook 8, cliffhanger 9, standalone 9) + early-episode boost. Explosive confrontation and shouting from start to finish keeps viewers glued.",
+      "final_score": 8.55,
+      "posting_score": 8.98,
+      "hook_score": 8,
+      "cliffhanger_score": 9,
+      "standalone_score": 9,
+      "standalone_reason": "a woman marries a stranger to spite her ex and gets disowned",
+      "weakness": "Extremely short duration gives little time to breathe.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 4,
+        "start_s": 114.8,
+        "end_s": 134.8,
+        "start": "01:54.80",
+        "end": "02:14.80",
+        "duration_s": 20.0
+      },
+      "warnings": []
+    },
+    {
+      "rank": 6,
+      "candidate_id": "ep16_c2",
+      "episode": 16,
+      "segments": [
+        {
+          "episode": 16,
+          "start": "00:16.80",
+          "end": "00:44.20",
+          "duration_s": 27.4
+        }
+      ],
+      "total_duration_s": 27.4,
+      "hook": "Alexander catches a weapon mid-air, wrenches it away, and violently slams the thug into the mud.",
+      "cliffhanger": "Alexander hoists the choking thug against the stone wall, demanding, 'Who sent you?'",
+      "why_it_works": "Delivers electrifying martial competence followed immediately by an explosive high-stakes interrogation hook.",
+      "rank_reason": "Score 8.8/10 (hook 9, cliffhanger 9, standalone 8) + early-episode boost. Delivers electrifying martial competence followed immediately by an explosive high-stakes interrogation hook.",
+      "final_score": 8.75,
+      "posting_score": 8.88,
+      "hook_score": 9,
+      "cliffhanger_score": 9,
+      "standalone_score": 8,
+      "standalone_reason": "a lone protector effortlessly dismantles three thugs and interrogates their ringleader",
+      "weakness": "Lacks the explicit reveal of Gerald's name unless extended into the next dialogue beat.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 16,
+        "start_s": 16.8,
+        "end_s": 44.2,
+        "start": "00:16.80",
+        "end": "00:44.20",
+        "duration_s": 27.4
+      },
+      "warnings": []
+    },
+    {
+      "rank": 7,
+      "candidate_id": "ep36_c3",
+      "episode": 36,
+      "segments": [
+        {
+          "episode": 36,
+          "start": "02:36.50",
+          "end": "03:20.75",
+          "duration_s": 44.25
+        }
+      ],
+      "total_duration_s": 44.25,
+      "hook": "A terrifying close-up on Alexander's wrathful eyes as he growls, '...and killing my wife afterward.'",
+      "cliffhanger": "Alexander turns toward the blizzard, declaring their dead Duke is coming home before the wedding starts.",
+      "why_it_works": "It delivers an irresistible underdog revenge premise capped with an iconic mic-drop threat.",
+      "rank_reason": "Score 8.8/10 (hook 8, cliffhanger 10, standalone 9). It delivers an irresistible underdog revenge premise capped with an iconic mic-drop threat.",
+      "final_score": 8.85,
+      "posting_score": 8.85,
+      "hook_score": 8,
+      "cliffhanger_score": 10,
+      "standalone_score": 9,
+      "standalone_reason": "a presumed-dead Duke prepares to crash a wedding to save his condemned wife",
+      "weakness": "Starting mid-sentence on beat 98 requires snapping to beat 96 for complete syntax.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "refined from 02:40.00->03:20.75",
+      "original_cut": {
+        "episode": 36,
+        "start_s": 160.0,
+        "end_s": 200.75,
+        "start": "02:40.00",
+        "end": "03:20.75",
+        "duration_s": 40.75
+      },
+      "warnings": []
+    },
+    {
+      "rank": 8,
+      "candidate_id": "ep45_c2",
+      "episode": 45,
+      "segments": [
+        {
+          "episode": 45,
+          "start": "01:07.00",
+          "end": "01:57.50",
+          "duration_s": 50.5
+        }
+      ],
+      "total_duration_s": 50.5,
+      "hook": "Catherine gasps in horrified disbelief, trembling as she echoes the word 'Wife?!'",
+      "cliffhanger": "The High Priest declares the marriage invalid as a Crown officer approaches with drawn sword.",
+      "why_it_works": "Provides an extraordinary rollercoaster cliffhanger from ducal triumph to drawn swords and nullification.",
+      "rank_reason": "Score 8.8/10 (hook 8, cliffhanger 10, standalone 9). Provides an extraordinary rollercoaster cliffhanger from ducal triumph to drawn swords and nullification.",
+      "final_score": 8.85,
+      "posting_score": 8.85,
+      "hook_score": 8,
+      "cliffhanger_score": 10,
+      "standalone_score": 9,
+      "standalone_reason": "a grand ducal wedding declaration is immediately challenged by an armed church inquisitor",
+      "weakness": "Starts on a reaction shot rather than an explosive action.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "refined from 01:07.00->01:48.80",
+      "original_cut": {
+        "episode": 45,
+        "start_s": 67.0,
+        "end_s": 108.8,
+        "start": "01:07.00",
+        "end": "01:48.80",
+        "duration_s": 41.8
+      },
+      "warnings": []
+    },
+    {
+      "rank": 9,
+      "candidate_id": "ep15_c3",
+      "episode": 15,
+      "segments": [
+        {
+          "episode": 15,
+          "start": "00:56.50",
+          "end": "01:26.00",
+          "duration_s": 29.5
+        }
+      ],
+      "total_duration_s": 29.5,
+      "hook": "Thugs laugh hysterically as one hoists a heavy club overhead to crush flowers before Juliana.",
+      "cliffhanger": "A thug raises his club asking if Alexander wants to fight, while Juliana watches breathlessly.",
+      "why_it_works": "Combines a terrifying club-raising hook with a textbook three-on-one street brawl cliffhanger.",
+      "rank_reason": "Score 8.6/10 (hook 8, cliffhanger 9, standalone 9) + early-episode boost. Combines a terrifying club-raising hook with a textbook three-on-one street brawl cliffhanger.",
+      "final_score": 8.55,
+      "posting_score": 8.7,
+      "hook_score": 8,
+      "cliffhanger_score": 9,
+      "standalone_score": 9,
+      "standalone_reason": "a husband stepping in against three armed thugs is immediately obvious",
+      "weakness": "Juliana's initial fall and injury occurred right before this cut.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 15,
+        "start_s": 56.5,
+        "end_s": 86.0,
+        "start": "00:56.50",
+        "end": "01:26.00",
+        "duration_s": 29.5
+      },
+      "warnings": []
+    },
+    {
+      "rank": 10,
+      "candidate_id": "ep25_c2",
+      "episode": 25,
+      "segments": [
+        {
+          "episode": 25,
+          "start": "00:18.80",
+          "end": "01:03.50",
+          "duration_s": 44.7
+        }
+      ],
+      "total_duration_s": 44.7,
+      "hook": "A man peels back Juliana's cloak to expose a raw, bloody whip laceration across her bare shoulder.",
+      "cliffhanger": "Juliana admits she was helping the Dowager Duchess, leaving Alexander stunned in disbelief.",
+      "why_it_works": "A gruesome wound reveal combined with volatile male rage is viral gold.",
+      "rank_reason": "Score 8.7/10 (hook 9, cliffhanger 8, standalone 9). A gruesome wound reveal combined with volatile male rage is viral gold.",
+      "final_score": 8.7,
+      "posting_score": 8.7,
+      "hook_score": 9,
+      "cliffhanger_score": 8,
+      "standalone_score": 9,
+      "standalone_reason": "immediately hooks through horrific evidence of abuse and an intense romantic protective dynamic",
+      "weakness": "Slows slightly during the middle interrogation about chamber cleaning.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "refinement ignored: unknown start beat '[b13]'",
+      "original_cut": {
+        "episode": 25,
+        "start_s": 18.8,
+        "end_s": 63.5,
+        "start": "00:18.80",
+        "end": "01:03.50",
+        "duration_s": 44.7
+      },
+      "warnings": []
+    }
+  ]
+}

@@ -11,6 +11,7 @@ import argparse
 import csv
 import json
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -45,11 +46,17 @@ def compare_md(title, m, a_name, b_name, extra=""):
         f"| Same quality-floor decision | {fmt(m['floor_agreement'], True)} |",
         f"| Same best candidate per episode ({m['episodes_compared_for_top']} episodes) | "
         f"{fmt(m['top_per_episode_agreement'], True)} |",
-        f"| Overlap of posted top lists | {m['ranked_overlap']} of {m['ranked_sizes']} |", "",
+        f"| Overlap of posted top lists | "
+        f"{'n/a (runs cover different episodes)' if m['ranked_overlap'] is None else str(m['ranked_overlap']) + ' of ' + str(m['ranked_sizes'][0])} |", "",
         "Quality floor decisions:", "",
         f"| | {b_name} passes | {b_name} rejects |", "|---|---|---|",
         f"| **{a_name} passes** | {c['both_pass']} | {c['a_only']} |",
         f"| **{a_name} rejects** | {c['b_only']} | {c['neither']} |", "", extra]).rstrip() + "\n"
+
+
+def report_name(name, title):
+    """File stem for a report: --name if given, else the title's first word (letters/digits only)."""
+    return name or re.sub(r"[^a-z0-9_]+", "", title.lower().split()[0])
 
 
 def cmd_compare(a, title, extra_fn=None):
@@ -57,7 +64,7 @@ def cmd_compare(a, title, extra_fn=None):
     A, B = load(a.a), load(a.b)
     m = compare_runs(A, B, cfg)
     extra = extra_fn(A, B) if extra_fn else ""
-    name = a.name or title.lower().split()[0]
+    name = report_name(a.name, title)
     os.makedirs(EVAL, exist_ok=True)
     with open(os.path.join(EVAL, f"{name}.json"), "w") as fh:
         json.dump(m, fh, indent=2)
@@ -115,15 +122,21 @@ def cmd_human(a):
     cfg = load_config()
     with open(os.path.join(EVAL, "review_sheet.csv")) as fh:
         rows = list(csv.DictReader(fh))
-    out = {name: human_agreement(load(run), rows, cfg) for name, run in (("llm", a.llm), ("heuristic", a.heuristic))}
+    runs = [(n, r) for n, r in (x.split("=", 1) for x in a.runs) if os.path.isdir(r)]
+    out = {name: human_agreement(load(run), rows, cfg) for name, run in runs}
     with open(os.path.join(EVAL, "human_agreement.json"), "w") as fh:
         json.dump(out, fh, indent=2)
-    lines = ["# Human agreement", "", f"Clips scored by a human: **{out['llm'].get('n_scored', 0)}** "
-             "(1-5, 'would I post this'; 4+ counts as good).", "",
+    n = max((m.get("n_scored", 0) for m in out.values()), default=0)
+    lines = ["# Human agreement", "",
+             f"Clips scored blind by a human: **{n}** (1-5, 'would I post this'; 4+ counts as good). "
+             "The 25 mix the single-order top 10, its 5 weakest, and 10 random candidates.", "",
              "| Judge | Spearman vs human | Floor precision | Floor recall |", "|---|---|---|---|"]
     for name, m in out.items():
         lines.append(f"| {name} | {fmt(m.get('spearman'))} | {fmt(m.get('floor_precision'), True)} | "
                      f"{fmt(m.get('floor_recall'), True)} |")
+    lines += ["", "Floor precision: of clips the judge would post, the share the human rated 4+. "
+              "Floor recall: of clips the human rated 4+, the share the judge would post. "
+              f"Small sample (n={n}): treat differences of a few points as noise."]
     with open(os.path.join(EVAL, "human_agreement.md"), "w") as fh:
         fh.write("\n".join(lines) + "\n")
     print("\n".join(lines))
@@ -145,8 +158,9 @@ def main():
     p.add_argument("--n-random", type=int, default=10)
     p.add_argument("--seed", type=int, default=7)
     p = sub.add_parser("human")
-    p.add_argument("--llm", default="outputs/gemini")
-    p.add_argument("--heuristic", default="outputs/heuristic")
+    p.add_argument("--runs", nargs="+", default=["heuristic=outputs/heuristic",
+                                                 "llm_single_order=outputs/gemini_single_order",
+                                                 "llm_two_orders=outputs/gemini"])
     a = ap.parse_args()
     if a.cmd == "stability":
         cmd_compare(a, "Stability of the LLM judge")

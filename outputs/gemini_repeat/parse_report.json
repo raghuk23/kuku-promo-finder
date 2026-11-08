@@ -1,0 +1,151 @@
+{
+  "episodes": 10,
+  "beats": 846,
+  "anomaly_count": 0,
+  "speaker_merges": {
+    "LADY JULIANA": "JULIANA",
+    "LADY CLARISSA": "CLARISSA",
+    "LADY CATHERINE": "CATHERINE"
+  },
+  "per_episode": [
+    {
+      "episode": 1,
+      "source": "episode-001-Episode 1671703.txt",
+      "scenes": 1,
+      "beats": 95,
+      "duration_s": 138.0,
+      "beat_types": {
+        "CAMERA": 50,
+        "ACTION": 7,
+        "DIALOGUE": 37,
+        "SFX": 1
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 2,
+      "source": "episode-002-Episode 1671704.txt",
+      "scenes": 1,
+      "beats": 74,
+      "duration_s": 110.0,
+      "beat_types": {
+        "CAMERA": 39,
+        "DIALOGUE": 31,
+        "ACTION": 4
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 3,
+      "source": "episode-003-Episode 1671705.txt",
+      "scenes": 3,
+      "beats": 118,
+      "duration_s": 145.75,
+      "beat_types": {
+        "CAMERA": 61,
+        "DIALOGUE": 46,
+        "ACTION": 8,
+        "SFX": 3
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 4,
+      "source": "episode-004-Episode 1671706.txt",
+      "scenes": 1,
+      "beats": 110,
+      "duration_s": 151.4,
+      "beat_types": {
+        "CAMERA": 59,
+        "ACTION": 9,
+        "DIALOGUE": 40,
+        "SFX": 2
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 5,
+      "source": "episode-005-Episode 1671707.txt",
+      "scenes": 1,
+      "beats": 62,
+      "duration_s": 110.5,
+      "beat_types": {
+        "CAMERA": 25,
+        "ACTION": 6,
+        "DIALOGUE": 29,
+        "SFX": 2
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 26,
+      "source": "episode-026-Episode 1678579.txt",
+      "scenes": 1,
+      "beats": 51,
+      "duration_s": 120.88,
+      "beat_types": {
+        "CAMERA": 27,
+        "ACTION": 7,
+        "SFX": 3,
+        "DIALOGUE": 14
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 27,
+      "source": "episode-027-Episode 1678580.txt",
+      "scenes": 1,
+      "beats": 95,
+      "duration_s": 150.5,
+      "beat_types": {
+        "CAMERA": 47,
+        "DIALOGUE": 44,
+        "SFX": 1,
+        "ACTION": 3
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 28,
+      "source": "episode-028-Episode 1678581.txt",
+      "scenes": 1,
+      "beats": 96,
+      "duration_s": 138.5,
+      "beat_types": {
+        "CAMERA": 38,
+        "ACTION": 6,
+        "SFX": 2,
+        "DIALOGUE": 50
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 29,
+      "source": "episode-029-Episode 1678582.txt",
+      "scenes": 3,
+      "beats": 74,
+      "duration_s": 116.69,
+      "beat_types": {
+        "CAMERA": 38,
+        "SFX": 4,
+        "ACTION": 3,
+        "DIALOGUE": 29
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 30,
+      "source": "episode-030-Episode 1678583.txt",
+      "scenes": 3,
+      "beats": 71,
+      "duration_s": 151.21,
+      "beat_types": {
+        "CAMERA": 35,
+        "SFX": 4,
+        "ACTION": 4,
+        "DIALOGUE": 28
+      },
+      "anomalies": []
+    }
+  ]
+}

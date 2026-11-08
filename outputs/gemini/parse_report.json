@@ -1,0 +1,704 @@
+{
+  "episodes": 50,
+  "beats": 3727,
+  "anomaly_count": 0,
+  "speaker_merges": {
+    "LADY CLARISSA": "CLARISSA",
+    "LADY JULIANA": "JULIANA",
+    "LADY CATHERINE": "CATHERINE"
+  },
+  "per_episode": [
+    {
+      "episode": 1,
+      "source": "episode-001-Episode 1671703.txt",
+      "scenes": 1,
+      "beats": 95,
+      "duration_s": 138.0,
+      "beat_types": {
+        "CAMERA": 50,
+        "ACTION": 7,
+        "DIALOGUE": 37,
+        "SFX": 1
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 2,
+      "source": "episode-002-Episode 1671704.txt",
+      "scenes": 1,
+      "beats": 74,
+      "duration_s": 110.0,
+      "beat_types": {
+        "CAMERA": 39,
+        "DIALOGUE": 31,
+        "ACTION": 4
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 3,
+      "source": "episode-003-Episode 1671705.txt",
+      "scenes": 3,
+      "beats": 118,
+      "duration_s": 145.75,
+      "beat_types": {
+        "CAMERA": 61,
+        "DIALOGUE": 46,
+        "ACTION": 8,
+        "SFX": 3
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 4,
+      "source": "episode-004-Episode 1671706.txt",
+      "scenes": 1,
+      "beats": 110,
+      "duration_s": 151.4,
+      "beat_types": {
+        "CAMERA": 59,
+        "ACTION": 9,
+        "DIALOGUE": 40,
+        "SFX": 2
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 5,
+      "source": "episode-005-Episode 1671707.txt",
+      "scenes": 1,
+      "beats": 62,
+      "duration_s": 110.5,
+      "beat_types": {
+        "CAMERA": 25,
+        "ACTION": 6,
+        "DIALOGUE": 29,
+        "SFX": 2
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 6,
+      "source": "episode-006-Episode 1671708.txt",
+      "scenes": 2,
+      "beats": 97,
+      "duration_s": 115.0,
+      "beat_types": {
+        "CAMERA": 52,
+        "ACTION": 11,
+        "SFX": 6,
+        "DIALOGUE": 28
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 7,
+      "source": "episode-007-Episode 1671709.txt",
+      "scenes": 3,
+      "beats": 58,
+      "duration_s": 116.0,
+      "beat_types": {
+        "CAMERA": 28,
+        "ACTION": 7,
+        "SFX": 3,
+        "DIALOGUE": 20
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 8,
+      "source": "episode-008-Episode 1671710.txt",
+      "scenes": 1,
+      "beats": 63,
+      "duration_s": 78.0,
+      "beat_types": {
+        "CAMERA": 33,
+        "ACTION": 3,
+        "DIALOGUE": 26,
+        "SFX": 1
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 9,
+      "source": "episode-009-Episode 1671711.txt",
+      "scenes": 2,
+      "beats": 89,
+      "duration_s": 115.5,
+      "beat_types": {
+        "CAMERA": 42,
+        "ACTION": 13,
+        "SFX": 1,
+        "DIALOGUE": 33
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 10,
+      "source": "episode-010-Episode 1671712.txt",
+      "scenes": 1,
+      "beats": 60,
+      "duration_s": 94.0,
+      "beat_types": {
+        "CAMERA": 35,
+        "ACTION": 2,
+        "SFX": 1,
+        "DIALOGUE": 22
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 11,
+      "source": "episode-011-Episode 1671713.txt",
+      "scenes": 2,
+      "beats": 85,
+      "duration_s": 112.75,
+      "beat_types": {
+        "CAMERA": 43,
+        "SFX": 3,
+        "ACTION": 6,
+        "DIALOGUE": 33
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 12,
+      "source": "episode-012-Episode 1671714.txt",
+      "scenes": 1,
+      "beats": 55,
+      "duration_s": 87.21,
+      "beat_types": {
+        "CAMERA": 24,
+        "DIALOGUE": 24,
+        "ACTION": 7
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 13,
+      "source": "episode-013-Episode 1671715.txt",
+      "scenes": 2,
+      "beats": 75,
+      "duration_s": 118.88,
+      "beat_types": {
+        "CAMERA": 38,
+        "SFX": 3,
+        "ACTION": 12,
+        "DIALOGUE": 22
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 14,
+      "source": "episode-014-Episode 1671716.txt",
+      "scenes": 3,
+      "beats": 51,
+      "duration_s": 87.63,
+      "beat_types": {
+        "CAMERA": 23,
+        "ACTION": 9,
+        "SFX": 5,
+        "DIALOGUE": 14
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 15,
+      "source": "episode-015-Episode 1671717.txt",
+      "scenes": 1,
+      "beats": 55,
+      "duration_s": 86.0,
+      "beat_types": {
+        "CAMERA": 25,
+        "ACTION": 11,
+        "SFX": 2,
+        "DIALOGUE": 17
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 16,
+      "source": "episode-016-Episode 1671718.txt",
+      "scenes": 1,
+      "beats": 64,
+      "duration_s": 83.19,
+      "beat_types": {
+        "CAMERA": 27,
+        "ACTION": 10,
+        "DIALOGUE": 22,
+        "SFX": 5
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 17,
+      "source": "episode-017-Episode 1671719.txt",
+      "scenes": 2,
+      "beats": 75,
+      "duration_s": 118.88,
+      "beat_types": {
+        "CAMERA": 34,
+        "ACTION": 13,
+        "DIALOGUE": 26,
+        "SFX": 2
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 18,
+      "source": "episode-018-Episode 1671720.txt",
+      "scenes": 5,
+      "beats": 81,
+      "duration_s": 192.0,
+      "beat_types": {
+        "CAMERA": 28,
+        "SFX": 5,
+        "ACTION": 20,
+        "DIALOGUE": 28
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 19,
+      "source": "episode-019-Episode 1671721.txt",
+      "scenes": 3,
+      "beats": 63,
+      "duration_s": 119.63,
+      "beat_types": {
+        "CAMERA": 24,
+        "ACTION": 10,
+        "DIALOGUE": 29
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 20,
+      "source": "episode-020-Episode 1671722.txt",
+      "scenes": 4,
+      "beats": 68,
+      "duration_s": 114.75,
+      "beat_types": {
+        "CAMERA": 22,
+        "DIALOGUE": 41,
+        "ACTION": 4,
+        "SFX": 1
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 21,
+      "source": "episode-021-Episode 1678574.txt",
+      "scenes": 3,
+      "beats": 76,
+      "duration_s": 114.0,
+      "beat_types": {
+        "CAMERA": 31,
+        "ACTION": 15,
+        "SFX": 2,
+        "DIALOGUE": 28
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 22,
+      "source": "episode-022-Episode 1678575.txt",
+      "scenes": 4,
+      "beats": 81,
+      "duration_s": 131.0,
+      "beat_types": {
+        "CAMERA": 37,
+        "ACTION": 11,
+        "DIALOGUE": 30,
+        "SFX": 3
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 23,
+      "source": "episode-023-Episode 1678576.txt",
+      "scenes": 1,
+      "beats": 67,
+      "duration_s": 131.5,
+      "beat_types": {
+        "CAMERA": 39,
+        "DIALOGUE": 20,
+        "ACTION": 2,
+        "SFX": 6
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 24,
+      "source": "episode-024-Episode 1678577.txt",
+      "scenes": 2,
+      "beats": 69,
+      "duration_s": 92.0,
+      "beat_types": {
+        "CAMERA": 31,
+        "SFX": 3,
+        "ACTION": 12,
+        "DIALOGUE": 23
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 25,
+      "source": "episode-025-Episode 1678578.txt",
+      "scenes": 1,
+      "beats": 95,
+      "duration_s": 168.0,
+      "beat_types": {
+        "CAMERA": 44,
+        "ACTION": 9,
+        "DIALOGUE": 42
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 26,
+      "source": "episode-026-Episode 1678579.txt",
+      "scenes": 1,
+      "beats": 51,
+      "duration_s": 120.88,
+      "beat_types": {
+        "CAMERA": 27,
+        "ACTION": 7,
+        "SFX": 3,
+        "DIALOGUE": 14
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 27,
+      "source": "episode-027-Episode 1678580.txt",
+      "scenes": 1,
+      "beats": 95,
+      "duration_s": 150.5,
+      "beat_types": {
+        "CAMERA": 47,
+        "DIALOGUE": 44,
+        "SFX": 1,
+        "ACTION": 3
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 28,
+      "source": "episode-028-Episode 1678581.txt",
+      "scenes": 1,
+      "beats": 96,
+      "duration_s": 138.5,
+      "beat_types": {
+        "CAMERA": 38,
+        "ACTION": 6,
+        "SFX": 2,
+        "DIALOGUE": 50
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 29,
+      "source": "episode-029-Episode 1678582.txt",
+      "scenes": 3,
+      "beats": 74,
+      "duration_s": 116.69,
+      "beat_types": {
+        "CAMERA": 38,
+        "SFX": 4,
+        "ACTION": 3,
+        "DIALOGUE": 29
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 30,
+      "source": "episode-030-Episode 1678583.txt",
+      "scenes": 3,
+      "beats": 71,
+      "duration_s": 151.21,
+      "beat_types": {
+        "CAMERA": 35,
+        "SFX": 4,
+        "ACTION": 4,
+        "DIALOGUE": 28
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 31,
+      "source": "episode-031-Episode 1681364.txt",
+      "scenes": 1,
+      "beats": 87,
+      "duration_s": 160.0,
+      "beat_types": {
+        "CAMERA": 41,
+        "SFX": 3,
+        "ACTION": 5,
+        "DIALOGUE": 38
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 32,
+      "source": "episode-032-Episode 1681365.txt",
+      "scenes": 1,
+      "beats": 117,
+      "duration_s": 154.38,
+      "beat_types": {
+        "CAMERA": 63,
+        "SFX": 1,
+        "DIALOGUE": 50,
+        "ACTION": 3
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 33,
+      "source": "episode-033-Episode 1681366.txt",
+      "scenes": 1,
+      "beats": 99,
+      "duration_s": 174.04,
+      "beat_types": {
+        "CAMERA": 45,
+        "DIALOGUE": 50,
+        "ACTION": 4
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 34,
+      "source": "episode-034-Episode 1681367.txt",
+      "scenes": 1,
+      "beats": 116,
+      "duration_s": 190.0,
+      "beat_types": {
+        "CAMERA": 55,
+        "DIALOGUE": 48,
+        "SFX": 4,
+        "ACTION": 9
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 35,
+      "source": "episode-035-Episode 1681368.txt",
+      "scenes": 3,
+      "beats": 72,
+      "duration_s": 157.5,
+      "beat_types": {
+        "CAMERA": 23,
+        "ACTION": 12,
+        "DIALOGUE": 33,
+        "SFX": 4
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 36,
+      "source": "episode-036-Episode 1681369.txt",
+      "scenes": 1,
+      "beats": 121,
+      "duration_s": 200.75,
+      "beat_types": {
+        "CAMERA": 56,
+        "ACTION": 5,
+        "DIALOGUE": 57,
+        "SFX": 3
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 37,
+      "source": "episode-037-Episode 1681370.txt",
+      "scenes": 4,
+      "beats": 79,
+      "duration_s": 156.47,
+      "beat_types": {
+        "CAMERA": 37,
+        "SFX": 4,
+        "DIALOGUE": 33,
+        "ACTION": 5
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 38,
+      "source": "episode-038-Episode 1681371.txt",
+      "scenes": 1,
+      "beats": 57,
+      "duration_s": 87.91,
+      "beat_types": {
+        "CAMERA": 21,
+        "ACTION": 12,
+        "SFX": 3,
+        "DIALOGUE": 21
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 39,
+      "source": "episode-039-Episode 1686799.txt",
+      "scenes": 5,
+      "beats": 59,
+      "duration_s": 98.41,
+      "beat_types": {
+        "CAMERA": 27,
+        "ACTION": 12,
+        "DIALOGUE": 18,
+        "SFX": 2
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 40,
+      "source": "episode-040-Episode 1686800.txt",
+      "scenes": 4,
+      "beats": 51,
+      "duration_s": 110.08,
+      "beat_types": {
+        "CAMERA": 24,
+        "SFX": 2,
+        "DIALOGUE": 20,
+        "ACTION": 5
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 41,
+      "source": "episode-041-Episode 1686801.txt",
+      "scenes": 1,
+      "beats": 53,
+      "duration_s": 96.09,
+      "beat_types": {
+        "CAMERA": 28,
+        "ACTION": 5,
+        "DIALOGUE": 18,
+        "SFX": 2
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 42,
+      "source": "episode-042-Episode 1686802.txt",
+      "scenes": 1,
+      "beats": 37,
+      "duration_s": 77.8,
+      "beat_types": {
+        "CAMERA": 14,
+        "ACTION": 4,
+        "DIALOGUE": 19
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 43,
+      "source": "episode-043-Episode 1686803.txt",
+      "scenes": 1,
+      "beats": 87,
+      "duration_s": 114.96,
+      "beat_types": {
+        "CAMERA": 44,
+        "DIALOGUE": 32,
+        "ACTION": 8,
+        "SFX": 3
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 44,
+      "source": "episode-044-Episode 1686804.txt",
+      "scenes": 2,
+      "beats": 54,
+      "duration_s": 70.5,
+      "beat_types": {
+        "CAMERA": 29,
+        "ACTION": 5,
+        "DIALOGUE": 20
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 45,
+      "source": "episode-045-Episode 1686805.txt",
+      "scenes": 3,
+      "beats": 74,
+      "duration_s": 121.75,
+      "beat_types": {
+        "CAMERA": 31,
+        "ACTION": 12,
+        "DIALOGUE": 29,
+        "SFX": 2
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 46,
+      "source": "episode-046-Episode 1688395.txt",
+      "scenes": 1,
+      "beats": 75,
+      "duration_s": 143.88,
+      "beat_types": {
+        "CAMERA": 38,
+        "ACTION": 3,
+        "SFX": 3,
+        "DIALOGUE": 31
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 47,
+      "source": "episode-047-Episode 1688396.txt",
+      "scenes": 4,
+      "beats": 70,
+      "duration_s": 134.0,
+      "beat_types": {
+        "CAMERA": 34,
+        "DIALOGUE": 33,
+        "ACTION": 3
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 48,
+      "source": "episode-048-Episode 1688397.txt",
+      "scenes": 2,
+      "beats": 43,
+      "duration_s": 80.0,
+      "beat_types": {
+        "CAMERA": 15,
+        "ACTION": 5,
+        "DIALOGUE": 21,
+        "SFX": 2
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 49,
+      "source": "episode-049-Episode 1688398.txt",
+      "scenes": 1,
+      "beats": 63,
+      "duration_s": 144.75,
+      "beat_types": {
+        "CAMERA": 31,
+        "SFX": 1,
+        "ACTION": 5,
+        "DIALOGUE": 26
+      },
+      "anomalies": []
+    },
+    {
+      "episode": 50,
+      "source": "episode-050-Episode 1697563.txt",
+      "scenes": 2,
+      "beats": 40,
+      "duration_s": 80.0,
+      "beat_types": {
+        "CAMERA": 19,
+        "ACTION": 6,
+        "DIALOGUE": 14,
+        "SFX": 1
+      },
+      "anomalies": []
+    }
+  ]
+}

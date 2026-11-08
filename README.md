@@ -27,6 +27,27 @@ python3.12 -m venv .venv
 `--input` takes a whole show (a folder) or one episode file. Use
 `--episodes 1,2,3` to run a subset.
 
+### Web app
+
+```bash
+.venv/bin/streamlit run app.py
+```
+
+- **Example results** shows the bundled raw outputs for the 50-episode show.
+- **Run on new screenplays** takes uploaded `.txt` episodes and a judge choice
+  (heuristic with no key, Gemini, or any OpenAI-compatible API), and returns
+  the ranked promos with the script for each clip and a .zip of all outputs.
+
+A pasted API key goes straight to the client for that run. It is never
+written to the environment or to disk. Uploaded files are processed in a
+temporary folder that is deleted after the run.
+
+**Deploy (Streamlit Community Cloud, free):** push the repo to GitHub, then
+on share.streamlit.io create an app from it with main file `app.py` and
+Python 3.12. Don't put a key in Secrets on a public app: the free tier allows
+only 20 calls per day per model, and anyone could use them up. Visitors paste
+their own key or use the heuristic judge.
+
 ### Swapping the model
 
 No code changes are needed. Pick a provider and model per run:

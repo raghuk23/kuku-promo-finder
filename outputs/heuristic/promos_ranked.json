@@ -1,0 +1,369 @@
+{
+  "show": "I Married a Broken Soldier. He was a Duke",
+  "judge": [
+    "heuristic"
+  ],
+  "prompt_version": "judge-v1",
+  "promos": [
+    {
+      "rank": 1,
+      "candidate_id": "ep01_c1",
+      "episode": 1,
+      "segments": [
+        {
+          "episode": 1,
+          "start": "00:06.80",
+          "end": "00:39.00",
+          "duration_s": 32.2
+        }
+      ],
+      "total_duration_s": 32.2,
+      "hook": "Juliana's eyes widen slightly in bewilderment as she notices something amiss at the altar.",
+      "cliffhanger": "Why are you holding her hand?",
+      "why_it_works": "heuristic: strongest signals hook, cliffhanger",
+      "rank_reason": "Score 10.0/10 (hook 10, cliffhanger 10) + early-episode boost. heuristic: strongest signals hook, cliffhanger",
+      "final_score": 10.0,
+      "posting_score": 10.5,
+      "hook_score": 10,
+      "cliffhanger_score": 10,
+      "standalone_score": null,
+      "standalone_reason": "not assessed by heuristics",
+      "weakness": "heuristic judge: cannot assess context, implied conflict or visual payoff",
+      "judge": "heuristic",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 1,
+        "start_s": 6.8,
+        "end_s": 39.0,
+        "start": "00:06.80",
+        "end": "00:39.00",
+        "duration_s": 32.2
+      },
+      "warnings": []
+    },
+    {
+      "rank": 2,
+      "candidate_id": "ep01_c2",
+      "episode": 1,
+      "segments": [
+        {
+          "episode": 1,
+          "start": "00:32.80",
+          "end": "01:14.60",
+          "duration_s": 41.8
+        }
+      ],
+      "total_duration_s": 41.8,
+      "hook": "Gerald?",
+      "cliffhanger": "How long?",
+      "why_it_works": "heuristic: strongest signals hook, cliffhanger",
+      "rank_reason": "Score 10.0/10 (hook 10, cliffhanger 10) + early-episode boost. heuristic: strongest signals hook, cliffhanger",
+      "final_score": 10.0,
+      "posting_score": 10.5,
+      "hook_score": 10,
+      "cliffhanger_score": 10,
+      "standalone_score": null,
+      "standalone_reason": "not assessed by heuristics",
+      "weakness": "heuristic judge: cannot assess context, implied conflict or visual payoff",
+      "judge": "heuristic",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 1,
+        "start_s": 32.8,
+        "end_s": 74.6,
+        "start": "00:32.80",
+        "end": "01:14.60",
+        "duration_s": 41.8
+      },
+      "warnings": []
+    },
+    {
+      "rank": 3,
+      "candidate_id": "ep02_c1",
+      "episode": 2,
+      "segments": [
+        {
+          "episode": 2,
+          "start": "00:02.80",
+          "end": "00:47.60",
+          "duration_s": 44.8
+        }
+      ],
+      "total_duration_s": 44.8,
+      "hook": "Juliana gasps softly in heartbreak, her eyes wide and brimming with tears.",
+      "cliffhanger": "You won't even look at me.",
+      "why_it_works": "heuristic: strongest signals hook, cliffhanger",
+      "rank_reason": "Score 10.0/10 (hook 10, cliffhanger 10) + early-episode boost. heuristic: strongest signals hook, cliffhanger",
+      "final_score": 10.0,
+      "posting_score": 10.47,
+      "hook_score": 10,
+      "cliffhanger_score": 10,
+      "standalone_score": null,
+      "standalone_reason": "not assessed by heuristics",
+      "weakness": "heuristic judge: cannot assess context, implied conflict or visual payoff",
+      "judge": "heuristic",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 2,
+        "start_s": 2.8,
+        "end_s": 47.6,
+        "start": "00:02.80",
+        "end": "00:47.60",
+        "duration_s": 44.8
+      },
+      "warnings": []
+    },
+    {
+      "rank": 4,
+      "candidate_id": "ep02_c2",
+      "episode": 2,
+      "segments": [
+        {
+          "episode": 2,
+          "start": "00:42.50",
+          "end": "01:38.20",
+          "duration_s": 55.7
+        }
+      ],
+      "total_duration_s": 55.7,
+      "hook": "Do not disgrace us further.",
+      "cliffhanger": "You have shown them exactly what your word is worth.",
+      "why_it_works": "heuristic: strongest signals hook, cliffhanger",
+      "rank_reason": "Score 10.0/10 (hook 10, cliffhanger 10) + early-episode boost. heuristic: strongest signals hook, cliffhanger",
+      "final_score": 10.0,
+      "posting_score": 10.47,
+      "hook_score": 10,
+      "cliffhanger_score": 10,
+      "standalone_score": null,
+      "standalone_reason": "not assessed by heuristics",
+      "weakness": "heuristic judge: cannot assess context, implied conflict or visual payoff",
+      "judge": "heuristic",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 2,
+        "start_s": 42.5,
+        "end_s": 98.2,
+        "start": "00:42.50",
+        "end": "01:38.20",
+        "duration_s": 55.7
+      },
+      "warnings": []
+    },
+    {
+      "rank": 5,
+      "candidate_id": "ep03_c1",
+      "episode": 3,
+      "segments": [
+        {
+          "episode": 3,
+          "start": "00:25.80",
+          "end": "01:06.00",
+          "duration_s": 40.2
+        }
+      ],
+      "total_duration_s": 40.2,
+      "hook": "You have humiliated this family enough for one day.",
+      "cliffhanger": "The guards tear her grip away from the pew.",
+      "why_it_works": "heuristic: strongest signals hook, cliffhanger",
+      "rank_reason": "Score 10.0/10 (hook 10, cliffhanger 10) + early-episode boost. heuristic: strongest signals hook, cliffhanger",
+      "final_score": 10.0,
+      "posting_score": 10.45,
+      "hook_score": 10,
+      "cliffhanger_score": 10,
+      "standalone_score": null,
+      "standalone_reason": "not assessed by heuristics",
+      "weakness": "heuristic judge: cannot assess context, implied conflict or visual payoff",
+      "judge": "heuristic",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 3,
+        "start_s": 25.8,
+        "end_s": 66.0,
+        "start": "00:25.80",
+        "end": "01:06.00",
+        "duration_s": 40.2
+      },
+      "warnings": []
+    },
+    {
+      "rank": 6,
+      "candidate_id": "ep03_c2",
+      "episode": 3,
+      "segments": [
+        {
+          "episode": 3,
+          "start": "00:56.20",
+          "end": "01:31.70",
+          "duration_s": 35.5
+        }
+      ],
+      "total_duration_s": 35.5,
+      "hook": "...and it isn't you.",
+      "cliffhanger": "Are you hurt?",
+      "why_it_works": "heuristic: strongest signals hook, cliffhanger",
+      "rank_reason": "Score 10.0/10 (hook 10, cliffhanger 10) + early-episode boost. heuristic: strongest signals hook, cliffhanger",
+      "final_score": 10.0,
+      "posting_score": 10.45,
+      "hook_score": 10,
+      "cliffhanger_score": 10,
+      "standalone_score": null,
+      "standalone_reason": "not assessed by heuristics",
+      "weakness": "heuristic judge: cannot assess context, implied conflict or visual payoff",
+      "judge": "heuristic",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 3,
+        "start_s": 56.2,
+        "end_s": 91.7,
+        "start": "00:56.20",
+        "end": "01:31.70",
+        "duration_s": 35.5
+      },
+      "warnings": []
+    },
+    {
+      "rank": 7,
+      "candidate_id": "ep04_c1",
+      "episode": 4,
+      "segments": [
+        {
+          "episode": 4,
+          "start": "02:02.80",
+          "end": "02:26.50",
+          "duration_s": 23.7
+        }
+      ],
+      "total_duration_s": 23.7,
+      "hook": "...than spend another moment begging for yours.",
+      "cliffhanger": "Clarissa gapes in shock while Lady Ashcroft exhales in exasperation.",
+      "why_it_works": "heuristic: strongest signals hook, cliffhanger",
+      "rank_reason": "Score 10.0/10 (hook 10, cliffhanger 10) + early-episode boost. heuristic: strongest signals hook, cliffhanger",
+      "final_score": 10.0,
+      "posting_score": 10.43,
+      "hook_score": 10,
+      "cliffhanger_score": 10,
+      "standalone_score": null,
+      "standalone_reason": "not assessed by heuristics",
+      "weakness": "heuristic judge: cannot assess context, implied conflict or visual payoff",
+      "judge": "heuristic",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 4,
+        "start_s": 122.8,
+        "end_s": 146.5,
+        "start": "02:02.80",
+        "end": "02:26.50",
+        "duration_s": 23.7
+      },
+      "warnings": []
+    },
+    {
+      "rank": 8,
+      "candidate_id": "ep06_c1",
+      "episode": 6,
+      "segments": [
+        {
+          "episode": 6,
+          "start": "00:09.90",
+          "end": "00:33.70",
+          "duration_s": 23.8
+        }
+      ],
+      "total_duration_s": 23.8,
+      "hook": "No.",
+      "cliffhanger": "At least no one there will be waiting to humiliate me.",
+      "why_it_works": "heuristic: strongest signals hook, cliffhanger",
+      "rank_reason": "Score 10.0/10 (hook 10, cliffhanger 10) + early-episode boost. heuristic: strongest signals hook, cliffhanger",
+      "final_score": 10.0,
+      "posting_score": 10.38,
+      "hook_score": 10,
+      "cliffhanger_score": 10,
+      "standalone_score": null,
+      "standalone_reason": "not assessed by heuristics",
+      "weakness": "heuristic judge: cannot assess context, implied conflict or visual payoff",
+      "judge": "heuristic",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 6,
+        "start_s": 9.9,
+        "end_s": 33.7,
+        "start": "00:09.90",
+        "end": "00:33.70",
+        "duration_s": 23.8
+      },
+      "warnings": []
+    },
+    {
+      "rank": 9,
+      "candidate_id": "ep06_c2",
+      "episode": 6,
+      "segments": [
+        {
+          "episode": 6,
+          "start": "00:18.30",
+          "end": "00:48.80",
+          "duration_s": 30.5
+        }
+      ],
+      "total_duration_s": 30.5,
+      "hook": "I suppose the day was already ruined.",
+      "cliffhanger": "Juliana removes her dark cloak, revealing her damp white bridal dress underneath.",
+      "why_it_works": "heuristic: strongest signals hook, cliffhanger",
+      "rank_reason": "Score 10.0/10 (hook 10, cliffhanger 10) + early-episode boost. heuristic: strongest signals hook, cliffhanger",
+      "final_score": 10.0,
+      "posting_score": 10.38,
+      "hook_score": 10,
+      "cliffhanger_score": 10,
+      "standalone_score": null,
+      "standalone_reason": "not assessed by heuristics",
+      "weakness": "heuristic judge: cannot assess context, implied conflict or visual payoff",
+      "judge": "heuristic",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 6,
+        "start_s": 18.3,
+        "end_s": 48.8,
+        "start": "00:18.30",
+        "end": "00:48.80",
+        "duration_s": 30.5
+      },
+      "warnings": []
+    },
+    {
+      "rank": 10,
+      "candidate_id": "ep07_c1",
+      "episode": 7,
+      "segments": [
+        {
+          "episode": 7,
+          "start": "00:50.80",
+          "end": "01:23.50",
+          "duration_s": 32.7
+        }
+      ],
+      "total_duration_s": 32.7,
+      "hook": "You chose that scarred beggar over a life of comfort.",
+      "cliffhanger": "Gerald freezes, his arrogant bravado instantly vanishing as cold dread overtakes his face.",
+      "why_it_works": "heuristic: strongest signals hook, cliffhanger",
+      "rank_reason": "Score 10.0/10 (hook 10, cliffhanger 10) + early-episode boost. heuristic: strongest signals hook, cliffhanger",
+      "final_score": 10.0,
+      "posting_score": 10.35,
+      "hook_score": 10,
+      "cliffhanger_score": 10,
+      "standalone_score": null,
+      "standalone_reason": "not assessed by heuristics",
+      "weakness": "heuristic judge: cannot assess context, implied conflict or visual payoff",
+      "judge": "heuristic",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 7,
+        "start_s": 50.8,
+        "end_s": 83.5,
+        "start": "00:50.80",
+        "end": "01:23.50",
+        "duration_s": 32.7
+      },
+      "warnings": []
+    }
+  ]
+}

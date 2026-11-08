@@ -92,9 +92,19 @@ class TestBatchingAndQuota(unittest.TestCase):
         import re as _re
         client = FakeClient(lambda s, u, sc: {"judgements": [
             good_judgement(cid) for cid in _re.findall(r"### (ep\d+_c\d+)", u)]})
-        s, recs = self.run_with(client, "--episodes-per-call", "3")
+        s, recs = self.run_with(client, "--episodes-per-call", "3", "--order-seeds", "none")
         self.assertEqual(client.calls, 3)                      # 7 episodes / 3 per call
         self.assertTrue(all(r["status"] == "ok" for r in recs))
+
+    def test_two_orderings_double_the_calls_and_are_recorded(self):
+        from tests.test_judge import FakeClient, good_judgement
+        import re as _re
+        client = FakeClient(lambda s, u, sc: {"judgements": [
+            good_judgement(cid) for cid in _re.findall(r"### (ep\d+_c\d+)", u)]})
+        s, recs = self.run_with(client, "--episodes-per-call", "3", "--order-seeds", "none,1")
+        self.assertEqual(client.calls, 6)
+        self.assertEqual(s["order_seeds"], [None, 1])
+        self.assertTrue(all(r["orders_judged"] == 2 for r in recs))
 
     def test_daily_quota_stops_the_run_and_still_writes_outputs(self):
         from tests.test_judge import FakeClient

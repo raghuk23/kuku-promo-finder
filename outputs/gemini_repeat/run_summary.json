@@ -1,0 +1,104 @@
+{
+  "started_at": "2026-11-08T08:32:19+00:00",
+  "finished_at": "2026-11-08T08:40:10+00:00",
+  "elapsed_s": 471.4,
+  "input": "/Users/aviralgupta/Desktop/Raghu/I Married a Broken Soldier. He was a Duke",
+  "provider": "gemini",
+  "judges_used": [
+    "gemini-3.8-flash"
+  ],
+  "prompt_version": "judge-v1",
+  "order_seed": null,
+  "cache": false,
+  "episodes_per_call": 5,
+  "judge_calls": 2,
+  "stopped_early": null,
+  "llm_usage": {
+    "calls": 2,
+    "input_tokens": 86019,
+    "output_tokens": 8761,
+    "thinking_tokens": 7566
+  },
+  "funnel": {
+    "episodes": 10,
+    "windows": 3338,
+    "candidates": 54,
+    "judged_records": 54,
+    "judge_failed": 0,
+    "failed_validation": 0,
+    "duplicates_removed": 10,
+    "below_floor": 22,
+    "passed_floor": 22,
+    "ranked": 10,
+    "episodes_with_a_promo": 9
+  },
+  "timestamp_validity_rate": 1.0,
+  "config": {
+    "llm": {
+      "provider": "gemini",
+      "model": "gemini-3.8-flash",
+      "fallback_models": [
+        "gemini-3.6-flash",
+        "gemini-3.7-flash",
+        "gemini-3.5-flash"
+      ],
+      "strict_model": true,
+      "temperature": 0,
+      "seed": 7,
+      "retries": 6,
+      "base_delay_s": 5,
+      "min_interval_s": 4,
+      "timeout_s": 600,
+      "openai_compatible": {
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env": "OPENAI_COMPAT_API_KEY"
+      }
+    },
+    "judge": {
+      "context_pad_s": 8,
+      "episodes_per_call": 5
+    },
+    "window": {
+      "min_s": 20,
+      "max_s": 60,
+      "hook_s": 3,
+      "cliff_s": 4,
+      "sweet_spot_s": [
+        30,
+        45
+      ],
+      "boundary_eps_s": 0.05
+    },
+    "candidates": {
+      "seconds_per_candidate": 25,
+      "k_min": 3,
+      "k_max": 8,
+      "nms_iou": 0.5
+    },
+    "heuristic_weights": {
+      "hook": 0.3,
+      "cliffhanger": 0.25,
+      "intensity": 0.15,
+      "conflict": 0.15,
+      "speakers": 0.1,
+      "length_fit": 0.05
+    },
+    "ranking": {
+      "weights": {
+        "hook": 0.45,
+        "cliffhanger": 0.3,
+        "standalone": 0.25
+      },
+      "quality_floor": {
+        "hook": 7,
+        "cliffhanger": 7,
+        "standalone": 6
+      },
+      "top_n": 10,
+      "max_per_episode": 2,
+      "dedup_iou": 0.5,
+      "early_episode_bonus": 0.5,
+      "early_episode_window": 20
+    }
+  }
+}

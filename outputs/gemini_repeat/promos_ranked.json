@@ -1,0 +1,369 @@
+{
+  "show": "I Married a Broken Soldier. He was a Duke",
+  "judge": [
+    "gemini-3.8-flash"
+  ],
+  "prompt_version": "judge-v1",
+  "promos": [
+    {
+      "rank": 1,
+      "candidate_id": "ep03_c2",
+      "episode": 3,
+      "segments": [
+        {
+          "episode": 3,
+          "start": "00:56.20",
+          "end": "01:31.70",
+          "duration_s": 35.5
+        }
+      ],
+      "total_duration_s": 35.5,
+      "hook": "The Matriarch severs family ties and orders armed guards to remove Juliana.",
+      "cliffhanger": "A bearded warrior knocks a guard flat out and gently asks Juliana if she is hurt.",
+      "why_it_works": "Combines physical action, instant justice, and romantic savior appeal in one punchy sequence.",
+      "rank_reason": "Score 8.6/10 (hook 8, cliffhanger 9, standalone 9) + early-episode boost. Combines physical action, instant justice, and romantic savior appeal in one punchy sequence.",
+      "final_score": 8.55,
+      "posting_score": 9.0,
+      "hook_score": 8,
+      "cliffhanger_score": 9,
+      "standalone_score": 9,
+      "standalone_reason": "a rugged stranger violently rescues a bride being dragged away by guards",
+      "weakness": "The transition from physical brawling to gentle romance happens very quickly.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 3,
+        "start_s": 56.2,
+        "end_s": 91.7,
+        "start": "00:56.20",
+        "end": "01:31.70",
+        "duration_s": 35.5
+      },
+      "warnings": []
+    },
+    {
+      "rank": 2,
+      "candidate_id": "ep04_c4",
+      "episode": 4,
+      "segments": [
+        {
+          "episode": 4,
+          "start": "01:54.80",
+          "end": "02:14.80",
+          "duration_s": 20.0
+        }
+      ],
+      "total_duration_s": 20.0,
+      "hook": "Gerald lunges forward in fury, screaming that Juliana has thrown herself away for a nobody.",
+      "cliffhanger": "Lady Ashcroft screams with venomous fury that Juliana is officially disowned.",
+      "why_it_works": "Explosive confrontation and shouting from start to finish keeps viewers glued.",
+      "rank_reason": "Score 8.6/10 (hook 8, cliffhanger 9, standalone 9) + early-episode boost. Explosive confrontation and shouting from start to finish keeps viewers glued.",
+      "final_score": 8.55,
+      "posting_score": 8.98,
+      "hook_score": 8,
+      "cliffhanger_score": 9,
+      "standalone_score": 9,
+      "standalone_reason": "a woman marries a stranger to spite her ex and gets disowned",
+      "weakness": "Extremely short duration gives little time to breathe.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 4,
+        "start_s": 114.8,
+        "end_s": 134.8,
+        "start": "01:54.80",
+        "end": "02:14.80",
+        "duration_s": 20.0
+      },
+      "warnings": []
+    },
+    {
+      "rank": 3,
+      "candidate_id": "ep27_c3",
+      "episode": 27,
+      "segments": [
+        {
+          "episode": 27,
+          "start": "00:26.10",
+          "end": "00:51.50",
+          "duration_s": 25.4
+        }
+      ],
+      "total_duration_s": 25.4,
+      "hook": "The Duchess weeps that her lost son who went to war wore Juliana's exact ring.",
+      "cliffhanger": "Heavy double doors burst open as aristocrats and an armed royal guard invade the room.",
+      "why_it_works": "Combines a massive identity revelation with an explosive, door-busting interruption.",
+      "rank_reason": "Score 8.6/10 (hook 8, cliffhanger 9, standalone 9). Combines a massive identity revelation with an explosive, door-busting interruption.",
+      "final_score": 8.55,
+      "posting_score": 8.55,
+      "hook_score": 8,
+      "cliffhanger_score": 9,
+      "standalone_score": 9,
+      "standalone_reason": "the realization that her peasant husband is the lost heir needs no backstory",
+      "weakness": "The cut ends before any dialogue from the intruders.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 27,
+        "start_s": 26.1,
+        "end_s": 51.5,
+        "start": "00:26.10",
+        "end": "00:51.50",
+        "duration_s": 25.4
+      },
+      "warnings": []
+    },
+    {
+      "rank": 4,
+      "candidate_id": "ep03_c5",
+      "episode": 3,
+      "segments": [
+        {
+          "episode": 3,
+          "start": "01:34.00",
+          "end": "02:17.30",
+          "duration_s": 43.3
+        }
+      ],
+      "total_duration_s": 43.3,
+      "hook": "A bearded stranger threatens armed guards, warning them never to touch Juliana again.",
+      "cliffhanger": "The stranger drops to one knee offering a wedding ring as the room gasps.",
+      "why_it_works": "The sudden public proposal right in front of the cheating ex is peak drama.",
+      "rank_reason": "Score 8.1/10 (hook 7, cliffhanger 9, standalone 9) + early-episode boost. The sudden public proposal right in front of the cheating ex is peak drama.",
+      "final_score": 8.1,
+      "posting_score": 8.55,
+      "hook_score": 7,
+      "cliffhanger_score": 9,
+      "standalone_score": 9,
+      "standalone_reason": "a mysterious protector proposes marriage to an abandoned bride on the spot",
+      "weakness": "Pacing slightly slows during the romantic dialogue in the center.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 3,
+        "start_s": 94.0,
+        "end_s": 137.3,
+        "start": "01:34.00",
+        "end": "02:17.30",
+        "duration_s": 43.3
+      },
+      "warnings": []
+    },
+    {
+      "rank": 5,
+      "candidate_id": "ep01_c2",
+      "episode": 1,
+      "segments": [
+        {
+          "episode": 1,
+          "start": "00:32.80",
+          "end": "01:14.60",
+          "duration_s": 41.8
+        }
+      ],
+      "total_duration_s": 41.8,
+      "hook": "Juliana stares in horror at Gerald holding hands with another woman and asks why.",
+      "cliffhanger": "Juliana asks how long the betrayal was planned before being cut off.",
+      "why_it_works": "Delivers raw emotional betrayal with the groom callously stating he changed his mind.",
+      "rank_reason": "Score 8.0/10 (hook 8, cliffhanger 7, standalone 9) + early-episode boost. Delivers raw emotional betrayal with the groom callously stating he changed his mind.",
+      "final_score": 7.95,
+      "posting_score": 8.45,
+      "hook_score": 8,
+      "cliffhanger_score": 7,
+      "standalone_score": 9,
+      "standalone_reason": "a bride is dumped at the altar for her own sister",
+      "weakness": "The middle section lingers slightly too long on Juliana's repetitive weeping.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 1,
+        "start_s": 32.8,
+        "end_s": 74.6,
+        "start": "00:32.80",
+        "end": "01:14.60",
+        "duration_s": 41.8
+      },
+      "warnings": []
+    },
+    {
+      "rank": 6,
+      "candidate_id": "ep29_c2",
+      "episode": 29,
+      "segments": [
+        {
+          "episode": 29,
+          "start": "00:31.90",
+          "end": "00:56.60",
+          "duration_s": 24.7
+        }
+      ],
+      "total_duration_s": 24.7,
+      "hook": "Catherine flips through herbal notes, declaring the magistrate will condemn them as witchcraft.",
+      "cliffhanger": "Catherine whispers that when Juliana hangs from a rope, no one will remember her book.",
+      "why_it_works": "A chilling, unpunished death threat makes viewers desperate to see the villain defeated.",
+      "rank_reason": "Score 8.3/10 (hook 8, cliffhanger 9, standalone 8). A chilling, unpunished death threat makes viewers desperate to see the villain defeated.",
+      "final_score": 8.3,
+      "posting_score": 8.3,
+      "hook_score": 8,
+      "cliffhanger_score": 9,
+      "standalone_score": 8,
+      "standalone_reason": "corrupt aristocrats framing a healer as a witch is an instantly understandable trope",
+      "weakness": "Mostly dialogue-driven without a physical confrontation beat.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 29,
+        "start_s": 31.9,
+        "end_s": 56.6,
+        "start": "00:31.90",
+        "end": "00:56.60",
+        "duration_s": 24.7
+      },
+      "warnings": []
+    },
+    {
+      "rank": 7,
+      "candidate_id": "ep27_c1",
+      "episode": 27,
+      "segments": [
+        {
+          "episode": 27,
+          "start": "01:57.20",
+          "end": "02:30.50",
+          "duration_s": 33.3
+        }
+      ],
+      "total_duration_s": 33.3,
+      "hook": "The Blond Nobleman menacingly repeats 'Poison' as Juliana urgently warns someone is poisoning Her Grace.",
+      "cliffhanger": "Juliana's terrified eyes widen as a guard violently drags her away into a deadly trap.",
+      "why_it_works": "High stakes, malicious villains twisting the truth, and physical apprehension create intense drama.",
+      "rank_reason": "Score 8.2/10 (hook 8, cliffhanger 8, standalone 9). High stakes, malicious villains twisting the truth, and physical apprehension create intense drama.",
+      "final_score": 8.25,
+      "posting_score": 8.25,
+      "hook_score": 8,
+      "cliffhanger_score": 8,
+      "standalone_score": 9,
+      "standalone_reason": "a framed maid facing corrupt nobles makes immediate intuitive sense",
+      "weakness": "The quick framing sequence relies heavily on rapid dialogue shifts.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 27,
+        "start_s": 117.2,
+        "end_s": 150.5,
+        "start": "01:57.20",
+        "end": "02:30.50",
+        "duration_s": 33.3
+      },
+      "warnings": []
+    },
+    {
+      "rank": 8,
+      "candidate_id": "ep29_c3",
+      "episode": 29,
+      "segments": [
+        {
+          "episode": 29,
+          "start": "00:02.80",
+          "end": "00:56.60",
+          "duration_s": 53.8
+        }
+      ],
+      "total_duration_s": 53.8,
+      "hook": "Guards violently haul Juliana down dungeon stairs as she begs Catherine for her mother's legacy.",
+      "cliffhanger": "Catherine whispers she can burn the book, predicting Juliana will end on the execution rope.",
+      "why_it_works": "Combines physical dragging action with an escalating execution threat.",
+      "rank_reason": "Score 8.2/10 (hook 8, cliffhanger 8, standalone 9). Combines physical dragging action with an escalating execution threat.",
+      "final_score": 8.25,
+      "posting_score": 8.25,
+      "hook_score": 8,
+      "cliffhanger_score": 8,
+      "standalone_score": 9,
+      "standalone_reason": "the desperate fight for a mother's keepsake anchors immediate empathy",
+      "weakness": "Slightly longer run time could lose viewer momentum in the middle.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "refined from 00:02.80->00:53.60",
+      "original_cut": {
+        "episode": 29,
+        "start_s": 2.8,
+        "end_s": 53.6,
+        "start": "00:02.80",
+        "end": "00:53.60",
+        "duration_s": 50.8
+      },
+      "warnings": []
+    },
+    {
+      "rank": 9,
+      "candidate_id": "ep28_c3",
+      "episode": 28,
+      "segments": [
+        {
+          "episode": 28,
+          "start": "00:34.90",
+          "end": "01:01.30",
+          "duration_s": 26.4
+        }
+      ],
+      "total_duration_s": 26.4,
+      "hook": "The Duchess shouts in fury: 'I was poisoned! And you... you knew!'",
+      "cliffhanger": "Rupert condescendingly whispers to the choking Duchess that she is merely confused and delusional.",
+      "why_it_works": "Starts directly on an electrifying accusation that stops scrollers instantly.",
+      "rank_reason": "Score 8.2/10 (hook 9, cliffhanger 7, standalone 8). Starts directly on an electrifying accusation that stops scrollers instantly.",
+      "final_score": 8.15,
+      "posting_score": 8.15,
+      "hook_score": 9,
+      "cliffhanger_score": 7,
+      "standalone_score": 8,
+      "standalone_reason": "a mother confronting her own treacherous family over attempted murder requires no explanation",
+      "weakness": "Ends on a sinister whisper rather than an explosive physical threat.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "unchanged",
+      "original_cut": {
+        "episode": 28,
+        "start_s": 34.9,
+        "end_s": 61.3,
+        "start": "00:34.90",
+        "end": "01:01.30",
+        "duration_s": 26.4
+      },
+      "warnings": []
+    },
+    {
+      "rank": 10,
+      "candidate_id": "ep28_c1",
+      "episode": 28,
+      "segments": [
+        {
+          "episode": 28,
+          "start": "01:01.30",
+          "end": "01:41.20",
+          "duration_s": 39.9
+        }
+      ],
+      "total_duration_s": 39.9,
+      "hook": "Catherine sneers at Juliana before Rupert commands the guard to take her away.",
+      "cliffhanger": "Juliana gasps in pure horror as Catherine opens her mother's book and reads her true name.",
+      "why_it_works": "High cruelty, physical violence against a keepsake, and an impending identity exposure.",
+      "rank_reason": "Score 8.0/10 (hook 8, cliffhanger 8, standalone 8). High cruelty, physical violence against a keepsake, and an impending identity exposure.",
+      "final_score": 8.0,
+      "posting_score": 8.0,
+      "hook_score": 8,
+      "cliffhanger_score": 8,
+      "standalone_score": 8,
+      "standalone_reason": "villains stripping a maid of her heirlooms and identity is easily understood",
+      "weakness": "Cuts just one line before Catherine speaks Juliana's full noble title out loud.",
+      "judge": "gemini-3.8-flash",
+      "refinement_note": "refined from 01:01.30->01:37.40",
+      "original_cut": {
+        "episode": 28,
+        "start_s": 61.3,
+        "end_s": 97.4,
+        "start": "01:01.30",
+        "end": "01:37.40",
+        "duration_s": 36.1
+      },
+      "warnings": []
+    }
+  ]
+}

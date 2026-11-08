@@ -1,0 +1,22 @@
+{
+  "records": 54,
+  "judged_ok": 54,
+  "judge_failed": 0,
+  "valid": 54,
+  "invalid": 0,
+  "timestamp_validity_rate": 1.0,
+  "valid_rate": 1.0,
+  "error_types": {},
+  "warning_types": {},
+  "warnings_total": 0,
+  "refinements": {
+    "refined": 21,
+    "unchanged": 28,
+    "refinement ignored": 3,
+    "refinement rejected": 2
+  },
+  "judges": {
+    "gemini-3.8-flash": 54
+  },
+  "examples": []
+}

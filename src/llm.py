@@ -174,9 +174,9 @@ class OpenAICompatibleClient(LLMClient):
     OpenAI-compatible endpoint, a local server..."""
 
     def __init__(self, model, base_url, api_key_env, temperature=0.0, retries=4,
-                 base_delay_s=4.0, min_interval_s=0.0):
+                 base_delay_s=4.0, min_interval_s=0.0, api_key=None):
         super().__init__()
-        self.key = os.environ.get(api_key_env)
+        self.key = api_key or os.environ.get(api_key_env)
         if not self.key:
             raise LLMError(f"{api_key_env} is not set")
         self.model, self.base_url = model, base_url.rstrip("/")
@@ -211,9 +211,12 @@ class OpenAICompatibleClient(LLMClient):
             raise
 
 
-def make_client(cfg: dict, provider: Optional[str] = None, model: Optional[str] = None) -> Optional[LLMClient]:
+def make_client(cfg: dict, provider: Optional[str] = None, model: Optional[str] = None,
+                api_key: Optional[str] = None) -> Optional[LLMClient]:
     """Build the configured client, or None for the no-LLM heuristic judge.
-    Precedence: explicit argument > LLM_PROVIDER / LLM_MODEL env var > config.yaml."""
+    Precedence: explicit argument > LLM_PROVIDER / LLM_MODEL env var > config.yaml.
+    `api_key` is passed straight to the client and never written to os.environ
+    (on a shared Streamlit deployment every visitor would see it)."""
     llm = cfg["llm"]
     explicit_model = model is not None or "LLM_MODEL" in os.environ
     provider = provider or os.environ.get("LLM_PROVIDER", llm.get("provider", "heuristic"))
@@ -227,8 +230,26 @@ def make_client(cfg: dict, provider: Optional[str] = None, model: Optional[str] 
     if provider == "gemini":
         fallbacks = [] if explicit_model else llm.get("fallback_models", [])
         return GeminiClient(model, fallbacks, seed=llm.get("seed"), timeout_s=llm.get("timeout_s", 120),
+                            api_key=api_key,
                             strict=bool(llm.get("strict_model", False)), **common)
     if provider == "openai_compatible":
         oc = llm["openai_compatible"]
-        return OpenAICompatibleClient(model, oc["base_url"], oc["api_key_env"], **common)
+        return OpenAICompatibleClient(model, oc["base_url"], oc["api_key_env"], api_key=api_key, **common)
     raise LLMError(f"unknown provider {provider!r}")
+
+
+class CacheOnlyClient(LLMClient):
+    """Stands in for a client once its daily quota is spent. judge_batch checks
+    the cache before calling, so cached answers are still served; any real call
+    raises immediately instead of burning time on a request that cannot succeed."""
+
+    def __init__(self, inner: LLMClient):
+        self.inner = inner
+        self.name = inner.name
+        self.required_model = getattr(inner, "required_model", None)
+        self.last_model = getattr(inner, "last_model", None)
+        self.usage = getattr(inner, "usage", None) or {"calls": 0, "input_tokens": 0,
+                                                      "output_tokens": 0, "thinking_tokens": 0}
+
+    def complete_json(self, system, user, schema):
+        raise QuotaExhaustedError("cache-only: daily quota already exhausted")

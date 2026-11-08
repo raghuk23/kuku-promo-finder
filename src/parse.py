@@ -219,8 +219,18 @@ def load_show(data_dir: str):
     """Parse every .txt in `data_dir` as one show. Returns (episodes, merges)."""
     import glob
     paths = sorted(glob.glob(os.path.join(data_dir, "*.txt")))
-    episodes = sorted((parse_episode_file(p) for p in paths),
-                      key=lambda e: (e.number is None, e.number or 0))
+    parsed = [parse_episode_file(p) for p in paths]
+    # Uploads may lack both a header and an "episode-N" filename: number them in
+    # filename order after the highest known number, and say so.
+    used = {e.number for e in parsed if e.number is not None}
+    nxt = max(used, default=0) + 1
+    for e in parsed:
+        if e.number is None:
+            e.number, nxt = nxt, nxt + 1
+            for b in e.beats:
+                b.episode = e.number
+            e.anomalies.append(f"no episode number in header or filename; assigned {e.number} by file order")
+    episodes = sorted(parsed, key=lambda e: e.number)
     merges = normalise_speakers(episodes)
     return episodes, merges
 

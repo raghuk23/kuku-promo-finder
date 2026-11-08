@@ -1,0 +1,116 @@
+{
+  "started_at": "2026-11-08T09:00:43+00:00",
+  "finished_at": "2026-11-08T09:32:11+00:00",
+  "elapsed_s": 1888.1,
+  "input": "/Users/aviralgupta/Desktop/Raghu/I Married a Broken Soldier. He was a Duke",
+  "provider": "gemini",
+  "judges_used": [
+    "gemini-3.8-flash"
+  ],
+  "prompt_version": "judge-v1",
+  "order_seed": null,
+  "cache": true,
+  "episodes_per_call": 5,
+  "judge_calls": 20,
+  "stopped_early": null,
+  "order_seeds": [
+    null,
+    1
+  ],
+  "orders_judged": {
+    "2": 250
+  },
+  "order_unstable_candidates": 45,
+  "llm_usage": {
+    "calls": 8,
+    "input_tokens": 293324,
+    "output_tokens": 34293,
+    "thinking_tokens": 36687
+  },
+  "funnel": {
+    "episodes": 50,
+    "windows": 12127,
+    "candidates": 250,
+    "judged_records": 250,
+    "judge_failed": 0,
+    "failed_validation": 0,
+    "duplicates_removed": 22,
+    "below_floor": 170,
+    "passed_floor": 58,
+    "ranked": 10,
+    "episodes_with_a_promo": 37
+  },
+  "timestamp_validity_rate": 1.0,
+  "config": {
+    "llm": {
+      "provider": "gemini",
+      "model": "gemini-3.8-flash",
+      "fallback_models": [
+        "gemini-3.6-flash",
+        "gemini-3.7-flash",
+        "gemini-3.5-flash"
+      ],
+      "strict_model": true,
+      "temperature": 0,
+      "seed": 7,
+      "retries": 6,
+      "base_delay_s": 5,
+      "min_interval_s": 4,
+      "timeout_s": 600,
+      "openai_compatible": {
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env": "OPENAI_COMPAT_API_KEY"
+      }
+    },
+    "judge": {
+      "context_pad_s": 8,
+      "episodes_per_call": 5,
+      "order_seeds": [
+        null,
+        1
+      ]
+    },
+    "window": {
+      "min_s": 20,
+      "max_s": 60,
+      "hook_s": 3,
+      "cliff_s": 4,
+      "sweet_spot_s": [
+        30,
+        45
+      ],
+      "boundary_eps_s": 0.05
+    },
+    "candidates": {
+      "seconds_per_candidate": 25,
+      "k_min": 3,
+      "k_max": 8,
+      "nms_iou": 0.5
+    },
+    "heuristic_weights": {
+      "hook": 0.3,
+      "cliffhanger": 0.25,
+      "intensity": 0.15,
+      "conflict": 0.15,
+      "speakers": 0.1,
+      "length_fit": 0.05
+    },
+    "ranking": {
+      "weights": {
+        "hook": 0.45,
+        "cliffhanger": 0.3,
+        "standalone": 0.25
+      },
+      "quality_floor": {
+        "hook": 7,
+        "cliffhanger": 7,
+        "standalone": 6
+      },
+      "top_n": 10,
+      "max_per_episode": 2,
+      "dedup_iou": 0.5,
+      "early_episode_bonus": 0.5,
+      "early_episode_window": 20
+    }
+  }
+}

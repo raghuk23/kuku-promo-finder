@@ -31,6 +31,10 @@ judge:
   # Free tier = 20 requests/day/model (learned from a 429 in the first run), so a
   # 50-episode show is judged 5 episodes per call: 10 calls instead of 50.
   episodes_per_call: 5
+  # Each batch is judged once per ordering and the scores averaged. Measured on
+  # this show: shuffling candidate order alone flipped 26% of floor decisions
+  # (eval/stability_shuffled.md). null = original order. Costs one call per order.
+  order_seeds: [null, 1]
 
 window:
   min_s: 20                 # brief: promos are 20-60 seconds

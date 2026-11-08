@@ -9,7 +9,8 @@ from .judge import fmt_ts
 PROMO_KEYS = ("rank", "candidate_id", "episode", "segments", "total_duration_s", "hook", "cliffhanger",
               "why_it_works", "rank_reason", "final_score", "posting_score", "hook_score",
               "cliffhanger_score", "standalone_score", "standalone_reason", "weakness", "judge",
-              "refinement_note", "original_cut", "warnings")
+              "refinement_note", "original_cut", "warnings", "orders_judged", "order_unstable",
+              "order_scores")
 
 
 def _dump(path, obj):
@@ -74,5 +75,7 @@ def write_all(out_dir: str, *, show: str, summary: dict, parse_rep: dict, record
                    f"- **Weakness:** {p['weakness']}", f"- **Cut:** {p['refinement_note']}"]
             if p["warnings"]:
                 md.append(f"- **Check:** {'; '.join(p['warnings'])}")
+            if p.get("order_unstable"):
+                md.append("- **Check:** the judge's post/don't-post call changed with candidate order")
     with open(os.path.join(out_dir, "promos_ranked.md"), "w", encoding="utf-8") as fh:
         fh.write("\n".join(md) + "\n")

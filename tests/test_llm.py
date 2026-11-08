@@ -77,6 +77,14 @@ class TestStrictModel(unittest.TestCase):
         self.assertEqual(c.models, ["m1"])
         self.assertEqual(c.required_model, "m1")
 
+    def test_explicit_api_key_needs_no_env_var(self):
+        # The Streamlit app passes a pasted key straight through: never via os.environ,
+        # which every visitor of a shared deployment would see.
+        cfg = {"llm": dict(self.CFG["llm"])}
+        with mock.patch.dict(os.environ, {}, clear=True), mock.patch("dotenv.load_dotenv"):
+            c = make_client(cfg, provider="gemini", api_key="pasted-key")
+        self.assertEqual(c.models[0], "m1")
+
     def test_non_strict_may_fall_back(self):
         c = self.build(False)
         self.assertEqual(c.models, ["m1", "m2"])

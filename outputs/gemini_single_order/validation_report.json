@@ -1,0 +1,55 @@
+{
+  "records": 250,
+  "judged_ok": 250,
+  "judge_failed": 0,
+  "valid": 250,
+  "invalid": 0,
+  "timestamp_validity_rate": 1.0,
+  "valid_rate": 1.0,
+  "error_types": {},
+  "warning_types": {
+    "hook: quote not found": 3,
+    "weakness: quote not found": 1
+  },
+  "warnings_total": 4,
+  "refinements": {
+    "refined": 61,
+    "unchanged": 126,
+    "refinement ignored": 45,
+    "refinement rejected": 17,
+    "refinement reverted": 1
+  },
+  "judges": {
+    "gemini-3.8-flash": 250
+  },
+  "examples": [
+    {
+      "candidate_id": "ep25_c3",
+      "errors": [],
+      "warnings": [
+        "hook: quote not found in clip: 'Poison. Arsenic.'"
+      ]
+    },
+    {
+      "candidate_id": "ep33_c7",
+      "errors": [],
+      "warnings": [
+        "weakness: quote not found in clip: 'witchcraft'"
+      ]
+    },
+    {
+      "candidate_id": "ep34_c5",
+      "errors": [],
+      "warnings": [
+        "hook: quote not found in clip: 'She calls it healing. The people call it poisoning!'"
+      ]
+    },
+    {
+      "candidate_id": "ep40_c2",
+      "errors": [],
+      "warnings": [
+        "hook: quote not found in clip: 'By sunset, Ashburgh will have its new Duke... and its witch will be dead.'"
+      ]
+    }
+  ]
+}

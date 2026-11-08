@@ -37,6 +37,11 @@ class TestValidateRecord(unittest.TestCase):
         r = copy.deepcopy(rs[0]); r["segments"][0]["end_s"] = 65.0
         self.assertTrue(any("episode end" in e for e in validate_record(r, ep, CFG)["errors"]))
 
+    def test_averaged_fractional_scores_are_valid(self):
+        ep, rs = records()
+        r = copy.deepcopy(rs[0]); r["hook_score"] = 7.5
+        self.assertEqual(validate_record(r, ep, CFG)["errors"], [])
+
     def test_empty_hook(self):
         ep, rs = records(hook="")
         self.assertTrue(any("hook" in e for e in validate_record(rs[0], ep, CFG)["errors"]))

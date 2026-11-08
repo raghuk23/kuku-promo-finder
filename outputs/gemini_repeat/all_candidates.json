@@ -1,0 +1,3367 @@
+[
+  {
+    "candidate_id": "ep01_c1",
+    "episode": 1,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 1,
+      "start_s": 6.8,
+      "end_s": 39.0,
+      "start": "00:06.80",
+      "end": "00:39.00",
+      "duration_s": 32.2
+    },
+    "segments": [
+      {
+        "episode": 1,
+        "start_s": 6.8,
+        "end_s": 41.5,
+        "start": "00:06.80",
+        "end": "00:41.50",
+        "duration_s": 34.7
+      }
+    ],
+    "refinement_note": "refined from 00:06.80->00:39.00",
+    "hook_score": 6,
+    "hook": "Juliana's smile turns to confusion as she sees Gerald holding another woman's hand at the altar.",
+    "cliffhanger_score": 6,
+    "cliffhanger": "Juliana asks why he is holding her hand as the camera cuts to their interlocked fingers.",
+    "standalone_score": 8,
+    "standalone_reason": "a bride catches her groom holding hands with someone else at the altar",
+    "why_it_works": "The visual shock of the groom hand-in-hand with another woman instantly hooks viewers.",
+    "weakness": "The cut stops before the sister's devastating reveal line.",
+    "heuristic_score": 0.7844,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.5625,
+      "conflict": 0.0,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b26"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.5,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 6 < 7",
+      "cliffhanger 6 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 6 < 7; cliffhanger 6 < 7"
+  },
+  {
+    "candidate_id": "ep01_c2",
+    "episode": 1,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 1,
+      "start_s": 32.8,
+      "end_s": 74.6,
+      "start": "00:32.80",
+      "end": "01:14.60",
+      "duration_s": 41.8
+    },
+    "segments": [
+      {
+        "episode": 1,
+        "start_s": 32.8,
+        "end_s": 74.6,
+        "start": "00:32.80",
+        "end": "01:14.60",
+        "duration_s": 41.8
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 8,
+    "hook": "Juliana stares in horror at Gerald holding hands with another woman and asks why.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Juliana asks how long the betrayal was planned before being cut off.",
+    "standalone_score": 9,
+    "standalone_reason": "a bride is dumped at the altar for her own sister",
+    "why_it_works": "Delivers raw emotional betrayal with the groom callously stating he changed his mind.",
+    "weakness": "The middle section lingers slightly too long on Juliana's repetitive weeping.",
+    "heuristic_score": 0.7589,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.3929,
+      "conflict": 0.0,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.95,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 8.45,
+    "rank": 5,
+    "excluded_reason": null
+  },
+  {
+    "candidate_id": "ep01_c3",
+    "episode": 1,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 1,
+      "start_s": 72.4,
+      "end_s": 98.6,
+      "start": "01:12.40",
+      "end": "01:38.60",
+      "duration_s": 26.2
+    },
+    "segments": [
+      {
+        "episode": 1,
+        "start_s": 72.4,
+        "end_s": 98.6,
+        "start": "01:12.40",
+        "end": "01:38.60",
+        "duration_s": 26.2
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 6,
+    "hook": "Juliana demands how long the conspiracy lasted, learning Gerald never intended to marry her.",
+    "cliffhanger_score": 5,
+    "cliffhanger": "The Matriarch declares Juliana has embarrassed the family, prompting Juliana's incredulous gasp.",
+    "standalone_score": 7,
+    "standalone_reason": "a daughter faces cruel rejection from her entire family at her wedding",
+    "why_it_works": "The heartbreaking silent rejection by her father adds genuine emotional weight.",
+    "weakness": "Lacks an immediate visual shock at the opening.",
+    "heuristic_score": 0.6655,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.6,
+      "intensity": 0.5,
+      "conflict": 0.0,
+      "speakers": 1.0,
+      "length_fit": 0.81
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 5.95,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 6 < 7",
+      "cliffhanger 5 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 6 < 7; cliffhanger 5 < 7"
+  },
+  {
+    "candidate_id": "ep01_c4",
+    "episode": 1,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 1,
+      "start_s": 117.0,
+      "end_s": 138.0,
+      "start": "01:57.00",
+      "end": "02:18.00",
+      "duration_s": 21.0
+    },
+    "segments": [
+      {
+        "episode": 1,
+        "start_s": 117.0,
+        "end_s": 138.0,
+        "start": "01:57.00",
+        "end": "02:18.00",
+        "duration_s": 21.0
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 6,
+    "hook": "Juliana confronts Gerald, asking if that was all she was worth to him.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Juliana's tearful face hardens into cold defiance as ominous music swells to black.",
+    "standalone_score": 8,
+    "standalone_reason": "a jilted bride is insulted as plain and worthless by her ex-fiance",
+    "why_it_works": "Juliana's transformation from victim to steely defiance makes viewers root for revenge.",
+    "weakness": "Opens late into the argument without showing the initial shock of the replacement bride.",
+    "heuristic_score": 0.6325,
+    "components": {
+      "hook": 0.6,
+      "cliffhanger": 1.0,
+      "intensity": 0.5,
+      "conflict": 0.0,
+      "speakers": 1.0,
+      "length_fit": 0.55
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.800000000000001,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 6 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 6 < 7"
+  },
+  {
+    "candidate_id": "ep01_c5",
+    "episode": 1,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 1,
+      "start_s": 95.8,
+      "end_s": 138.0,
+      "start": "01:35.80",
+      "end": "02:18.00",
+      "duration_s": 42.2
+    },
+    "segments": [
+      {
+        "episode": 1,
+        "start_s": 95.8,
+        "end_s": 138.0,
+        "start": "01:35.80",
+        "end": "02:18.00",
+        "duration_s": 42.2
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 5,
+    "hook": "Juliana rises after being told she embarrassed the family, demanding to know what she is.",
+    "cliffhanger_score": 6,
+    "cliffhanger": "Juliana's grief turns to stony resolve right before the screen cuts to black.",
+    "standalone_score": 8,
+    "standalone_reason": "a rejected bride is degraded by her mother and ex-fiance",
+    "why_it_works": "Packed with venomous dialogue showcasing total familial betrayal.",
+    "weakness": "A slow opening that takes too long to reach peak dramatic cruelty.",
+    "heuristic_score": 0.6277,
+    "components": {
+      "hook": 0.6,
+      "cliffhanger": 1.0,
+      "intensity": 0.3182,
+      "conflict": 0.0,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.05,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 5 < 7",
+      "cliffhanger 6 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 5 < 7; cliffhanger 6 < 7"
+  },
+  {
+    "candidate_id": "ep01_c6",
+    "episode": 1,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 1,
+      "start_s": 72.4,
+      "end_s": 128.5,
+      "start": "01:12.40",
+      "end": "02:08.50",
+      "duration_s": 56.1
+    },
+    "segments": [
+      {
+        "episode": 1,
+        "start_s": 72.4,
+        "end_s": 128.5,
+        "start": "01:12.40",
+        "end": "02:08.50",
+        "duration_s": 56.1
+      }
+    ],
+    "refinement_note": "refinement ignored: unknown end beat 'b94'",
+    "hook_score": 6,
+    "hook": "Juliana demands how long the secret lasted as her sister confirms the calculated betrayal.",
+    "cliffhanger_score": 4,
+    "cliffhanger": "Gerald turns his back, cutting off mid-sentence while calling Juliana plain and low value.",
+    "standalone_score": 7,
+    "standalone_reason": "a bride is rejected by both her father and fiance in church",
+    "why_it_works": "Captures the full gauntlet of cruelty from sister, father, and groom.",
+    "weakness": "Cuts mid-sentence during Gerald's dialogue, leaving the clip feeling awkwardly truncated.",
+    "heuristic_score": 0.6014,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.45,
+      "intensity": 0.3824,
+      "conflict": 0.0,
+      "speakers": 1.0,
+      "length_fit": 0.63
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b94"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 5.65,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 6 < 7",
+      "cliffhanger 4 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 6 < 7; cliffhanger 4 < 7"
+  },
+  {
+    "candidate_id": "ep02_c1",
+    "episode": 2,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 2,
+      "start_s": 2.8,
+      "end_s": 47.6,
+      "start": "00:02.80",
+      "end": "00:47.60",
+      "duration_s": 44.8
+    },
+    "segments": [
+      {
+        "episode": 2,
+        "start_s": 2.8,
+        "end_s": 47.6,
+        "start": "00:02.80",
+        "end": "00:47.60",
+        "duration_s": 44.8
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 7,
+    "hook": "Gerald cruelly sneers down at Juliana, telling her she is far too plain.",
+    "cliffhanger_score": 5,
+    "cliffhanger": "Her father refuses to look at her, demanding she accept Gerald's choice.",
+    "standalone_score": 8,
+    "standalone_reason": "a father backs the groom who just dumped his daughter at the altar",
+    "why_it_works": "Gerald's blatant narcissism immediately provokes outrage from the audience.",
+    "weakness": "Ends on Juliana whimpering rather than fighting back.",
+    "heuristic_score": 0.8081,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.4231,
+      "conflict": 0.2976,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.65,
+    "floor_pass": false,
+    "floor_reasons": [
+      "cliffhanger 5 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: cliffhanger 5 < 7"
+  },
+  {
+    "candidate_id": "ep02_c2",
+    "episode": 2,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 2,
+      "start_s": 42.5,
+      "end_s": 98.2,
+      "start": "00:42.50",
+      "end": "01:38.20",
+      "duration_s": 55.7
+    },
+    "segments": [
+      {
+        "episode": 2,
+        "start_s": 42.5,
+        "end_s": 98.2,
+        "start": "00:42.50",
+        "end": "01:38.20",
+        "duration_s": 55.7
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 6,
+    "hook": "Her father coldly tells Juliana to accept her humiliation and not disgrace the family further.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Juliana publically demolishes Gerald's honor, leaving him frozen and speechless at the altar.",
+    "standalone_score": 8,
+    "standalone_reason": "a discarded bride publicly humiliates her cheating fiance in front of guests",
+    "why_it_works": "Delivers an exhilarating verbal clapback that completely silences her abusers.",
+    "weakness": "Spans a long runtime with multiple conversational shifts.",
+    "heuristic_score": 0.7663,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.4412,
+      "conflict": 0.1197,
+      "speakers": 1.0,
+      "length_fit": 0.6433
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.800000000000001,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 6 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 6 < 7"
+  },
+  {
+    "candidate_id": "ep02_c3",
+    "episode": 2,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 2,
+      "start_s": 32.4,
+      "end_s": 53.4,
+      "start": "00:32.40",
+      "end": "00:53.40",
+      "duration_s": 21.0
+    },
+    "segments": [
+      {
+        "episode": 2,
+        "start_s": 32.4,
+        "end_s": 56.7,
+        "start": "00:32.40",
+        "end": "00:56.70",
+        "duration_s": 24.3
+      }
+    ],
+    "refinement_note": "refined from 00:32.40->00:53.40",
+    "hook_score": 5,
+    "hook": "Juliana begs her stone-faced father not to let Gerald humiliate her before the congregation.",
+    "cliffhanger_score": 4,
+    "cliffhanger": "Clarissa contemptuously pinches Juliana's wedding gown, mocking its old-fashioned fabric.",
+    "standalone_score": 7,
+    "standalone_reason": "a sister mocks a discarded bride at the altar",
+    "why_it_works": "The father's unyielding cruelty establishes high sympathetic stakes.",
+    "weakness": "Cuts out right before the insult reaches its punchline.",
+    "heuristic_score": 0.6977,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.3,
+      "intensity": 0.6667,
+      "conflict": 0.6349,
+      "speakers": 1.0,
+      "length_fit": 0.55
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b37"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 5.2,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 5 < 7",
+      "cliffhanger 4 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 5 < 7; cliffhanger 4 < 7"
+  },
+  {
+    "candidate_id": "ep02_c4",
+    "episode": 2,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 2,
+      "start_s": 42.5,
+      "end_s": 66.0,
+      "start": "00:42.50",
+      "end": "01:06.00",
+      "duration_s": 23.5
+    },
+    "segments": [
+      {
+        "episode": 2,
+        "start_s": 42.5,
+        "end_s": 66.0,
+        "start": "00:42.50",
+        "end": "01:06.00",
+        "duration_s": 23.5
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 5,
+    "hook": "A father commands his weeping daughter to accept her abandonment without causing further disgrace.",
+    "cliffhanger_score": 6,
+    "cliffhanger": "The matriarch steps forward with cold superiority, telling Juliana not to look wounded.",
+    "standalone_score": 7,
+    "standalone_reason": "a bride is publicly mocked by her sister and abandoned by her father",
+    "why_it_works": "Clarissa's sneering kitchen maid insult creates strong underdog sympathy.",
+    "weakness": "Lacks a high-energy hook in the first three seconds.",
+    "heuristic_score": 0.6263,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.3,
+      "intensity": 0.5,
+      "conflict": 0.2837,
+      "speakers": 1.0,
+      "length_fit": 0.675
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 5.8,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 5 < 7",
+      "cliffhanger 6 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 5 < 7; cliffhanger 6 < 7"
+  },
+  {
+    "candidate_id": "ep03_c1",
+    "episode": 3,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 3,
+      "start_s": 25.8,
+      "end_s": 66.0,
+      "start": "00:25.80",
+      "end": "01:06.00",
+      "duration_s": 40.2
+    },
+    "segments": [
+      {
+        "episode": 3,
+        "start_s": 25.8,
+        "end_s": 66.0,
+        "start": "00:25.80",
+        "end": "01:06.00",
+        "duration_s": 40.2
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 6,
+    "hook": "The Matriarch glares with icy contempt, barking that Juliana has humiliated the family enough.",
+    "cliffhanger_score": 8,
+    "cliffhanger": "Two armed royal guards violently seize Juliana and drag her down the aisle.",
+    "standalone_score": 8,
+    "standalone_reason": "a bride is forcibly dragged out of church by armed guards",
+    "why_it_works": "The physical escalation of guards wrestling the bride creates intense tension.",
+    "weakness": "Does not include the dramatic entrance of the savior hero.",
+    "heuristic_score": 0.9484,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.6562,
+      "conflict": 1.0,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.1,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 6 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 6 < 7"
+  },
+  {
+    "candidate_id": "ep03_c2",
+    "episode": 3,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 3,
+      "start_s": 56.2,
+      "end_s": 91.7,
+      "start": "00:56.20",
+      "end": "01:31.70",
+      "duration_s": 35.5
+    },
+    "segments": [
+      {
+        "episode": 3,
+        "start_s": 56.2,
+        "end_s": 91.7,
+        "start": "00:56.20",
+        "end": "01:31.70",
+        "duration_s": 35.5
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 8,
+    "hook": "The Matriarch severs family ties and orders armed guards to remove Juliana.",
+    "cliffhanger_score": 9,
+    "cliffhanger": "A bearded warrior knocks a guard flat out and gently asks Juliana if she is hurt.",
+    "standalone_score": 9,
+    "standalone_reason": "a rugged stranger violently rescues a bride being dragged away by guards",
+    "why_it_works": "Combines physical action, instant justice, and romantic savior appeal in one punchy sequence.",
+    "weakness": "The transition from physical brawling to gentle romance happens very quickly.",
+    "heuristic_score": 0.909,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.4545,
+      "conflict": 0.939,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 8.55,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 9.0,
+    "rank": 1,
+    "excluded_reason": null
+  },
+  {
+    "candidate_id": "ep03_c3",
+    "episode": 3,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 3,
+      "start_s": 43.3,
+      "end_s": 72.8,
+      "start": "00:43.30",
+      "end": "01:12.80",
+      "duration_s": 29.5
+    },
+    "segments": [
+      {
+        "episode": 3,
+        "start_s": 43.3,
+        "end_s": 72.8,
+        "start": "00:43.30",
+        "end": "01:12.80",
+        "duration_s": 29.5
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 6,
+    "hook": "The Matriarch cruelly sentences Juliana to go wherever a discarded daughter belongs.",
+    "cliffhanger_score": 8,
+    "cliffhanger": "A towering bearded stranger marches down the aisle, bellowing to take hands off her.",
+    "standalone_score": 8,
+    "standalone_reason": "a mysterious stranger steps in to stop guards assaulting a bride",
+    "why_it_works": "The hero's commanding entrance creates an irresistible hero-arrival cliffhanger.",
+    "weakness": "Cuts right before any physical confrontation or rescue occurs.",
+    "heuristic_score": 0.8337,
+    "components": {
+      "hook": 0.6,
+      "cliffhanger": 1.0,
+      "intensity": 0.7,
+      "conflict": 1.0,
+      "speakers": 1.0,
+      "length_fit": 0.975
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.1,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 6 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 6 < 7"
+  },
+  {
+    "candidate_id": "ep03_c4",
+    "episode": 3,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 3,
+      "start_s": 8.5,
+      "end_s": 43.3,
+      "start": "00:08.50",
+      "end": "00:43.30",
+      "duration_s": 34.8
+    },
+    "segments": [
+      {
+        "episode": 3,
+        "start_s": 8.5,
+        "end_s": 43.3,
+        "start": "00:08.50",
+        "end": "00:43.30",
+        "duration_s": 34.8
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 7,
+    "hook": "Juliana directly accuses her sister of stealing her wedding while clutching her locket.",
+    "cliffhanger_score": 6,
+    "cliffhanger": "The Matriarch orders Juliana to leave, and Juliana breathlessly asks where to go.",
+    "standalone_score": 8,
+    "standalone_reason": "a bride confronts her sister who stole her husband and wedding",
+    "why_it_works": "Clear, punchy dialogue outlining the stolen wedding premise in seconds.",
+    "weakness": "The ending question is soft compared to the physical danger beats that follow.",
+    "heuristic_score": 0.824,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.6,
+      "intensity": 0.5357,
+      "conflict": 0.9579,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.949999999999999,
+    "floor_pass": false,
+    "floor_reasons": [
+      "cliffhanger 6 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: cliffhanger 6 < 7"
+  },
+  {
+    "candidate_id": "ep03_c5",
+    "episode": 3,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 3,
+      "start_s": 94.0,
+      "end_s": 137.3,
+      "start": "01:34.00",
+      "end": "02:17.30",
+      "duration_s": 43.3
+    },
+    "segments": [
+      {
+        "episode": 3,
+        "start_s": 94.0,
+        "end_s": 137.3,
+        "start": "01:34.00",
+        "end": "02:17.30",
+        "duration_s": 43.3
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 7,
+    "hook": "A bearded stranger threatens armed guards, warning them never to touch Juliana again.",
+    "cliffhanger_score": 9,
+    "cliffhanger": "The stranger drops to one knee offering a wedding ring as the room gasps.",
+    "standalone_score": 9,
+    "standalone_reason": "a mysterious protector proposes marriage to an abandoned bride on the spot",
+    "why_it_works": "The sudden public proposal right in front of the cheating ex is peak drama.",
+    "weakness": "Pacing slightly slows during the romantic dialogue in the center.",
+    "heuristic_score": 0.7519,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.1923,
+      "conflict": 0.154,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 8.1,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 8.549999999999999,
+    "rank": 4,
+    "excluded_reason": null
+  },
+  {
+    "candidate_id": "ep03_c6",
+    "episode": 3,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 3,
+      "start_s": 0.0,
+      "end_s": 28.0,
+      "start": "00:00.00",
+      "end": "00:28.00",
+      "duration_s": 28.0
+    },
+    "segments": [
+      {
+        "episode": 3,
+        "start_s": 0.0,
+        "end_s": 28.0,
+        "start": "00:00.00",
+        "end": "00:28.00",
+        "duration_s": 28.0
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 6,
+    "hook": "Juliana stands abandoned as her sister taunts her for clinging to a pathetic locket.",
+    "cliffhanger_score": 4,
+    "cliffhanger": "The Matriarch steps forward with imperial authority, commanding Juliana to stop.",
+    "standalone_score": 7,
+    "standalone_reason": "a jealous sister flaunts stealing a bride's groom",
+    "why_it_works": "Clarissa's gloating provides immediate villain hatred.",
+    "weakness": "Cuts right as the matriarch speaks without any resolution or dramatic payoff.",
+    "heuristic_score": 0.6621,
+    "components": {
+      "hook": 0.6,
+      "cliffhanger": 0.5,
+      "intensity": 0.7,
+      "conflict": 0.7143,
+      "speakers": 1.0,
+      "length_fit": 0.9
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b20"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 5.65,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 6 < 7",
+      "cliffhanger 4 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 6 < 7; cliffhanger 4 < 7"
+  },
+  {
+    "candidate_id": "ep04_c1",
+    "episode": 4,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 4,
+      "start_s": 122.8,
+      "end_s": 146.5,
+      "start": "02:02.80",
+      "end": "02:26.50",
+      "duration_s": 23.7
+    },
+    "segments": [
+      {
+        "episode": 4,
+        "start_s": 114.8,
+        "end_s": 146.5,
+        "start": "01:54.80",
+        "end": "02:26.50",
+        "duration_s": 31.7
+      }
+    ],
+    "refinement_note": "refined from 02:02.80->02:26.50",
+    "hook_score": 6,
+    "hook": "Juliana proudly tells Gerald she would rather choose her life than beg for his.",
+    "cliffhanger_score": 8,
+    "cliffhanger": "The family watches in stunned silence as Juliana walks away with her new protector.",
+    "standalone_score": 8,
+    "standalone_reason": "a disowned noblewoman defiantly walks out with her mysterious new husband",
+    "why_it_works": "The shock of the mother's disownment and Juliana's triumphant departure deliver great satisfaction.",
+    "weakness": "Opens on the tail end of an argument rather than an explosive hook.",
+    "heuristic_score": 0.8624,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.625,
+      "conflict": 0.5626,
+      "speakers": 1.0,
+      "length_fit": 0.685
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "b85",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.1,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 6 < 7"
+    ],
+    "duplicate_of": "ep04_c4",
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "duplicate of ep04_c4 (overlap after refinement)"
+  },
+  {
+    "candidate_id": "ep04_c2",
+    "episode": 4,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 4,
+      "start_s": 1.5,
+      "end_s": 27.9,
+      "start": "00:01.50",
+      "end": "00:27.90",
+      "duration_s": 26.4
+    },
+    "segments": [
+      {
+        "episode": 4,
+        "start_s": 1.5,
+        "end_s": 27.9,
+        "start": "00:01.50",
+        "end": "00:27.90",
+        "duration_s": 26.4
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 7,
+    "hook": "Juliana stares in shock at the ring while Gerald mocks the stranger as penniless.",
+    "cliffhanger_score": 8,
+    "cliffhanger": "Juliana asks the kneeling warrior why he would ever offer her his name.",
+    "standalone_score": 8,
+    "standalone_reason": "a humiliated bride questions why an unknown warrior is proposing to her",
+    "why_it_works": "Contrasts cruel mockery from the family with an earnest romantic mystery.",
+    "weakness": "Leaves the viewer hanging on a question without answering why he stepped up.",
+    "heuristic_score": 0.8082,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.8,
+      "intensity": 0.3571,
+      "conflict": 0.7576,
+      "speakers": 1.0,
+      "length_fit": 0.82
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.55,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 7.975,
+    "rank": null,
+    "excluded_reason": "passed the floor; ranked below top 10"
+  },
+  {
+    "candidate_id": "ep04_c3",
+    "episode": 4,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 4,
+      "start_s": 10.5,
+      "end_s": 38.9,
+      "start": "00:10.50",
+      "end": "00:38.90",
+      "duration_s": 28.4
+    },
+    "segments": [
+      {
+        "episode": 4,
+        "start_s": 10.5,
+        "end_s": 38.9,
+        "start": "00:10.50",
+        "end": "00:38.90",
+        "duration_s": 28.4
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 6,
+    "hook": "Clarissa laughs mockingly, claiming Juliana found a man as worthless as she is.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "The warrior defends Juliana, declaring she is not a woman who deserves to be discarded.",
+    "standalone_score": 8,
+    "standalone_reason": "a stranger defends a mocked bride against her abusive family",
+    "why_it_works": "The hero validating Juliana's worth against her family's abuse hits deep emotional chords.",
+    "weakness": "The opening laughter lacks the instant punch of physical drama or high stakes.",
+    "heuristic_score": 0.7306,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.5,
+      "intensity": 0.125,
+      "conflict": 0.939,
+      "speakers": 1.0,
+      "length_fit": 0.92
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.800000000000001,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 6 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 6 < 7"
+  },
+  {
+    "candidate_id": "ep04_c4",
+    "episode": 4,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 4,
+      "start_s": 114.8,
+      "end_s": 134.8,
+      "start": "01:54.80",
+      "end": "02:14.80",
+      "duration_s": 20.0
+    },
+    "segments": [
+      {
+        "episode": 4,
+        "start_s": 114.8,
+        "end_s": 134.8,
+        "start": "01:54.80",
+        "end": "02:14.80",
+        "duration_s": 20.0
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 8,
+    "hook": "Gerald lunges forward in fury, screaming that Juliana has thrown herself away for a nobody.",
+    "cliffhanger_score": 9,
+    "cliffhanger": "Lady Ashcroft screams with venomous fury that Juliana is officially disowned.",
+    "standalone_score": 9,
+    "standalone_reason": "a woman marries a stranger to spite her ex and gets disowned",
+    "why_it_works": "Explosive confrontation and shouting from start to finish keeps viewers glued.",
+    "weakness": "Extremely short duration gives little time to breathe.",
+    "heuristic_score": 0.6425,
+    "components": {
+      "hook": 0.6,
+      "cliffhanger": 0.5,
+      "intensity": 0.75,
+      "conflict": 0.6667,
+      "speakers": 1.0,
+      "length_fit": 0.5
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 8.55,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 8.975000000000001,
+    "rank": 2,
+    "excluded_reason": null
+  },
+  {
+    "candidate_id": "ep04_c5",
+    "episode": 4,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 4,
+      "start_s": 17.5,
+      "end_s": 55.8,
+      "start": "00:17.50",
+      "end": "00:55.80",
+      "duration_s": 38.3
+    },
+    "segments": [
+      {
+        "episode": 4,
+        "start_s": 17.5,
+        "end_s": 55.8,
+        "start": "00:17.50",
+        "end": "00:55.80",
+        "duration_s": 38.3
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 5,
+    "hook": "Juliana asks the kneeling stranger why he would propose when he does not know her.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Juliana proudly warns that if this marriage proposal is pity, he must take it back.",
+    "standalone_score": 7,
+    "standalone_reason": "a proud woman refuses to accept a marriage proposal based on pity",
+    "why_it_works": "Juliana's refusal to be anyone's charity highlights her strong, unyielding character.",
+    "weakness": "Dialogue-heavy opening lacks urgency and immediate conflict.",
+    "heuristic_score": 0.6374,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.3,
+      "intensity": 0.2273,
+      "conflict": 0.5222,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.1,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 5 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 5 < 7"
+  },
+  {
+    "candidate_id": "ep04_c6",
+    "episode": 4,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 4,
+      "start_s": 33.8,
+      "end_s": 84.0,
+      "start": "00:33.80",
+      "end": "01:24.00",
+      "duration_s": 50.2
+    },
+    "segments": [
+      {
+        "episode": 4,
+        "start_s": 33.8,
+        "end_s": 84.0,
+        "start": "00:33.80",
+        "end": "01:24.00",
+        "duration_s": 50.2
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 5,
+    "hook": "The warrior insists he sees a betrayed woman who does not deserve abandonment.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Juliana agrees to marry him and takes his hand as the priest trembles.",
+    "standalone_score": 8,
+    "standalone_reason": "a woman spontaneously accepts a proposal from a mysterious warrior in church",
+    "why_it_works": "Satisfying emotional payoff as she chooses the stranger over her toxic family.",
+    "weakness": "Internal voiceover slows down the momentum of the church scene.",
+    "heuristic_score": 0.583,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.3,
+      "intensity": 0.1786,
+      "conflict": 0.2656,
+      "speakers": 1.0,
+      "length_fit": 0.8267
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.35,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 5 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 5 < 7"
+  },
+  {
+    "candidate_id": "ep05_c1",
+    "episode": 5,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 5,
+      "start_s": 46.0,
+      "end_s": 72.5,
+      "start": "00:46.00",
+      "end": "01:12.50",
+      "duration_s": 26.5
+    },
+    "segments": [
+      {
+        "episode": 5,
+        "start_s": 46.0,
+        "end_s": 72.5,
+        "start": "00:46.00",
+        "end": "01:12.50",
+        "duration_s": 26.5
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 6,
+    "hook": "Lady Ashcroft steps forward menacingly, claiming Juliana's book belongs to the family.",
+    "cliffhanger_score": 8,
+    "cliffhanger": "The ledger is thrown into a puddle, and the warrior steps in to retrieve it.",
+    "standalone_score": 8,
+    "standalone_reason": "a stepmother steals and ruins a bride's only maternal heirloom",
+    "why_it_works": "Physical cruelty of throwing the heirloom in mud triggers instant viewer outrage.",
+    "weakness": "The opening beat takes a second to establish what the book represents.",
+    "heuristic_score": 0.7667,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.5,
+      "intensity": 0.8333,
+      "conflict": 0.5031,
+      "speakers": 1.0,
+      "length_fit": 0.825
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.1,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 6 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 6 < 7"
+  },
+  {
+    "candidate_id": "ep05_c2",
+    "episode": 5,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 5,
+      "start_s": 57.8,
+      "end_s": 96.5,
+      "start": "00:57.80",
+      "end": "01:36.50",
+      "duration_s": 38.7
+    },
+    "segments": [
+      {
+        "episode": 5,
+        "start_s": 57.8,
+        "end_s": 101.5,
+        "start": "00:57.80",
+        "end": "01:41.50",
+        "duration_s": 43.7
+      }
+    ],
+    "refinement_note": "refined from 00:57.80->01:36.50",
+    "hook_score": 7,
+    "hook": "Clarissa and Gerald burst into cruel laughter as Juliana's heirloom is flung into mud.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Gerald mocks Juliana from the stairs as a noblewoman reduced to a beggar's wife.",
+    "standalone_score": 8,
+    "standalone_reason": "an arrogant ex-fiance mocks a ruined noblewoman and her new husband",
+    "why_it_works": "Clear good-versus-evil dynamic as the protector comforts the weeping bride.",
+    "weakness": "Cutting before the warrior threatens Gerald leaves the confrontation half-baked.",
+    "heuristic_score": 0.7609,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.5,
+      "intensity": 0.55,
+      "conflict": 0.6891,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b57"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.25,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 7.65,
+    "rank": null,
+    "excluded_reason": "passed the floor; ranked below top 10"
+  },
+  {
+    "candidate_id": "ep05_c3",
+    "episode": 5,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 5,
+      "start_s": 80.0,
+      "end_s": 101.5,
+      "start": "01:20.00",
+      "end": "01:41.50",
+      "duration_s": 21.5
+    },
+    "segments": [
+      {
+        "episode": 5,
+        "start_s": 80.0,
+        "end_s": 101.5,
+        "start": "01:20.00",
+        "end": "01:41.50",
+        "duration_s": 21.5
+      }
+    ],
+    "refinement_note": "refinement rejected: 01:31.00->01:41.50 is 10.5s",
+    "hook_score": 5,
+    "hook": "The warrior gently reassures Juliana that getting her book dirtied is not destruction.",
+    "cliffhanger_score": 9,
+    "cliffhanger": "The warrior looks up and warns Gerald to choose his next words carefully.",
+    "standalone_score": 8,
+    "standalone_reason": "a protective warrior threatens an arrogant noble who insulted his wife",
+    "why_it_works": "The lethal, quiet threat at the end creates an incredible anticipation spike for violence.",
+    "weakness": "Opens on a quiet emotional moment rather than a loud hook.",
+    "heuristic_score": 0.6812,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.3,
+      "intensity": 0.5625,
+      "conflict": 0.6202,
+      "speakers": 1.0,
+      "length_fit": 0.575
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "b53",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.949999999999999,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 5 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 5 < 7"
+  },
+  {
+    "candidate_id": "ep05_c4",
+    "episode": 5,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 5,
+      "start_s": 6.6,
+      "end_s": 48.8,
+      "start": "00:06.60",
+      "end": "00:48.80",
+      "duration_s": 42.2
+    },
+    "segments": [
+      {
+        "episode": 5,
+        "start_s": 6.6,
+        "end_s": 48.8,
+        "start": "00:06.60",
+        "end": "00:48.80",
+        "duration_s": 42.2
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 7,
+    "hook": "Lord Ashcroft coldly tells Juliana she will not leave carrying the Ashcroft name.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Lady Ashcroft advances with a smirk to strip Juliana of her mother's ledger.",
+    "standalone_score": 8,
+    "standalone_reason": "a father disowns and strips his daughter of her name and inheritance",
+    "why_it_works": "Brutal aristocratic family disownment provides intense melodrama that hooks soap-opera fans.",
+    "weakness": "Dialogue is somewhat repetitive with multiple statements of disownment.",
+    "heuristic_score": 0.6729,
+    "components": {
+      "hook": 0.6,
+      "cliffhanger": 1.0,
+      "intensity": 0.4615,
+      "conflict": 0.158,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.25,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 7.65,
+    "rank": null,
+    "excluded_reason": "passed the floor; ranked below top 10"
+  },
+  {
+    "candidate_id": "ep26_c1",
+    "episode": 26,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 26,
+      "start_s": 55.8,
+      "end_s": 90.8,
+      "start": "00:55.80",
+      "end": "01:30.80",
+      "duration_s": 35.0
+    },
+    "segments": [
+      {
+        "episode": 26,
+        "start_s": 55.8,
+        "end_s": 100.0,
+        "start": "00:55.80",
+        "end": "01:40.00",
+        "duration_s": 44.2
+      }
+    ],
+    "refinement_note": "refined from 00:55.80->01:30.80",
+    "hook_score": 8,
+    "hook": "The Duchess asks Juliana if Rupert and Catherine are poisoning her in her own bed.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "A sharp gasp sounds as the camera reveals a distinctive engraved signet ring on Juliana's finger.",
+    "standalone_score": 8,
+    "standalone_reason": "the poisoned duchess and loyal maid dynamic is immediately apparent",
+    "why_it_works": "The revelation of murder plots paired with an aristocratic heirloom reveal builds rapid intrigue.",
+    "weakness": "Cuts just before the Duchess reacts verbally to seeing the ring.",
+    "heuristic_score": 0.7946,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.25,
+      "conflict": 0.381,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b39"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.7,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 7.7,
+    "rank": null,
+    "excluded_reason": "passed the floor; ranked below top 10"
+  },
+  {
+    "candidate_id": "ep26_c2",
+    "episode": 26,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 26,
+      "start_s": 86.5,
+      "end_s": 119.5,
+      "start": "01:26.50",
+      "end": "01:59.50",
+      "duration_s": 33.0
+    },
+    "segments": [
+      {
+        "episode": 26,
+        "start_s": 86.5,
+        "end_s": 120.88,
+        "start": "01:26.50",
+        "end": "02:00.88",
+        "duration_s": 34.38
+      }
+    ],
+    "refinement_note": "refined from 01:26.50->01:59.50",
+    "hook_score": 7,
+    "hook": "The camera reveals an engraved ring on Juliana's finger, triggering a sharp, stunned gasp from the Duchess.",
+    "cliffhanger_score": 9,
+    "cliffhanger": "The Duchess grabs Juliana's sleeve and desperately demands where she got the ring.",
+    "standalone_score": 8,
+    "standalone_reason": "an heirloom ring instantly signals a secret noble identity to any newcomer",
+    "why_it_works": "Furious emotional momentum culminates in an intense, unanswered question.",
+    "weakness": "Lacks the earlier poison exposition, focusing entirely on the ring mystery.",
+    "heuristic_score": 0.775,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.5,
+      "conflict": 0.0,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b50"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.85,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 7.85,
+    "rank": null,
+    "excluded_reason": "passed the floor; ranked below top 10"
+  },
+  {
+    "candidate_id": "ep26_c3",
+    "episode": 26,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 26,
+      "start_s": 30.8,
+      "end_s": 62.5,
+      "start": "00:30.80",
+      "end": "01:02.50",
+      "duration_s": 31.7
+    },
+    "segments": [
+      {
+        "episode": 26,
+        "start_s": 30.8,
+        "end_s": 62.5,
+        "start": "00:30.80",
+        "end": "01:02.50",
+        "duration_s": 31.7
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 7,
+    "hook": "The Duchess notes Juliana took Catherine's whip for her and is no common servant.",
+    "cliffhanger_score": 8,
+    "cliffhanger": "The Duchess asks with tragic certainty if Rupert and Catherine are poisoning her.",
+    "standalone_score": 8,
+    "standalone_reason": "the dialogue explicitly lays out the murder conspiracy",
+    "why_it_works": "A chilling accusation against the villains makes an effective narrative cliffhanger.",
+    "weakness": "Begins with quiet dialogue rather than high-octane physical drama.",
+    "heuristic_score": 0.7746,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.8,
+      "intensity": 0.2,
+      "conflict": 0.6309,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.55,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 7.55,
+    "rank": null,
+    "excluded_reason": "passed the floor; ranked below top 10"
+  },
+  {
+    "candidate_id": "ep26_c4",
+    "episode": 26,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 26,
+      "start_s": 0.0,
+      "end_s": 55.8,
+      "start": "00:00.00",
+      "end": "00:55.80",
+      "duration_s": 55.8
+    },
+    "segments": [
+      {
+        "episode": 26,
+        "start_s": 14.2,
+        "end_s": 62.5,
+        "start": "00:14.20",
+        "end": "01:02.50",
+        "duration_s": 48.3
+      }
+    ],
+    "refinement_note": "refined from 00:00.00->00:55.80",
+    "hook_score": 4,
+    "hook": "Juliana sits vigilantly beside a canopied bed in a dark candlelit chamber, unscrewing a dropper bottle.",
+    "cliffhanger_score": 4,
+    "cliffhanger": "Realization settles on the Duchess's face as she clutches her blanket in dismay.",
+    "standalone_score": 6,
+    "standalone_reason": "it plays like slow exposition rather than a self-contained hook",
+    "why_it_works": "Builds authentic atmosphere and establishes the antidote medicine clearly.",
+    "weakness": "Pacing is far too sluggish for a scrolling audience.",
+    "heuristic_score": 0.6583,
+    "components": {
+      "hook": 0.7,
+      "cliffhanger": 1.0,
+      "intensity": 0.0833,
+      "conflict": 0.3584,
+      "speakers": 1.0,
+      "length_fit": 0.64
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "b6",
+      "end": "b25"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 4.5,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 4 < 7",
+      "cliffhanger 4 < 7"
+    ],
+    "duplicate_of": "ep26_c3",
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "duplicate of ep26_c3 (overlap after refinement)"
+  },
+  {
+    "candidate_id": "ep26_c5",
+    "episode": 26,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 26,
+      "start_s": 43.2,
+      "end_s": 79.6,
+      "start": "00:43.20",
+      "end": "01:19.60",
+      "duration_s": 36.4
+    },
+    "segments": [
+      {
+        "episode": 26,
+        "start_s": 43.2,
+        "end_s": 86.5,
+        "start": "00:43.20",
+        "end": "01:26.50",
+        "duration_s": 43.3
+      }
+    ],
+    "refinement_note": "refined from 00:43.20->01:19.60",
+    "hook_score": 7,
+    "hook": "Juliana whispers in fear that if the guards hear them, they are both dead.",
+    "cliffhanger_score": 6,
+    "cliffhanger": "The Duchess studies Juliana and asks why a noble girl works as a maid.",
+    "standalone_score": 7,
+    "standalone_reason": "the secret danger in the bedchamber is easy to grasp",
+    "why_it_works": "Creates instant paranoia about patrolling guards and poison.",
+    "weakness": "The closing question is low-urgency compared to other cliffhangers in the episode.",
+    "heuristic_score": 0.6449,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.3,
+      "intensity": 0.25,
+      "conflict": 0.5495,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b32"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.699999999999999,
+    "floor_pass": false,
+    "floor_reasons": [
+      "cliffhanger 6 < 7"
+    ],
+    "duplicate_of": "ep26_c1",
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "duplicate of ep26_c1 (overlap after refinement)"
+  },
+  {
+    "candidate_id": "ep27_c1",
+    "episode": 27,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 27,
+      "start_s": 117.2,
+      "end_s": 150.5,
+      "start": "01:57.20",
+      "end": "02:30.50",
+      "duration_s": 33.3
+    },
+    "segments": [
+      {
+        "episode": 27,
+        "start_s": 117.2,
+        "end_s": 150.5,
+        "start": "01:57.20",
+        "end": "02:30.50",
+        "duration_s": 33.3
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 8,
+    "hook": "The Blond Nobleman menacingly repeats 'Poison' as Juliana urgently warns someone is poisoning Her Grace.",
+    "cliffhanger_score": 8,
+    "cliffhanger": "Juliana's terrified eyes widen as a guard violently drags her away into a deadly trap.",
+    "standalone_score": 9,
+    "standalone_reason": "a framed maid facing corrupt nobles makes immediate intuitive sense",
+    "why_it_works": "High stakes, malicious villains twisting the truth, and physical apprehension create intense drama.",
+    "weakness": "The quick framing sequence relies heavily on rapid dialogue shifts.",
+    "heuristic_score": 0.9333,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.5556,
+      "conflict": 1.0,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 8.25,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 8.25,
+    "rank": 7,
+    "excluded_reason": null
+  },
+  {
+    "candidate_id": "ep27_c2",
+    "episode": 27,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 27,
+      "start_s": 112.5,
+      "end_s": 134.0,
+      "start": "01:52.50",
+      "end": "02:14.00",
+      "duration_s": 21.5
+    },
+    "segments": [
+      {
+        "episode": 27,
+        "start_s": 112.5,
+        "end_s": 134.0,
+        "start": "01:52.50",
+        "end": "02:14.00",
+        "duration_s": 21.5
+      }
+    ],
+    "refinement_note": "refinement ignored: unknown end beat 'b90'",
+    "hook_score": 8,
+    "hook": "The Blond Nobleman barks for an answer, and Juliana resolutely states: 'Poison.'",
+    "cliffhanger_score": 5,
+    "cliffhanger": "The Blond Nobleman raises his black-gloved hand and coldly silences the room with 'Enough.'",
+    "standalone_score": 7,
+    "standalone_reason": "the accusation of poisoning is clear",
+    "why_it_works": "Rapid-fire accusations and tight framing sustain strong microdrama tension.",
+    "weakness": "Cuts prematurely before the actual arrest occurs.",
+    "heuristic_score": 0.9037,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.5,
+      "conflict": 1.0,
+      "speakers": 1.0,
+      "length_fit": 0.575
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b90"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.85,
+    "floor_pass": false,
+    "floor_reasons": [
+      "cliffhanger 5 < 7"
+    ],
+    "duplicate_of": "ep27_c5",
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "duplicate of ep27_c5 (overlap after refinement)"
+  },
+  {
+    "candidate_id": "ep27_c3",
+    "episode": 27,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 27,
+      "start_s": 26.1,
+      "end_s": 51.5,
+      "start": "00:26.10",
+      "end": "00:51.50",
+      "duration_s": 25.4
+    },
+    "segments": [
+      {
+        "episode": 27,
+        "start_s": 26.1,
+        "end_s": 51.5,
+        "start": "00:26.10",
+        "end": "00:51.50",
+        "duration_s": 25.4
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 8,
+    "hook": "The Duchess weeps that her lost son who went to war wore Juliana's exact ring.",
+    "cliffhanger_score": 9,
+    "cliffhanger": "Heavy double doors burst open as aristocrats and an armed royal guard invade the room.",
+    "standalone_score": 9,
+    "standalone_reason": "the realization that her peasant husband is the lost heir needs no backstory",
+    "why_it_works": "Combines a massive identity revelation with an explosive, door-busting interruption.",
+    "weakness": "The cut ends before any dialogue from the intruders.",
+    "heuristic_score": 0.801,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.75,
+      "conflict": 0.0,
+      "speakers": 1.0,
+      "length_fit": 0.77
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 8.55,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 8.55,
+    "rank": 3,
+    "excluded_reason": null
+  },
+  {
+    "candidate_id": "ep27_c4",
+    "episode": 27,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 27,
+      "start_s": 31.8,
+      "end_s": 73.8,
+      "start": "00:31.80",
+      "end": "01:13.80",
+      "duration_s": 42.0
+    },
+    "segments": [
+      {
+        "episode": 27,
+        "start_s": 26.1,
+        "end_s": 73.8,
+        "start": "00:26.10",
+        "end": "01:13.80",
+        "duration_s": 47.7
+      }
+    ],
+    "refinement_note": "refined from 00:31.80->01:13.80",
+    "hook_score": 7,
+    "hook": "Juliana gasps in shock learning her husband claimed to be a sergeant, not the Duchess's son.",
+    "cliffhanger_score": 6,
+    "cliffhanger": "Juliana extends her palm before the Blond Nobleman, revealing the small glass medicine vial.",
+    "standalone_score": 7,
+    "standalone_reason": "the transition between the son's ring and the medicine vial is slightly muddled",
+    "why_it_works": "Features continuous escalation from secret lineage to an armed confrontation.",
+    "weakness": "Transitions from an emotional ring revelation straight into an unrelated medicine interrogation.",
+    "heuristic_score": 0.7875,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.5833,
+      "conflict": 0.0,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "b14",
+      "end": "b42"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.699999999999999,
+    "floor_pass": false,
+    "floor_reasons": [
+      "cliffhanger 6 < 7"
+    ],
+    "duplicate_of": "ep27_c3",
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "duplicate of ep27_c3 (overlap after refinement)"
+  },
+  {
+    "candidate_id": "ep27_c5",
+    "episode": 27,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 27,
+      "start_s": 95.0,
+      "end_s": 131.0,
+      "start": "01:35.00",
+      "end": "02:11.00",
+      "duration_s": 36.0
+    },
+    "segments": [
+      {
+        "episode": 27,
+        "start_s": 95.0,
+        "end_s": 134.0,
+        "start": "01:35.00",
+        "end": "02:14.00",
+        "duration_s": 39.0
+      }
+    ],
+    "refinement_note": "refined from 01:35.00->02:11.00",
+    "hook_score": 7,
+    "hook": "The Blond Nobleman ominously notes his aunt has been wasting away while an unknown maid hides nearby.",
+    "cliffhanger_score": 8,
+    "cliffhanger": "Catherine screams that Juliana admitted to poisoning the Duchess in secret, while Juliana desperately denies it.",
+    "standalone_score": 8,
+    "standalone_reason": "the classic frame-up trope is transparent and infuriating",
+    "why_it_works": "The villains brazenly distort the truth in front of the helpless victim.",
+    "weakness": "Lacks the physical arrest beat that delivers finality to the scene.",
+    "heuristic_score": 0.7724,
+    "components": {
+      "hook": 0.6,
+      "cliffhanger": 1.0,
+      "intensity": 0.5417,
+      "conflict": 0.7407,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b84"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.55,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 7.55,
+    "rank": null,
+    "excluded_reason": "episode cap (max 2 per episode in posting order)"
+  },
+  {
+    "candidate_id": "ep27_c6",
+    "episode": 27,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 27,
+      "start_s": 70.5,
+      "end_s": 122.8,
+      "start": "01:10.50",
+      "end": "02:02.80",
+      "duration_s": 52.3
+    },
+    "segments": [
+      {
+        "episode": 27,
+        "start_s": 70.5,
+        "end_s": 128.5,
+        "start": "01:10.50",
+        "end": "02:08.50",
+        "duration_s": 58.0
+      }
+    ],
+    "refinement_note": "refined from 01:10.50->02:02.80",
+    "hook_score": 6,
+    "hook": "Juliana reveals the amber dropper bottle to the Blond Nobleman, stating it is medicine.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Juliana declares someone has been poisoning Her Grace as the Nobleman scowls.",
+    "standalone_score": 8,
+    "standalone_reason": "interrogation dynamics clearly depict an innocent person trying to explain medication",
+    "why_it_works": "Steadily ratchets up suspense until the word 'poison' drops.",
+    "weakness": "Slower middle section with several defensive verbal exchanges.",
+    "heuristic_score": 0.691,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.5,
+      "intensity": 0.4722,
+      "conflict": 0.3824,
+      "speakers": 1.0,
+      "length_fit": 0.7567
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b80"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.800000000000001,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 6 < 7"
+    ],
+    "duplicate_of": "ep27_c5",
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "duplicate of ep27_c5 (overlap after refinement)"
+  },
+  {
+    "candidate_id": "ep28_c1",
+    "episode": 28,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 28,
+      "start_s": 61.3,
+      "end_s": 97.4,
+      "start": "01:01.30",
+      "end": "01:37.40",
+      "duration_s": 36.1
+    },
+    "segments": [
+      {
+        "episode": 28,
+        "start_s": 61.3,
+        "end_s": 101.2,
+        "start": "01:01.30",
+        "end": "01:41.20",
+        "duration_s": 39.9
+      }
+    ],
+    "refinement_note": "refined from 01:01.30->01:37.40",
+    "hook_score": 8,
+    "hook": "Catherine sneers at Juliana before Rupert commands the guard to take her away.",
+    "cliffhanger_score": 8,
+    "cliffhanger": "Juliana gasps in pure horror as Catherine opens her mother's book and reads her true name.",
+    "standalone_score": 8,
+    "standalone_reason": "villains stripping a maid of her heirlooms and identity is easily understood",
+    "why_it_works": "High cruelty, physical violence against a keepsake, and an impending identity exposure.",
+    "weakness": "Cuts just one line before Catherine speaks Juliana's full noble title out loud.",
+    "heuristic_score": 0.936,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.65,
+      "conflict": 0.9234,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b72"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 8.0,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 8.0,
+    "rank": 10,
+    "excluded_reason": null
+  },
+  {
+    "candidate_id": "ep28_c2",
+    "episode": 28,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 28,
+      "start_s": 8.2,
+      "end_s": 61.3,
+      "start": "00:08.20",
+      "end": "01:01.30",
+      "duration_s": 53.1
+    },
+    "segments": [
+      {
+        "episode": 28,
+        "start_s": 8.2,
+        "end_s": 61.3,
+        "start": "00:08.20",
+        "end": "01:01.30",
+        "duration_s": 53.1
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 8,
+    "hook": "Catherine mocks Juliana having herbs in her pockets and secret medicine, declaring she looks like a poisoner.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Rupert leans menacingly over his sick mother, dismissing her protests as poison-induced confusion.",
+    "standalone_score": 8,
+    "standalone_reason": "the gaslighting of the sick elder woman clarifies the evil family dynamic",
+    "why_it_works": "The sick Duchess fighting back to defend Juliana creates great emotional investment.",
+    "weakness": "The clip is relatively long and diffuses some tension midway through.",
+    "heuristic_score": 0.905,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.4565,
+      "conflict": 1.0,
+      "speakers": 1.0,
+      "length_fit": 0.73
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.7,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 7.7,
+    "rank": null,
+    "excluded_reason": "episode cap (max 2 per episode in posting order)"
+  },
+  {
+    "candidate_id": "ep28_c3",
+    "episode": 28,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 28,
+      "start_s": 34.9,
+      "end_s": 61.3,
+      "start": "00:34.90",
+      "end": "01:01.30",
+      "duration_s": 26.4
+    },
+    "segments": [
+      {
+        "episode": 28,
+        "start_s": 34.9,
+        "end_s": 61.3,
+        "start": "00:34.90",
+        "end": "01:01.30",
+        "duration_s": 26.4
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 9,
+    "hook": "The Duchess shouts in fury: 'I was poisoned! And you... you knew!'",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Rupert condescendingly whispers to the choking Duchess that she is merely confused and delusional.",
+    "standalone_score": 8,
+    "standalone_reason": "a mother confronting her own treacherous family over attempted murder requires no explanation",
+    "why_it_works": "Starts directly on an electrifying accusation that stops scrollers instantly.",
+    "weakness": "Ends on a sinister whisper rather than an explosive physical threat.",
+    "heuristic_score": 0.8972,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.375,
+      "conflict": 1.0,
+      "speakers": 1.0,
+      "length_fit": 0.82
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 8.15,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 8.15,
+    "rank": 9,
+    "excluded_reason": null
+  },
+  {
+    "candidate_id": "ep28_c4",
+    "episode": 28,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 28,
+      "start_s": 78.9,
+      "end_s": 107.8,
+      "start": "01:18.90",
+      "end": "01:47.80",
+      "duration_s": 28.9
+    },
+    "segments": [
+      {
+        "episode": 28,
+        "start_s": 70.5,
+        "end_s": 107.8,
+        "start": "01:10.50",
+        "end": "01:47.80",
+        "duration_s": 37.3
+      }
+    ],
+    "refinement_note": "refined from 01:18.90->01:47.80",
+    "hook_score": 7,
+    "hook": "Catherine callously flings Juliana's mother's silver locket across the stone floor, mocking the gallows.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Catherine circles Juliana, taunting her as the disgraced daughter cast out by her family.",
+    "standalone_score": 7,
+    "standalone_reason": "personal humiliation of an outcast heroine is relatable melodrama",
+    "why_it_works": "Delivers satisfying venomous class warfare and villain gloating.",
+    "weakness": "Misses the visceral locket-snatching moment that provoked Juliana's outburst.",
+    "heuristic_score": 0.8392,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.5,
+      "intensity": 0.8571,
+      "conflict": 0.9227,
+      "speakers": 1.0,
+      "length_fit": 0.945
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "b51",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.0,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": "ep28_c1",
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "duplicate of ep28_c1 (overlap after refinement)"
+  },
+  {
+    "candidate_id": "ep28_c5",
+    "episode": 28,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 28,
+      "start_s": 0.0,
+      "end_s": 37.7,
+      "start": "00:00.00",
+      "end": "00:37.70",
+      "duration_s": 37.7
+    },
+    "segments": [
+      {
+        "episode": 28,
+        "start_s": 0.0,
+        "end_s": 43.0,
+        "start": "00:00.00",
+        "end": "00:43.00",
+        "duration_s": 43.0
+      }
+    ],
+    "refinement_note": "refined from 00:00.00->00:37.70",
+    "hook_score": 8,
+    "hook": "Guards drag Juliana backward as her book falls, and Catherine stomps firmly onto its cover.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "The Duchess clutches her chest, furiously shouting that she knows what happened to her.",
+    "standalone_score": 7,
+    "standalone_reason": "the visual physical abuse establishes protagonist sympathy instantly",
+    "why_it_works": "Opens with an immediate physical scuffle and disrespectful disrespect toward the heirloom.",
+    "weakness": "Cuts right before the Duchess delivers the explicit poisoning accusation.",
+    "heuristic_score": 0.8357,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.6,
+      "intensity": 0.5714,
+      "conflict": 1.0,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b31"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.45,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": "ep28_c2",
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "duplicate of ep28_c2 (overlap after refinement)"
+  },
+  {
+    "candidate_id": "ep28_c6",
+    "episode": 28,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 28,
+      "start_s": 47.4,
+      "end_s": 75.3,
+      "start": "00:47.40",
+      "end": "01:15.30",
+      "duration_s": 27.9
+    },
+    "segments": [
+      {
+        "episode": 28,
+        "start_s": 47.4,
+        "end_s": 82.3,
+        "start": "00:47.40",
+        "end": "01:22.30",
+        "duration_s": 34.9
+      }
+    ],
+    "refinement_note": "refined from 00:47.40->01:15.30",
+    "hook_score": 8,
+    "hook": "Juliana lunges toward the bed screaming to help the Duchess as guards wrench her back.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Catherine sneeringly asks where a gutter rat found a silver locket.",
+    "standalone_score": 8,
+    "standalone_reason": "the struggle to protect a dying patient highlights the moral stakes clearly",
+    "why_it_works": "High panic, frantic physical movement, and cruel class-based bullying.",
+    "weakness": "Stops before Catherine actually destroys or discards the pendant.",
+    "heuristic_score": 0.8073,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.6,
+      "intensity": 0.4167,
+      "conflict": 1.0,
+      "speakers": 1.0,
+      "length_fit": 0.895
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b60"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.7,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 7.7,
+    "rank": null,
+    "excluded_reason": "episode cap (max 2 per episode in posting order)"
+  },
+  {
+    "candidate_id": "ep29_c1",
+    "episode": 29,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 29,
+      "start_s": 63.8,
+      "end_s": 96.1,
+      "start": "01:03.80",
+      "end": "01:36.10",
+      "duration_s": 32.3
+    },
+    "segments": [
+      {
+        "episode": 29,
+        "start_s": 63.8,
+        "end_s": 102.5,
+        "start": "01:03.80",
+        "end": "01:42.50",
+        "duration_s": 38.7
+      }
+    ],
+    "refinement_note": "refined from 01:03.80->01:36.10",
+    "hook_score": 7,
+    "hook": "Catherine coldly tells Juliana she was cast out once and should have stayed forgotten.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Juliana weeps on the cold dungeon floor, sobbing 'Mother...' as the heavy door locks.",
+    "standalone_score": 8,
+    "standalone_reason": "the harsh imprisonment of an innocent maid is crystal clear",
+    "why_it_works": "Features strong villain arrogance followed by the brutal reality of solitary confinement.",
+    "weakness": "Ends on pure despair and crying rather than an unresolved dramatic hook.",
+    "heuristic_score": 0.8488,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.8,
+      "intensity": 0.5,
+      "conflict": 0.8256,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b63"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.25,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 7.25,
+    "rank": null,
+    "excluded_reason": "episode cap (max 2 per episode in posting order)"
+  },
+  {
+    "candidate_id": "ep29_c2",
+    "episode": 29,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 29,
+      "start_s": 31.9,
+      "end_s": 56.6,
+      "start": "00:31.90",
+      "end": "00:56.60",
+      "duration_s": 24.7
+    },
+    "segments": [
+      {
+        "episode": 29,
+        "start_s": 31.9,
+        "end_s": 56.6,
+        "start": "00:31.90",
+        "end": "00:56.60",
+        "duration_s": 24.7
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 8,
+    "hook": "Catherine flips through herbal notes, declaring the magistrate will condemn them as witchcraft.",
+    "cliffhanger_score": 9,
+    "cliffhanger": "Catherine whispers that when Juliana hangs from a rope, no one will remember her book.",
+    "standalone_score": 8,
+    "standalone_reason": "corrupt aristocrats framing a healer as a witch is an instantly understandable trope",
+    "why_it_works": "A chilling, unpunished death threat makes viewers desperate to see the villain defeated.",
+    "weakness": "Mostly dialogue-driven without a physical confrontation beat.",
+    "heuristic_score": 0.8427,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.5,
+      "conflict": 0.5398,
+      "speakers": 1.0,
+      "length_fit": 0.735
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 8.3,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 8.3,
+    "rank": 6,
+    "excluded_reason": null
+  },
+  {
+    "candidate_id": "ep29_c3",
+    "episode": 29,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 29,
+      "start_s": 2.8,
+      "end_s": 53.6,
+      "start": "00:02.80",
+      "end": "00:53.60",
+      "duration_s": 50.8
+    },
+    "segments": [
+      {
+        "episode": 29,
+        "start_s": 2.8,
+        "end_s": 56.6,
+        "start": "00:02.80",
+        "end": "00:56.60",
+        "duration_s": 53.8
+      }
+    ],
+    "refinement_note": "refined from 00:02.80->00:53.60",
+    "hook_score": 8,
+    "hook": "Guards violently haul Juliana down dungeon stairs as she begs Catherine for her mother's legacy.",
+    "cliffhanger_score": 8,
+    "cliffhanger": "Catherine whispers she can burn the book, predicting Juliana will end on the execution rope.",
+    "standalone_score": 9,
+    "standalone_reason": "the desperate fight for a mother's keepsake anchors immediate empathy",
+    "why_it_works": "Combines physical dragging action with an escalating execution threat.",
+    "weakness": "Slightly longer run time could lose viewer momentum in the middle.",
+    "heuristic_score": 0.8359,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.5769,
+      "conflict": 0.3937,
+      "speakers": 1.0,
+      "length_fit": 0.8067
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b33"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 8.25,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 8.25,
+    "rank": 8,
+    "excluded_reason": null
+  },
+  {
+    "candidate_id": "ep29_c4",
+    "episode": 29,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 29,
+      "start_s": 78.5,
+      "end_s": 109.0,
+      "start": "01:18.50",
+      "end": "01:49.00",
+      "duration_s": 30.5
+    },
+    "segments": [
+      {
+        "episode": 29,
+        "start_s": 78.5,
+        "end_s": 112.8,
+        "start": "01:18.50",
+        "end": "01:52.80",
+        "duration_s": 34.3
+      }
+    ],
+    "refinement_note": "refined from 01:18.50->01:49.00",
+    "hook_score": 5,
+    "hook": "A guard shoves Juliana down a dark corridor toward a heavy subterranean cell.",
+    "cliffhanger_score": 5,
+    "cliffhanger": "Juliana slumps weeping against stone wall, whispering in voiceover about her lost ledger.",
+    "standalone_score": 6,
+    "standalone_reason": "lacks the villain dialogue that clarifies why she was locked up",
+    "why_it_works": "Captures the visceral claustrophobia and misery of medieval dungeons.",
+    "weakness": "Heavy on solitary weeping and despair without dynamic conflict.",
+    "heuristic_score": 0.7948,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.6,
+      "intensity": 0.6429,
+      "conflict": 0.6557,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b70"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 5.25,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 5 < 7",
+      "cliffhanger 5 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 5 < 7; cliffhanger 5 < 7"
+  },
+  {
+    "candidate_id": "ep29_c5",
+    "episode": 29,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 29,
+      "start_s": 0.0,
+      "end_s": 26.8,
+      "start": "00:00.00",
+      "end": "00:26.80",
+      "duration_s": 26.8
+    },
+    "segments": [
+      {
+        "episode": 29,
+        "start_s": 0.0,
+        "end_s": 26.8,
+        "start": "00:00.00",
+        "end": "00:26.80",
+        "duration_s": 26.8
+      }
+    ],
+    "refinement_note": "refinement ignored: unknown end beat 'b21'",
+    "hook_score": 4,
+    "hook": "A silent tracking shot descends a gloomy spiral stone staircase lit by torches.",
+    "cliffhanger_score": 6,
+    "cliffhanger": "Catherine mockingly asks if Juliana still calls her mother's book of weeds a legacy.",
+    "standalone_score": 5,
+    "standalone_reason": "the dialogue is too fragmented to convey the full life-or-death context",
+    "why_it_works": "Captures the visual cruelty of Catherine taunting Juliana's heritage.",
+    "weakness": "Starts on a slow scenic establishing shot that will cause immediate swipe-aways.",
+    "heuristic_score": 0.7606,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.6,
+      "intensity": 0.875,
+      "conflict": 0.2488,
+      "speakers": 1.0,
+      "length_fit": 0.84
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "b2",
+      "end": "b21"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 4.85,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 4 < 7",
+      "cliffhanger 6 < 7",
+      "standalone 5 < 6"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 4 < 7; cliffhanger 6 < 7; standalone 5 < 6"
+  },
+  {
+    "candidate_id": "ep30_c1",
+    "episode": 30,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 30,
+      "start_s": 125.1,
+      "end_s": 151.21,
+      "start": "02:05.10",
+      "end": "02:31.21",
+      "duration_s": 26.11
+    },
+    "segments": [
+      {
+        "episode": 30,
+        "start_s": 125.1,
+        "end_s": 151.21,
+        "start": "02:05.10",
+        "end": "02:31.21",
+        "duration_s": 26.11
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 8,
+    "hook": "Catherine maliciously gloats that Juliana will hang as the witch's disgraced daughter before cheering crowds.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Juliana shivers in chains in a pitch-black flooded cell beneath the moonlit grate.",
+    "standalone_score": 8,
+    "standalone_reason": "a cold-blooded conspiracy to execute an innocent prisoner is immediately clear",
+    "why_it_works": "The shocking contrast between opulent aristocrats plotting murder and the freezing prisoner hooks empathy.",
+    "weakness": "Ends on a somber visual mood rather than an immediate narrative twist.",
+    "heuristic_score": 0.8903,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.3333,
+      "conflict": 1.0,
+      "speakers": 1.0,
+      "length_fit": 0.8055
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.7,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 7.7,
+    "rank": null,
+    "excluded_reason": "passed the floor; ranked below top 10"
+  },
+  {
+    "candidate_id": "ep30_c2",
+    "episode": 30,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 30,
+      "start_s": 0.0,
+      "end_s": 29.8,
+      "start": "00:00.00",
+      "end": "00:29.80",
+      "duration_s": 29.8
+    },
+    "segments": [
+      {
+        "episode": 30,
+        "start_s": 7.5,
+        "end_s": 39.8,
+        "start": "00:07.50",
+        "end": "00:39.80",
+        "duration_s": 32.3
+      }
+    ],
+    "refinement_note": "refined from 00:00.00->00:29.80",
+    "hook_score": 4,
+    "hook": "Shoes and a gold-handled cane rhythmically click down an empty marble hallway.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "Rupert mutters in dread that Juliana knows the Duchess was poisoned.",
+    "standalone_score": 6,
+    "standalone_reason": "feels like an incomplete snippet of an ongoing noble conversation",
+    "why_it_works": "Rupert's paranoid confession of poisoning builds legitimate conspiratorial tension.",
+    "weakness": "Slow, dialogue-heavy exposition at the start with zero immediate hook.",
+    "heuristic_score": 0.8229,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.375,
+      "conflict": 0.4474,
+      "speakers": 1.0,
+      "length_fit": 0.99
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "b5",
+      "end": "b18"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 5.4,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 4 < 7"
+    ],
+    "duplicate_of": "ep30_c6",
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "duplicate of ep30_c6 (overlap after refinement)"
+  },
+  {
+    "candidate_id": "ep30_c3",
+    "episode": 30,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 30,
+      "start_s": 58.8,
+      "end_s": 94.5,
+      "start": "00:58.80",
+      "end": "01:34.50",
+      "duration_s": 35.7
+    },
+    "segments": [
+      {
+        "episode": 30,
+        "start_s": 58.8,
+        "end_s": 94.5,
+        "start": "00:58.80",
+        "end": "01:34.50",
+        "duration_s": 35.7
+      }
+    ],
+    "refinement_note": "unchanged",
+    "hook_score": 7,
+    "hook": "The Elder Nobleman chillingly announces they will use the law itself to destroy Juliana.",
+    "cliffhanger_score": 8,
+    "cliffhanger": "Rupert gasps that witchcraft is a capital charge, and the Elder Nobleman coldly confirms: 'Precisely.'",
+    "standalone_score": 7,
+    "standalone_reason": "the ruthless calculation to fabricate a witchcraft charge explains itself",
+    "why_it_works": "Sharp, witty villain scheming that lands on a brutal one-word execution punchline.",
+    "weakness": "Static drawing-room conversation with no physical action or protagonist presence.",
+    "heuristic_score": 0.8028,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 1.0,
+      "intensity": 0.125,
+      "conflict": 0.5602,
+      "speakers": 1.0,
+      "length_fit": 1.0
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b46"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.3,
+    "floor_pass": true,
+    "floor_reasons": [],
+    "duplicate_of": null,
+    "posting_score": 7.3,
+    "rank": null,
+    "excluded_reason": "passed the floor; ranked below top 10"
+  },
+  {
+    "candidate_id": "ep30_c4",
+    "episode": 30,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 30,
+      "start_s": 16.9,
+      "end_s": 64.8,
+      "start": "00:16.90",
+      "end": "01:04.80",
+      "duration_s": 47.9
+    },
+    "segments": [
+      {
+        "episode": 30,
+        "start_s": 33.4,
+        "end_s": 64.8,
+        "start": "00:33.40",
+        "end": "01:04.80",
+        "duration_s": 31.4
+      }
+    ],
+    "refinement_note": "refined from 00:16.90->01:04.80",
+    "hook_score": 6,
+    "hook": "The Elder Nobleman warns that kitchen maids are whispering about the prisoner downstairs.",
+    "cliffhanger_score": 7,
+    "cliffhanger": "The Elder Nobleman states they will use the law to destroy her, leaving Rupert confused.",
+    "standalone_score": 6,
+    "standalone_reason": "the dialogue revolves around offscreen maids and unknown legal maneuvers",
+    "why_it_works": "Features the intense cane-to-chest intimidation moment in the middle.",
+    "weakness": "Too conversational and lacks the sharpest threats from either end of the scene.",
+    "heuristic_score": 0.7378,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.8,
+      "intensity": 0.2,
+      "conflict": 0.4175,
+      "speakers": 1.0,
+      "length_fit": 0.9033
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "b16",
+      "end": ""
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.300000000000001,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 6 < 7"
+    ],
+    "duplicate_of": "ep30_c5",
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "duplicate of ep30_c5 (overlap after refinement)"
+  },
+  {
+    "candidate_id": "ep30_c5",
+    "episode": 30,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 30,
+      "start_s": 32.0,
+      "end_s": 85.6,
+      "start": "00:32.00",
+      "end": "01:25.60",
+      "duration_s": 53.6
+    },
+    "segments": [
+      {
+        "episode": 30,
+        "start_s": 32.0,
+        "end_s": 88.5,
+        "start": "00:32.00",
+        "end": "01:28.50",
+        "duration_s": 56.5
+      }
+    ],
+    "refinement_note": "refined from 00:32.00->01:25.60",
+    "hook_score": 8,
+    "hook": "The Elder Nobleman aggressively pins Rupert against the wall with his cane, demanding weeds be burned.",
+    "cliffhanger_score": 6,
+    "cliffhanger": "Catherine curiously asks what happens if Juliana claims she is a healer.",
+    "standalone_score": 7,
+    "standalone_reason": "the conspirators detailing their fabricated evidence clarifies the plot",
+    "why_it_works": "Strong physical aggression at the opening grabs attention instantly.",
+    "weakness": "Cuts right before the shocking 'witchcraft' response to Catherine's question.",
+    "heuristic_score": 0.7257,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.8,
+      "intensity": 0.2273,
+      "conflict": 0.3731,
+      "speakers": 1.0,
+      "length_fit": 0.7133
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "",
+      "end": "b42"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 7.15,
+    "floor_pass": false,
+    "floor_reasons": [
+      "cliffhanger 6 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: cliffhanger 6 < 7"
+  },
+  {
+    "candidate_id": "ep30_c6",
+    "episode": 30,
+    "judge": "gemini-3.8-flash",
+    "prompt_version": "judge-v1",
+    "status": "ok",
+    "failure_reason": null,
+    "original_cut": {
+      "episode": 30,
+      "start_s": 16.9,
+      "end_s": 39.8,
+      "start": "00:16.90",
+      "end": "00:39.80",
+      "duration_s": 22.9
+    },
+    "segments": [
+      {
+        "episode": 30,
+        "start_s": 16.9,
+        "end_s": 39.8,
+        "start": "00:16.90",
+        "end": "00:39.80",
+        "duration_s": 22.9
+      }
+    ],
+    "refinement_note": "refinement rejected: 00:32.00->00:43.80 is 11.8s",
+    "hook_score": 5,
+    "hook": "The Elder Nobleman scolds Rupert over servant gossip regarding soup bowls and lower grates.",
+    "cliffhanger_score": 8,
+    "cliffhanger": "The Elder Nobleman pins Rupert to the wall, snarling that weeds in the cellar must be burned.",
+    "standalone_score": 6,
+    "standalone_reason": "focuses on inter-villain friction rather than the victim's plight",
+    "why_it_works": "Ends on a sudden, physically violent confrontation between co-conspirators.",
+    "weakness": "The first fifteen seconds are mundane complaints about kitchen staff.",
+    "heuristic_score": 0.6508,
+    "components": {
+      "hook": 1.0,
+      "cliffhanger": 0.3,
+      "intensity": 0.375,
+      "conflict": 0.5822,
+      "speakers": 1.0,
+      "length_fit": 0.645
+    },
+    "judge_issues": [],
+    "suggested_beats": {
+      "start": "b14",
+      "end": "b19"
+    },
+    "validation": {
+      "errors": [],
+      "warnings": []
+    },
+    "valid": true,
+    "final_score": 6.15,
+    "floor_pass": false,
+    "floor_reasons": [
+      "hook 5 < 7"
+    ],
+    "duplicate_of": null,
+    "posting_score": null,
+    "rank": null,
+    "excluded_reason": "below quality floor: hook 5 < 7"
+  }
+]

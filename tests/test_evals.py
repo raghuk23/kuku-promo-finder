@@ -36,6 +36,12 @@ class TestCompareRuns(unittest.TestCase):
         self.assertEqual(m["top_per_episode_agreement"], 1.0)
         self.assertEqual(m["floor_confusion"], {"both_pass": 2, "a_only": 0, "b_only": 0, "neither": 1})
 
+    def test_ranked_overlap_undefined_when_runs_cover_different_episodes(self):
+        a = [rec("c1", 1, 9, 8, 7), rec("c3", 2, 7, 7, 7)]
+        b = [rec("c1", 1, 9, 8, 7)]
+        a[0]["rank"] = b[0]["rank"] = 1
+        self.assertIsNone(compare_runs(a, b, CFG)["ranked_overlap"])
+
     def test_only_shared_valid_candidates_compared(self):
         a = [rec("c1", 1, 9, 8, 7), rec("c2", 1, 5, 5, 5), rec("c3", 2, 7, 7, 7, valid=False)]
         b = [rec("c1", 1, 8, 8, 7), rec("c2", 1, 6, 5, 5)]
@@ -74,3 +80,20 @@ class TestHumanAgreement(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def _load_evaluate_script():
+    import importlib.util
+    import os
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts", "evaluate.py")
+    spec = importlib.util.spec_from_file_location("evaluate_script", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def test_default_report_name_is_a_safe_filename():
+    ev = _load_evaluate_script()
+    assert ev.report_name(None, "Ablation: heuristics only vs LLM judge") == "ablation"
+    assert ev.report_name(None, "Stability of the LLM judge") == "stability"
+    assert ev.report_name("single_vs_two_orders", "anything") == "single_vs_two_orders"

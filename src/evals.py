@@ -66,6 +66,8 @@ def compare_runs(a: List[dict], b: List[dict], cfg: dict) -> dict:
     best = lambda f, run, cs: max(cs, key=lambda i: (f[i], run[i].get("hook_score") or 0, i))
     eps = [cs for cs in by_ep.values() if len(cs) >= 2]
     top_agree = (sum(best(fa, A, cs) == best(fb, B, cs) for cs in eps) / len(eps)) if eps else None
+    # Top lists are only comparable when both runs ranked the same episodes.
+    same_eps = {r["episode"] for r in a} == {r["episode"] for r in b}
     ra = {r["candidate_id"] for r in a if r.get("rank")}
     rb = {r["candidate_id"] for r in b if r.get("rank")}
     return {
@@ -78,7 +80,7 @@ def compare_runs(a: List[dict], b: List[dict], cfg: dict) -> dict:
         "floor_confusion": conf,
         "top_per_episode_agreement": top_agree,
         "episodes_compared_for_top": len(eps),
-        "ranked_overlap": len(ra & rb), "ranked_sizes": [len(ra), len(rb)],
+        "ranked_overlap": len(ra & rb) if same_eps else None, "ranked_sizes": [len(ra), len(rb)],
     }
 
 

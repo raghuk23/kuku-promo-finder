@@ -76,7 +76,7 @@ def validate_record(rec: dict, ep: Episode, cfg: dict) -> dict:
         v = rec.get(k)
         if v is None and k == "standalone_score":
             continue
-        if not isinstance(v, int) or not 1 <= v <= 10:
+        if isinstance(v, bool) or not isinstance(v, (int, float)) or not 1 <= v <= 10:  # averaged -> float
             errors.append(f"{k} invalid ({v!r})")
 
     # Grounding: anything the judge puts in quotes must actually be in the clip.

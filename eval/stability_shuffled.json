@@ -1,0 +1,24 @@
+{
+  "n": 54,
+  "spearman_final": 0.6387541702296787,
+  "mean_abs_diff": {
+    "hook_score": 0.8703703703703703,
+    "cliffhanger_score": 0.8333333333333334,
+    "standalone_score": 0.8333333333333334
+  },
+  "exact_match_rate": 0.05555555555555555,
+  "floor_agreement": 0.7407407407407407,
+  "floor_confusion": {
+    "both_pass": 14,
+    "a_only": 10,
+    "b_only": 4,
+    "neither": 26
+  },
+  "top_per_episode_agreement": 0.4,
+  "episodes_compared_for_top": 10,
+  "ranked_overlap": null,
+  "ranked_sizes": [
+    10,
+    10
+  ]
+}

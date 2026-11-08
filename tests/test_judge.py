@@ -5,9 +5,9 @@ import unittest
 
 from src.config import load_config
 from src.candidates import Candidate, cut_points
-from src.llm import LLMClient, JsonCache, QuotaExhaustedError
+from src.llm import LLMClient, JsonCache, QuotaExhaustedError, CacheOnlyClient
 from src.judge import (build_user_prompt, parse_judgements, refine, judge_episode,
-                       judge_batch, beat_id, PROMPT_VERSION)
+                       judge_batch, judge_batch_ensemble, beat_id, PROMPT_VERSION)
 from tests.test_candidates import ep_from
 
 CFG = load_config()
@@ -251,6 +251,63 @@ class TestJudgeBatch(unittest.TestCase):
             raise Exception("429 RESOURCE_EXHAUSTED requests per day limit exceeded on Free Tier")
         with self.assertRaises(QuotaExhaustedError):
             judge_batch([(self.e1, self.c1)], FakeClient(quota), CFG)
+
+
+class TestOrderEnsemble(unittest.TestCase):
+    """Measured: shuffling candidate order flipped 26% of floor decisions, so the
+    production run averages two orderings."""
+
+    def setUp(self):
+        self.ep = make_ep()
+        self.cs = [cand(self.ep, "ep01_c1", 10, 40), cand(self.ep, "ep01_c2", 20, 50)]
+        self.n = 0
+
+    def by_call(self, hooks):
+        def respond(*_):
+            h = hooks[min(self.n, len(hooks) - 1)]
+            self.n += 1
+            return {"judgements": [good_judgement(c.candidate_id, hook_score=h,
+                                                  hook=f"order {self.n} hook") for c in self.cs]}
+        return respond
+
+    def test_scores_averaged_texts_from_first_order(self):
+        client = FakeClient(self.by_call([8, 6]))
+        res = judge_batch_ensemble([(self.ep, self.cs)], client, CFG, seeds=[None, 1])
+        self.assertEqual(client.calls, 2)
+        r = res[0]
+        self.assertEqual(r["hook_score"], 7.0)
+        self.assertEqual(r["hook"], "order 1 hook")
+        self.assertEqual(r["orders_judged"], 2)
+        self.assertEqual([o["hook_score"] for o in r["order_scores"]], [8, 6])
+
+    def test_disagreement_on_the_floor_is_flagged(self):
+        r = judge_batch_ensemble([(self.ep, self.cs)], FakeClient(self.by_call([8, 6])), CFG, seeds=[None, 1])[0]
+        self.assertTrue(r["order_unstable"])       # 8 passes the hook floor of 7, 6 does not
+        r = judge_batch_ensemble([(self.ep, self.cs)], FakeClient(self.by_call([9, 8])), CFG, seeds=[None, 1])[0]
+        self.assertFalse(r["order_unstable"])
+
+    def test_quota_on_second_order_keeps_first_order_as_partial(self):
+        first = self.by_call([8])
+        def respond(*a):
+            if self.n >= 1:
+                raise QuotaExhaustedError("429 per day")
+            return first(*a)
+        with self.assertRaises(QuotaExhaustedError) as ctx:
+            judge_batch_ensemble([(self.ep, self.cs)], FakeClient(respond), CFG, seeds=[None, 1])
+        part = ctx.exception.partial
+        self.assertEqual([r["status"] for r in part], ["ok", "ok"])
+        self.assertEqual(part[0]["orders_judged"], 1)
+
+    def test_cache_only_client_serves_hits_and_refuses_misses(self):
+        with tempfile.TemporaryDirectory() as d:
+            cache = JsonCache(d)
+            live = FakeClient(self.by_call([8]))
+            live.required_model = live.last_model = "m"
+            judge_batch([(self.ep, self.cs)], live, CFG, cache=cache)          # caches order None
+            offline = CacheOnlyClient(live)
+            self.assertEqual(judge_batch([(self.ep, self.cs)], offline, CFG, cache=cache)[0]["status"], "ok")
+            with self.assertRaises(QuotaExhaustedError):
+                judge_batch([(self.ep, self.cs)], offline, CFG, cache=cache, order_seed=1)
 
 
 if __name__ == "__main__":

@@ -182,6 +182,19 @@ class TestAnomalies(unittest.TestCase):
         self.assertEqual(parse_episode_text(TITLE_CASE).anomalies, [])
 
 
+class TestUnnumberedUploads(unittest.TestCase):
+    def test_files_without_header_or_numbered_name_get_sequential_numbers(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            no_header = TITLE_CASE.replace("EPISODE NUMBER: Episode 1\n", "")
+            open(os.path.join(d, "Episode 1 - Wedding.txt"), "w").write(no_header)   # name has no "episode-N"
+            open(os.path.join(d, "zz final.txt"), "w").write(no_header)
+            eps, _ = load_show(d)
+            self.assertEqual(sorted(e.number for e in eps), [1, 2])
+            self.assertTrue(all(b.episode == e.number for e in eps for b in e.beats))
+            self.assertTrue(any("assigned" in a for e in eps for a in e.anomalies))
+
+
 # --- Real input pack (confidential, lives outside the repo) -----------------
 DATA_DIR = os.environ.get(
     "KUKU_DATA_DIR",

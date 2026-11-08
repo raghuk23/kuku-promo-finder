@@ -14,7 +14,7 @@ import random
 from typing import Dict, List, Optional, Tuple
 
 from .candidates import Candidate, cut_points
-from .llm import QuotaExhaustedError, is_daily_quota
+from .llm import CacheOnlyClient, QuotaExhaustedError, is_daily_quota
 from .parse import Beat, Episode
 from .validate import quotes_not_in_clip
 
@@ -348,13 +348,77 @@ def judge_batch(items, client, cfg: dict, cache=None, order_seed: Optional[int] 
     return results
 
 
+def _order_fields(rec, seed):
+    ok = rec["status"] == "ok"
+    rec["orders_judged"] = 1 if ok else 0
+    rec["order_scores"] = [{"order_seed": seed, **{k: rec[k] for k in SCORE_KEYS}}] if ok else []
+    rec["order_unstable"] = False
+    return rec
+
+
+def _merge_orders(runs, cfg) -> List[dict]:
+    """runs: [(seed, records)] from judging the same batch in different orders.
+    Scores are averaged; texts and cut come from the first successful order
+    (the original order comes first)."""
+    from .rank import passes_floor  # local import: rank imports this module
+    out = []
+    for idx, first in enumerate(runs[0][1]):
+        per = [(s, recs[idx]) for s, recs in runs]
+        assert all(r["candidate_id"] == first["candidate_id"] for _, r in per)
+        oks = [(s, r) for s, r in per if r["status"] == "ok"]
+        if not oks:
+            rec = dict(first, orders_judged=0, order_scores=[], order_unstable=False)
+            rec["failure_reason"] = "; ".join(sorted({r["failure_reason"] or "" for _, r in per}))
+            out.append(rec)
+            continue
+        rec = dict(oks[0][1])
+        rec["order_scores"] = [{"order_seed": s, **{k: r[k] for k in SCORE_KEYS}} for s, r in oks]
+        for k in SCORE_KEYS:
+            vals = [r[k] for _, r in oks if r[k] is not None]
+            rec[k] = round(sum(vals) / len(vals), 2) if vals else None
+        rec["orders_judged"] = len(oks)
+        rec["order_unstable"] = len({passes_floor(r, cfg)[0] for _, r in oks}) > 1
+        rec["judge_issues"] = sorted({i for _, r in oks for i in r["judge_issues"]})
+        out.append(rec)
+    return out
+
+
+def judge_batch_ensemble(items, client, cfg: dict, cache=None, seeds=(None,)) -> List[dict]:
+    """Judge a batch once per candidate ordering and average the scores.
+
+    Measured on this show: shuffling candidate order alone flipped 26% of
+    quality-floor decisions, so the production run averages two orderings.
+    If the daily quota runs out partway, raises QuotaExhaustedError with
+    `.partial` holding records merged from the orders that did succeed."""
+    seeds = list(seeds) or [None]
+    if client is None or len(seeds) == 1:
+        return [_order_fields(r, seeds[0]) for r in judge_batch(items, client, cfg, cache, seeds[0])]
+    runs, quota = [], None
+    for s in seeds:  # after a quota error, remaining orders may still be cached
+        try:
+            runs.append((s, judge_batch(items, client, cfg, cache, s)))
+        except QuotaExhaustedError as e:
+            quota = e
+            if not isinstance(client, CacheOnlyClient):
+                client = CacheOnlyClient(client)  # no more live calls that cannot succeed
+    if not runs:
+        raise quota
+    merged = _merge_orders(runs, cfg)
+    if quota is not None:
+        err = QuotaExhaustedError(str(quota))
+        err.partial = merged
+        raise err
+    return merged
+
+
 def failed_records(items, reason: str, judge: str) -> List[dict]:
     """Records for candidates that were never judged (e.g. quota ran out)."""
     out = []
     for ep, cs in items:
         for c in cs:
             rec = _base_record(ep, c, judge, PROMPT_VERSION)
-            rec.update(status="judge_failed", failure_reason=reason)
+            rec.update(status="judge_failed", failure_reason=reason, orders_judged=0,
+                       order_scores=[], order_unstable=False)
             out.append(rec)
     return out
 
