@@ -15,15 +15,29 @@ from .config import ROOT
 
 TRANSIENT_MARKERS = ("503", "429", "500", "UNAVAILABLE", "RESOURCE_EXHAUSTED",
                      "DEADLINE_EXCEEDED", "INTERNAL", "timed out", "Timeout",
-                     "Connection reset", "temporarily")
+                     "Connection reset", "temporarily", "disconnected", "RemoteProtocolError",
+                     "ReadError", "ConnectError", "WriteError")
 
 
 class LLMError(Exception):
     pass
 
 
+class QuotaExhaustedError(LLMError):
+    """The provider's daily quota is used up. Retrying cannot help until it resets."""
+
+
+def is_daily_quota(exc: Exception) -> bool:
+    s = str(exc)
+    return "PerDay" in s or "per day" in s.lower()
+
+
 def is_transient(exc: Exception) -> bool:
-    """Overload / rate-limit / network blips are worth retrying; 4xx are not."""
+    """Overload / per-minute rate limits / network blips are worth retrying.
+    Daily quota and other 4xx errors are not: the free tier allows only 20
+    requests per day per model, and retrying a spent quota only burns time."""
+    if is_daily_quota(exc):
+        return False
     s = f"{type(exc).__name__} {exc}"
     return any(m in s for m in TRANSIENT_MARKERS)
 
@@ -69,6 +83,7 @@ class JsonCache:
 class LLMClient:
     name = "base"
     last_model: Optional[str] = None
+    required_model: Optional[str] = None   # strict mode: only this model may judge
 
     def __init__(self):
         # Real token counts reported by the API, for the cost section of the doc.
@@ -108,14 +123,20 @@ def _loads(text: Optional[str]) -> dict:
 
 class GeminiClient(LLMClient):
     def __init__(self, model: str, fallback_models=(), temperature=0.0, seed=None,
-                 retries=4, base_delay_s=4.0, min_interval_s=0.0, api_key=None):
+                 retries=4, base_delay_s=4.0, min_interval_s=0.0, api_key=None, strict=False,
+                 timeout_s=120):
         from google import genai
+        from google.genai import types
         super().__init__()
         key = api_key or os.environ.get("GEMINI_API_KEY")
         if not key or key == "PASTE_YOUR_KEY_HERE":
             raise LLMError("GEMINI_API_KEY is not set (put it in .env)")
-        self._genai_client = genai.Client(api_key=key)
-        self.models = [model] + [m for m in fallback_models if m != model]
+        # A request with no timeout hung for 32 minutes in the first strict run.
+        self._genai_client = genai.Client(api_key=key, http_options=types.HttpOptions(timeout=int(timeout_s * 1000)))
+        # Strict: one model for the whole run, so scores in one global ranking are
+        # comparable. Overload means waiting longer, never switching judge.
+        self.models = [model] if strict else [model] + [m for m in fallback_models if m != model]
+        self.required_model = model if strict else None
         self.name = f"gemini:{model}"
         self.temperature, self.seed = temperature, seed
         self.retries, self.base_delay_s = retries, base_delay_s
@@ -144,7 +165,7 @@ class GeminiClient(LLMClient):
                 self.last_model = m
                 return out
             except Exception as e:  # noqa: BLE001 -- try the next model, keep the error
-                last_err = e
+                last_err = QuotaExhaustedError(f"daily quota exhausted for {m}: {e}") if is_daily_quota(e) else e
         raise last_err
 
 
@@ -182,14 +203,21 @@ class OpenAICompatibleClient(LLMClient):
         return _loads(data["choices"][0]["message"]["content"])
 
     def complete_json(self, system, user, schema):
-        return with_retries(lambda: self._call(system, user, schema), self.retries, self.base_delay_s)
+        try:
+            return with_retries(lambda: self._call(system, user, schema), self.retries, self.base_delay_s)
+        except Exception as e:  # noqa: BLE001
+            if is_daily_quota(e):
+                raise QuotaExhaustedError(str(e)) from e
+            raise
 
 
-def make_client(cfg: dict) -> Optional[LLMClient]:
-    """Build the configured client, or None for the no-LLM heuristic judge."""
+def make_client(cfg: dict, provider: Optional[str] = None, model: Optional[str] = None) -> Optional[LLMClient]:
+    """Build the configured client, or None for the no-LLM heuristic judge.
+    Precedence: explicit argument > LLM_PROVIDER / LLM_MODEL env var > config.yaml."""
     llm = cfg["llm"]
-    provider = os.environ.get("LLM_PROVIDER", llm.get("provider", "heuristic"))
-    model = os.environ.get("LLM_MODEL", llm.get("model"))
+    explicit_model = model is not None or "LLM_MODEL" in os.environ
+    provider = provider or os.environ.get("LLM_PROVIDER", llm.get("provider", "heuristic"))
+    model = model or os.environ.get("LLM_MODEL", llm.get("model"))
     if provider == "heuristic":
         return None
     from dotenv import load_dotenv
@@ -197,8 +225,9 @@ def make_client(cfg: dict) -> Optional[LLMClient]:
     common = dict(temperature=llm.get("temperature", 0), retries=llm.get("retries", 4),
                   base_delay_s=llm.get("base_delay_s", 4), min_interval_s=llm.get("min_interval_s", 0))
     if provider == "gemini":
-        fallbacks = [] if "LLM_MODEL" in os.environ else llm.get("fallback_models", [])
-        return GeminiClient(model, fallbacks, seed=llm.get("seed"), **common)
+        fallbacks = [] if explicit_model else llm.get("fallback_models", [])
+        return GeminiClient(model, fallbacks, seed=llm.get("seed"), timeout_s=llm.get("timeout_s", 120),
+                            strict=bool(llm.get("strict_model", False)), **common)
     if provider == "openai_compatible":
         oc = llm["openai_compatible"]
         return OpenAICompatibleClient(model, oc["base_url"], oc["api_key_env"], **common)

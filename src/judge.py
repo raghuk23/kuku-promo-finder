@@ -14,7 +14,9 @@ import random
 from typing import Dict, List, Optional, Tuple
 
 from .candidates import Candidate, cut_points
+from .llm import QuotaExhaustedError, is_daily_quota
 from .parse import Beat, Episode
+from .validate import quotes_not_in_clip
 
 PROMPT_VERSION = "judge-v1"
 SCORE_KEYS = ("hook_score", "cliffhanger_score", "standalone_score")
@@ -261,47 +263,102 @@ def _heuristic_record(ep, c, cfg):
     return rec
 
 
-def judge_episode(ep: Episode, cands: List[Candidate], client, cfg: dict,
-                  cache=None, order_seed: Optional[int] = None) -> List[dict]:
-    if not cands:
+def build_batch_prompt(items, cfg: dict, order_seed: Optional[int] = None) -> str:
+    """Several episodes in one prompt. A single episode gives exactly the
+    single-episode prompt, so earlier cached answers stay valid."""
+    items = [(ep, cs) for ep, cs in items if cs]
+    if len(items) == 1:
+        return build_user_prompt(items[0][0], items[0][1], cfg, order_seed=order_seed)
+    rng = random.Random(order_seed) if order_seed is not None else None
+    if rng:
+        rng.shuffle(items)
+    total = sum(len(cs) for _, cs in items)
+    parts = [f"{len(items)} episodes, {total} candidate promos in total. Judge every candidate; "
+             "compare across episodes too, since all promos share one ranking."]
+    for ep, cs in items:
+        parts.append(build_user_prompt(ep, cs, cfg, order_seed=rng.randrange(1 << 30) if rng else None))
+    return "\n\n".join(parts)
+
+
+def judge_batch(items, client, cfg: dict, cache=None, order_seed: Optional[int] = None) -> List[dict]:
+    """Judge candidates from one or more episodes in a single model call.
+
+    items: [(episode, [candidates])]. The free tier allows 20 requests per day
+    per model, so a 50-episode show is judged ~5 episodes per call.
+    Raises QuotaExhaustedError so the caller can stop instead of retrying."""
+    items = [(ep, cs) for ep, cs in items if cs]
+    if not items:
         return []
     if client is None:
-        return [_heuristic_record(ep, c, cfg) for c in cands]
+        return [_heuristic_record(ep, c, cfg) for ep, cs in items for c in cs]
 
-    user = build_user_prompt(ep, cands, cfg, order_seed=order_seed)
+    all_cands = [c for _, cs in items for c in cs]
+    user = build_batch_prompt(items, cfg, order_seed=order_seed)
     key = cache.key(client.name, PROMPT_VERSION, SYSTEM, user) if cache else None
     hit = cache.get(key) if cache else None
+    required = getattr(client, "required_model", None)
+    if hit and required and hit.get("model") != required:
+        hit = None  # judged by a different model earlier; re-judge for consistency
     model, js, issues = None, {}, []
     if hit:
         model = hit["model"]
-        js, issues = parse_judgements(hit["data"], cands)
+        js, issues = parse_judgements(hit["data"], all_cands)
     else:
         for attempt in range(2):  # one retry if the reply parses to nothing usable
             try:
                 data = client.complete_json(SYSTEM, user, SCHEMA)
             except Exception as e:  # noqa: BLE001 -- recorded on every candidate
+                if isinstance(e, QuotaExhaustedError) or is_daily_quota(e):
+                    raise QuotaExhaustedError(str(e)[:500]) from e
                 issues = [f"llm call failed: {type(e).__name__}: {str(e)[:300]}"]
                 break
             model = getattr(client, "last_model", None) or client.name
-            js, issues = parse_judgements(data, cands)
+            js, issues = parse_judgements(data, all_cands)
             if js:
                 if cache:
                     cache.set(key, {"model": model, "data": data})
                 break
 
     results = []
-    for c in cands:
-        rec = _base_record(ep, c, model or client.name, PROMPT_VERSION)
-        rec["judge_issues"] = [i for i in issues if c.candidate_id in i
-                               or not any(x.candidate_id in i for x in cands)]
-        j = js.get(c.candidate_id)
-        if j is None:
-            rec.update(status="judge_failed",
-                       failure_reason="; ".join(rec["judge_issues"]) or "no judgement returned")
-        else:
-            s, e, note = refine(ep, c, j["start_beat"], j["end_beat"], cfg)
-            rec.update(status="ok", segments=[_segment(ep, s, e)], refinement_note=note,
-                       **{k: j[k] for k in SCORE_KEYS + TEXT_KEYS},
-                       suggested_beats={"start": j["start_beat"], "end": j["end_beat"]})
-        results.append(rec)
+    for ep, cs in items:
+        for c in cs:
+            rec = _base_record(ep, c, model or client.name, PROMPT_VERSION)
+            rec["judge_issues"] = [i for i in issues if c.candidate_id in i
+                                   or not any(x.candidate_id in i for x in all_cands)]
+            j = js.get(c.candidate_id)
+            if j is None:
+                rec.update(status="judge_failed",
+                           failure_reason="; ".join(rec["judge_issues"]) or "no judgement returned")
+            else:
+                s, e, note = refine(ep, c, j["start_beat"], j["end_beat"], cfg)
+                if (s, e) != (c.start_s, c.end_s):
+                    # Keep the judge's own words true to the clip: if the new cut drops a
+                    # line its hook/cliffhanger quotes (and the original cut had it), revert.
+                    texts = {k: j[k] for k in ("hook", "cliffhanger")}
+                    lost = set(quotes_not_in_clip(texts, ep, [_segment(ep, s, e)], _eps(cfg))) - \
+                        set(quotes_not_in_clip(texts, ep, [_segment(ep, c.start_s, c.end_s)], _eps(cfg)))
+                    if lost:
+                        k, q = sorted(lost)[0]
+                        s, e = c.start_s, c.end_s
+                        note = f"refinement reverted: new cut would drop the {k} line {q!r}"
+                rec.update(status="ok", segments=[_segment(ep, s, e)], refinement_note=note,
+                           **{k: j[k] for k in SCORE_KEYS + TEXT_KEYS},
+                           suggested_beats={"start": j["start_beat"], "end": j["end_beat"]})
+            results.append(rec)
     return results
+
+
+def failed_records(items, reason: str, judge: str) -> List[dict]:
+    """Records for candidates that were never judged (e.g. quota ran out)."""
+    out = []
+    for ep, cs in items:
+        for c in cs:
+            rec = _base_record(ep, c, judge, PROMPT_VERSION)
+            rec.update(status="judge_failed", failure_reason=reason)
+            out.append(rec)
+    return out
+
+
+def judge_episode(ep: Episode, cands: List[Candidate], client, cfg: dict,
+                  cache=None, order_seed: Optional[int] = None) -> List[dict]:
+    return judge_batch([(ep, cands)], client, cfg, cache=cache, order_seed=order_seed)

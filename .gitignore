@@ -9,3 +9,4 @@ data/
 *.txt
 !requirements.txt
 .cache/
+eval/review_clips.md

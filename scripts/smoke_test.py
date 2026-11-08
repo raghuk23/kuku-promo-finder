@@ -12,6 +12,7 @@ import sys
 
 from dotenv import load_dotenv
 from google import genai
+from google.genai import types
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 load_dotenv(os.path.join(ROOT, ".env"))
@@ -31,7 +32,7 @@ def main():
         sys.exit("GEMINI_API_KEY missing or still the placeholder in .env")
     print(f"key loaded: {KEY[:2]}... ({len(KEY)} chars)")
 
-    client = genai.Client(api_key=KEY)
+    client = genai.Client(api_key=KEY, http_options=types.HttpOptions(timeout=180_000))
     try:
         models = list(client.models.list())
     except Exception as e:

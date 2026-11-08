@@ -3,13 +3,30 @@ import os
 import unittest
 from unittest import mock
 
-from src.llm import is_transient, with_retries, make_client
+from src.llm import is_transient, is_daily_quota, with_retries, make_client
 
 
 class TestTransient(unittest.TestCase):
     def test_overload_and_rate_limit_are_transient(self):
         self.assertTrue(is_transient(Exception("503 UNAVAILABLE. high demand")))
         self.assertTrue(is_transient(Exception("429 RESOURCE_EXHAUSTED")))
+
+    def test_dropped_connections_and_timeouts_are_transient(self):
+        self.assertTrue(is_transient(Exception("RemoteProtocolError: Server disconnected without sending a response")))
+        self.assertTrue(is_transient(Exception("ReadTimeout: The read operation timed out")))
+        self.assertTrue(is_transient(Exception("ConnectError: [Errno 54] Connection reset by peer")))
+
+    def test_daily_quota_is_not_transient(self):
+        # Real message from the first run: retrying this only burns time until reset.
+        e = Exception("429 RESOURCE_EXHAUSTED. Generate content requests per day limit exceeded on "
+                      "Free Tier. quotaId: GenerateRequestsPerDayPerProjectPerModel-FreeTier")
+        self.assertTrue(is_daily_quota(e))
+        self.assertFalse(is_transient(e))
+
+    def test_per_minute_rate_limit_is_transient(self):
+        e = Exception("429 RESOURCE_EXHAUSTED. quotaId: GenerateRequestsPerMinutePerProjectPerModel-FreeTier")
+        self.assertFalse(is_daily_quota(e))
+        self.assertTrue(is_transient(e))
 
     def test_not_found_is_not_transient(self):
         self.assertFalse(is_transient(Exception("404 NOT_FOUND. no longer available")))
@@ -45,6 +62,25 @@ class TestProviderSwitch(unittest.TestCase):
         cfg = {"llm": {"provider": "gemini", "model": "x"}}
         with mock.patch.dict(os.environ, {"LLM_PROVIDER": "heuristic"}):
             self.assertIsNone(make_client(cfg))
+
+
+class TestStrictModel(unittest.TestCase):
+    CFG = {"llm": {"provider": "gemini", "model": "m1", "fallback_models": ["m2"]}}
+
+    def build(self, strict):
+        cfg = {"llm": dict(self.CFG["llm"], strict_model=strict)}
+        with mock.patch.dict(os.environ, {"GEMINI_API_KEY": "test-key"}):
+            return make_client(cfg, provider="gemini")
+
+    def test_strict_uses_only_the_primary_and_requires_it(self):
+        c = self.build(True)
+        self.assertEqual(c.models, ["m1"])
+        self.assertEqual(c.required_model, "m1")
+
+    def test_non_strict_may_fall_back(self):
+        c = self.build(False)
+        self.assertEqual(c.models, ["m1", "m2"])
+        self.assertIsNone(c.required_model)
 
 
 if __name__ == "__main__":

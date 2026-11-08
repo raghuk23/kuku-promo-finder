@@ -5,9 +5,9 @@ import unittest
 
 from src.config import load_config
 from src.candidates import Candidate, cut_points
-from src.llm import LLMClient, JsonCache
+from src.llm import LLMClient, JsonCache, QuotaExhaustedError
 from src.judge import (build_user_prompt, parse_judgements, refine, judge_episode,
-                       beat_id, PROMPT_VERSION)
+                       judge_batch, beat_id, PROMPT_VERSION)
 from tests.test_candidates import ep_from
 
 CFG = load_config()
@@ -150,6 +150,19 @@ class TestJudgeEpisode(unittest.TestCase):
             self.assertIn(seg["end_s"], self.ends)
             self.assertEqual(seg["episode"], self.ep.number)
 
+    def test_refinement_that_cuts_out_the_quoted_cliffhanger_is_reverted(self):
+        # Real case (ep17_c4): the model shortened its cut, then described a line
+        # that was no longer inside it.
+        c = self.cs[0]                                   # 10 -> 40, contains "Who are you?" at 22
+        start_late = bid(self.ep, "Medium shot.", start=25.0)  # start at 25s drops the 22s line
+        resp = {"judgements": [good_judgement(c.candidate_id, cliffhanger="She asks 'Who are you?'",
+                                              start_beat=start_late,
+                                              end_beat=bid(self.ep, "Medium shot.", start=45.0)),
+                               good_judgement(self.cs[1].candidate_id)]}
+        r = judge_episode(self.ep, self.cs, FakeClient(lambda *a: resp), CFG)[0]
+        self.assertEqual((r["segments"][0]["start_s"], r["segments"][0]["end_s"]), (10.0, 40.0))
+        self.assertIn("reverted", r["refinement_note"])
+
     def test_cache_avoids_second_call(self):
         client = FakeClient(self.respond_all)
         with tempfile.TemporaryDirectory() as d:
@@ -157,6 +170,21 @@ class TestJudgeEpisode(unittest.TestCase):
             judge_episode(self.ep, self.cs, client, CFG, cache=cache)
             judge_episode(self.ep, self.cs, client, CFG, cache=cache)
         self.assertEqual(client.calls, 1)
+
+    def test_cached_answer_from_a_different_model_is_rejudged_when_model_is_required(self):
+        # Strict mode: one global ranking must come from one judge.
+        with tempfile.TemporaryDirectory() as d:
+            cache = JsonCache(d)
+            judge_episode(self.ep, self.cs, FakeClient(self.respond_all), CFG, cache=cache)
+            strict = FakeClient(self.respond_all)
+            strict.required_model = strict.last_model = "primary-model"
+            res = judge_episode(self.ep, self.cs, strict, CFG, cache=cache)
+            self.assertEqual(strict.calls, 1)
+            self.assertEqual(res[0]["judge"], "primary-model")
+            again = FakeClient(self.respond_all)
+            again.required_model = again.last_model = "primary-model"
+            judge_episode(self.ep, self.cs, again, CFG, cache=cache)
+            self.assertEqual(again.calls, 0)          # now cached under the right model
 
     def test_malformed_response_marks_failed_never_fills_scores(self):
         res = judge_episode(self.ep, self.cs, FakeClient(lambda *a: {"nope": 1}), CFG)
@@ -177,6 +205,52 @@ class TestJudgeEpisode(unittest.TestCase):
             self.assertTrue(1 <= r["hook_score"] <= 10)
             self.assertIsNone(r["standalone_score"])   # heuristics cannot judge this
             self.assertTrue(r["hook"])
+
+
+class TestJudgeBatch(unittest.TestCase):
+    """Free tier: 20 requests/day/model. Several episodes per call keeps a full
+    show inside one day's quota."""
+
+    def setUp(self):
+        self.e1, self.e2 = make_ep(), make_ep()
+        self.e2.number = 2
+        for b in self.e2.beats:
+            b.episode = 2
+        self.c1 = [cand(self.e1, "ep01_c1", 10, 40)]
+        self.c2 = [cand(self.e2, "ep02_c1", 20, 50), cand(self.e2, "ep02_c2", 10, 35)]
+        self.all = self.c1 + self.c2
+
+    def respond_all(self, *_):
+        return {"judgements": [good_judgement(c.candidate_id) for c in self.all]}
+
+    def test_one_call_judges_several_episodes(self):
+        client = FakeClient(self.respond_all)
+        res = judge_batch([(self.e1, self.c1), (self.e2, self.c2)], client, CFG)
+        self.assertEqual(client.calls, 1)
+        self.assertEqual([(r["episode"], r["status"]) for r in res], [(1, "ok"), (2, "ok"), (2, "ok")])
+
+    def test_batch_prompt_keeps_each_episode_separate(self):
+        seen = {}
+        def capture(system, user, schema):
+            seen["user"] = user
+            return self.respond_all()
+        judge_batch([(self.e1, self.c1), (self.e2, self.c2)], FakeClient(capture), CFG)
+        self.assertIn("Episode 1:", seen["user"])
+        self.assertIn("Episode 2:", seen["user"])
+
+    def test_single_episode_batch_prompt_is_unchanged(self):
+        seen = {}
+        def capture(system, user, schema):
+            seen["user"] = user
+            return {"judgements": [good_judgement("ep01_c1")]}
+        judge_batch([(self.e1, self.c1)], FakeClient(capture), CFG)
+        self.assertEqual(seen["user"], build_user_prompt(self.e1, self.c1, CFG))
+
+    def test_daily_quota_raises_so_the_run_can_stop(self):
+        def quota(*a):
+            raise Exception("429 RESOURCE_EXHAUSTED requests per day limit exceeded on Free Tier")
+        with self.assertRaises(QuotaExhaustedError):
+            judge_batch([(self.e1, self.c1)], FakeClient(quota), CFG)
 
 
 if __name__ == "__main__":

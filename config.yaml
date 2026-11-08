@@ -5,21 +5,32 @@ llm:
   # LLM_MODEL env vars -- swapping models is one env var, no code change.
   # `heuristic` uses no LLM at all: offline fallback AND the ablation baseline.
   provider: gemini
-  model: gemini-3.6-flash   # verified by scripts/smoke_test.py on 2026-11-08
+  # Official run: gemini-3.8-flash. (gemini-3.6-flash hit the free tier's 20
+  # requests/day cap mid-run; each model has its own daily quota.)
+  model: gemini-3.8-flash   # verified by scripts/smoke_test.py on 2026-11-08
   # Tried in order if the primary stays overloaded. Each result records the model
   # that actually answered, because mixing models makes scores non-comparable.
-  fallback_models: [gemini-3.8-flash, gemini-3.7-flash, gemini-3.5-flash]
+  fallback_models: [gemini-3.6-flash, gemini-3.7-flash, gemini-3.5-flash]
+  # strict_model: true = never fall back. All promos share one global ranking, so
+  # they must share one judge. (Learned the hard way: in the first full run Google
+  # overloaded gemini-3.6-flash and episodes 18/20/21 were silently judged by 3.8.)
+  # Use --allow-fallback on the CLI when speed matters more than comparability.
+  strict_model: true
   temperature: 0
   seed: 7
-  retries: 4                # per model, exponential backoff, transient errors only
-  base_delay_s: 4
+  retries: 6                # per model, exponential backoff 5,10,20,40,80,160s; transient errors only
+  base_delay_s: 5
   min_interval_s: 4         # pacing between calls on the free tier
+  timeout_s: 600            # per request (a 5-episode call can take minutes); timeouts retry like overload
   openai_compatible:        # OpenRouter, Groq, Anthropic's OpenAI-compatible endpoint, ...
     base_url: https://openrouter.ai/api/v1
     api_key_env: OPENAI_COMPAT_API_KEY
 
 judge:
   context_pad_s: 8          # beats shown before/after each cut so the LLM can move it
+  # Free tier = 20 requests/day/model (learned from a 429 in the first run), so a
+  # 50-episode show is judged 5 episodes per call: 10 calls instead of 50.
+  episodes_per_call: 5
 
 window:
   min_s: 20                 # brief: promos are 20-60 seconds
@@ -44,3 +55,19 @@ heuristic_weights:
   conflict: 0.15
   speakers: 0.10
   length_fit: 0.05
+
+ranking:
+  # Final score = weighted mean of the judge's 1-10 scores. Hook highest, as above.
+  weights: {hook: 0.45, cliffhanger: 0.30, standalone: 0.25}
+  # Pre-registered BEFORE the full run, from the judge prompt's own anchors:
+  # hook/cliffhanger 5-6 mean "not arresting" / "partly resolved", i.e. not a hook
+  # or cliffhanger. Standalone 5-6 means "gist clear, a relationship unexplained";
+  # a little mystery is tolerable in a promo, so 6 passes.
+  quality_floor: {hook: 7, cliffhanger: 7, standalone: 6}
+  top_n: 10
+  max_per_episode: 2        # spread the posting order across the show
+  dedup_iou: 0.5            # refined cuts can overlap again; dedupe after the judge
+  # A new viewer should be able to start the show from the episode a promo comes
+  # from, so early episodes get a small, explicit boost in the posting order only.
+  early_episode_bonus: 0.5
+  early_episode_window: 20
