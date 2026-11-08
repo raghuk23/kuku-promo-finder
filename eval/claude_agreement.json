@@ -1,0 +1,26 @@
+{
+  "heuristic": {
+    "n_scored": 25,
+    "spearman": 0.39877977616961013,
+    "floor_precision": 0.6666666666666666,
+    "floor_recall": 0.5,
+    "human_good": 12,
+    "floor_passed": 9
+  },
+  "llm_single_order": {
+    "n_scored": 25,
+    "spearman": 0.8144741820626703,
+    "floor_precision": 0.8181818181818182,
+    "floor_recall": 0.75,
+    "human_good": 12,
+    "floor_passed": 11
+  },
+  "llm_two_orders": {
+    "n_scored": 25,
+    "spearman": 0.8241994446153158,
+    "floor_precision": 0.8181818181818182,
+    "floor_recall": 0.75,
+    "human_good": 12,
+    "floor_passed": 11
+  }
+}

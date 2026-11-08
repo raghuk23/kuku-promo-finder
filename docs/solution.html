@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Find the Promos - solution</title>
+<!--
+  EDIT ME, then rebuild the PDF:   bash scripts/build_doc.sh
+  Yellow boxes (class="slot") are blanks for you to fill in. Delete the class to remove the yellow.
+-->
+<style>
+  @page { size: A4; margin: 13mm 14mm 12mm 14mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 8.9pt; line-height: 1.32;
+         color: #1a1a1a; margin: 0; }
+  h1 { font-size: 15pt; margin: 0 0 1pt; letter-spacing: -0.2pt; }
+  .sub { color: #555; margin: 0 0 5pt; font-size: 8.4pt; }
+  h2 { font-size: 10.2pt; margin: 7pt 0 2.5pt; padding-bottom: 1pt; border-bottom: 0.6pt solid #bbb; }
+  p { margin: 0 0 3.5pt; }
+  ul, ol { margin: 0 0 3.5pt; padding-left: 13pt; }
+  li { margin: 0 0 1.6pt; }
+  table { width: 100%; border-collapse: collapse; margin: 2pt 0 4pt; font-size: 8.3pt; }
+  th, td { border: 0.5pt solid #c8c8c8; padding: 1.8pt 4pt; vertical-align: top; text-align: left; }
+  th { background: #f1f1f1; font-weight: 600; }
+  code { font-family: Menlo, Consolas, monospace; font-size: 7.8pt; }
+  .key { background: #f6f6f6; border-left: 2pt solid #444; padding: 3pt 6pt; margin: 3pt 0 4pt; }
+  .slot { background: #fff3a8; }
+  .nb { white-space: nowrap; }
+  .small { font-size: 7.9pt; color: #444; }
+  .page2 { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<h1>Find the Promos: a promo shortlister for microdrama screenplays</h1>
+<p class="sub">Problem 1 &nbsp;·&nbsp; App: <span class="slot">[Streamlit URL]</span> &nbsp;·&nbsp;
+Code + run steps: <span class="slot">[GitHub URL]</span> &nbsp;·&nbsp; Raw outputs: <code>outputs/gemini/</code> in the repo
+&nbsp;·&nbsp; Video: <span class="slot">[Loom URL]</span></p>
+
+<h2>1. The problem I picked, and the assumptions I made</h2>
+<p><b>Why Problem 1.</b> My background is classic ML, and this problem has a shape I know: generate many candidates
+cheaply, then rank them well, and ranking is the part an LLM can do and rules can't. It has a real user (an editor
+scrubbing every episode by hand, weekly) and a checkable output, so I could measure quality instead of arguing about it.</p>
+<p><b>Assumptions</b> (the brief is silent on these):</p>
+<ul>
+<li><b>"The best promos" means the best for the whole show, not a quota per episode.</b> I rank all 50 episodes together.
+  A quiet episode can return nothing: forcing a pick from it would manufacture bad promos. Editors also work episode by
+  episode, so I output a <i>best per episode</i> list too, with clips below the bar marked as such.</li>
+<li><b>A promo must meet all three criteria</b> in the brief, so each one is a pass/fail floor (out of 10: hook &ge;&nbsp;7,
+  cliffhanger &ge;&nbsp;7, makes sense on its own &ge;&nbsp;6). I set it from the rubric before seeing any results.</li>
+<li>20&ndash;60&nbsp;s is a hard limit. A clip never starts or ends mid-line. Timestamps are episode-relative, as in the screenplays.</li>
+<li>The user is an editor choosing what to post. So the output is a shortlist with reasons, not one answer.</li>
+<li><b>Not built:</b> promos stitched from several moments. The output format allows several segments, but every promo
+  today is one continuous stretch.</li>
+</ul>
+
+<h2>2. How it works</h2>
+<div class="key"><b>Code owns the clock; the LLM owns the taste.</b> LLMs are unreliable with numbers like
+<code>01:27.21</code>, so the model never writes a timestamp. It refers to numbered script lines; code converts them to
+times and checks them.</div>
+<table>
+<tr><th style="width:17%">Step</th><th style="width:11%">Who</th><th>What it does</th></tr>
+<tr><td>1. Parse</td><td>Code</td><td>50 screenplays &rarr; 3,727 timed lines (dialogue, action, camera), with 0 anomalies.
+  It tolerates inconsistent formatting, such as label case, stacked tags and name variants.</td></tr>
+<tr><td>2. Candidates</td><td>Code + rules</td><td>Lists every 20&ndash;60&nbsp;s window that starts and ends on a camera cut,
+  never inside a line: 12,127 windows. A keyword/structure score rewards conflict, physical action and cliff markers in
+  the first 3&nbsp;s and last 4&nbsp;s. After dropping overlapping windows, the top 3&ndash;8 per episode (by length) are kept:
+  <b>250 candidates</b>. This step is cheap and deterministic, and it caps the LLM spend.</td></tr>
+<tr><td>3. Judge</td><td>LLM<br>(Gemini 3.8 Flash)</td><td>Reads each candidate's lines with 8&nbsp;s of context and
+  scores it against a rubric with anchored examples. It returns the hook, the cliffhanger, why the clip works, scores
+  1&ndash;10 for hook, cliffhanger and making sense on its own, a weakness, and optionally a tighter cut (by line number).
+  The show's summary is withheld, so "on its own" is judged cold. Settings: temperature 0, JSON schema output,
+  5 episodes per call. Each batch is judged in <b>two candidate orders and the scores averaged</b> (see &sect;4).</td></tr>
+<tr><td>4. Validate</td><td>Code</td><td>Every cut must land on a real cut and be 20&ndash;60&nbsp;s long. Every quoted line must
+  exist inside the clip. Bad trims are rejected, or reverted to the original cut.</td></tr>
+<tr><td>5. Rank</td><td>Code</td><td>Score = 0.45&nbsp;hook + 0.30&nbsp;cliffhanger + 0.25&nbsp;on-its-own. The hook gets the
+  most weight because on a feed, a clip nobody stops for never reaches its cliffhanger. Then: apply the floor, remove
+  duplicates, allow at most 2 per episode, and add a small bonus for early episodes (a new viewer lands near the start of
+  the show). The bonus fades to 0 by episode 20.</td></tr>
+</table>
+<p><b>Result on the input pack:</b> 12,127 windows &rarr; 250 candidates &rarr; <b>58 pass the floor</b>, in 37 of 50
+episodes &rarr; top 10 in posting order. Top 3: ep&nbsp;31 <span class="nb">02:10.80&ndash;02:40.00</span>
+(branding-iron threat, 9.3/10); ep&nbsp;24 <span class="nb">00:28.80&ndash;01:10.50</span> (riding-crop lash, 9.2);
+ep&nbsp;16 <span class="nb">00:16.80&ndash;00:44.20</span> (street fight ending on "Who sent you?", 8.9). The full list,
+with hook, cliffhanger and reason, is in <code>outputs/gemini/promos_ranked.md</code>. There are two ways to run it:
+a CLI, and a Streamlit app that shows these results or runs on newly uploaded screenplays with a pasted API key.</p>
+
+<h2>3. Scale and cost</h2>
+<ul>
+<li><b>Per show (50 episodes):</b> 250 candidates &rarr; 10 batched calls &times; 2 orders = <b>20 LLM calls</b>.
+  Measured over 8 live calls: about 37k input and 9k output+thinking tokens per call. That makes about
+  <b>0.73M input and 0.18M output tokens per show</b>. For example, at $0.50/M input and $3/M output, that is
+  about $0.90 per show.</li>
+<li><b>Free tier:</b> Gemini allows 20 requests per model per day, which is exactly one show a day. That is why
+  episodes are batched 5 per call. Every answer is also cached by its content, so re-runs, ranking changes and resumed
+  runs cost nothing.</li>
+<li><b>Time:</b> about 30&ndash;40&nbsp;min for 50 episodes on the free tier, with calls run one after another
+  (2&ndash;8&nbsp;min each).
+  Batches are independent, so on a paid tier they run in parallel and a show takes minutes.</li>
+<li><b>Swapping the model</b> takes one config line, CLI flag or app setting. Any OpenAI-compatible endpoint works.
+  Each run uses exactly one model: cached answers from a different model are re-judged, so a ranking never mixes judges.</li>
+<li><b>The human stays in the loop:</b> the editor picks from the top 10 and the per-episode list. The app flags
+  borderline clips and quote mismatches for a closer look.</li>
+</ul>
+
+<h2 class="page2">4. How I know it's good, and where it fails</h2>
+<table>
+<tr><th style="width:27%">Check</th><th style="width:38%">Result</th><th>What it tells me</th></tr>
+<tr><td>Timestamp validity (250 clips)</td><td>100% land on real cuts, 20&ndash;60&nbsp;s</td>
+  <td>Guaranteed by code, not by trusting the model.</td></tr>
+<tr><td>Same prompt run twice (54 clips)</td><td>100% identical scores</td><td>The judge is repeatable at temperature 0.</td></tr>
+<tr><td>Same clips in shuffled order (54 clips)</td><td>Rank correlation 0.64; <b>26% of post/don't-post decisions
+  flipped</b></td><td>The judge has a real order bias. Fix: average two orders.</td></tr>
+<tr><td>After the fix: 1 order vs average of 2 (250 clips)</td><td>Rank correlation 0.95; 92% same decision;
+  8 of 10 top picks unchanged. 45 clips (18%) still get different verdicts in the two orders.</td>
+  <td>Those 45 sit a median 0.5 points from the floor, and none are in the top 20. The app labels them
+  "borderline".</td></tr>
+<tr><td>Ablation: rules only vs LLM (250 clips)</td><td>Rank correlation 0.29; 2 of 10 top picks shared. The rules'
+  top 10 are all tied at 10.0; the LLM's spread from 8.32 to 9.30.</td>
+  <td>Rules can shortlist but can't rank. The LLM is what makes ranking possible.</td></tr>
+<tr><td><b>Blind second-model check</b> (25 clips: the single-order run's top 10, its 5 weakest and 10 random). A fresh
+  Claude agent that had seen no scores rated each clip 1&ndash;5. <i>This is not a human review.</i></td>
+  <td>Rank correlation with Claude: Gemini (2 orders) <b>0.82</b>; rules only <b>0.40</b>.<br>
+  Of the clips Gemini would post, Claude rated 82% good (4+). Of the clips Claude rated good, Gemini would post 75%.</td>
+  <td>Two different model families agree, and both disagree with the rules. But LLMs may share taste biases, so a
+  human review is still the missing check. <span class="small">(eval/claude_agreement.md)</span></td></tr>
+</table>
+<p><b>Where it picks badly</b></p>
+<ul>
+<li><b>The LLM's trims are unreliable.</b> Of 124 tighter cuts it suggested, 63 (51%) were unusable: 45 referred to line
+  numbers it wasn't given, 17 broke the length or cut rules, and 1 cut off its own cliffhanger (reverted). Code catches all of
+  them, but trimming should stay an editor's job.</li>
+<li><b>Order bias near the bar.</b> A borderline clip's verdict depends on which clips it is shown next to. Averaging two
+  orders narrows this but does not remove it.</li>
+<li><b>Recall is unmeasured.</b> The LLM only sees the 250 windows the rules let through (2% of 12,127). A great quiet
+  moment with no conflict words or cut markers never reaches it. 13 episodes got no promo (2, 6, 8, 9, 17, 19, 22,
+  33, 35, 37, 38, 48, 49), 10 of them for lack of a hook. Some are genuinely quiet stretches; I haven't checked which
+  ones the rules simply missed.</li>
+<li><b>Quotes:</b> 4 of 250 write-ups quote a line that isn't in the clip. These are flagged, not auto-fixed.</li>
+<li><b>It reads text, not video.</b> It can't see acting, pacing or whether a slap lands on screen. It doesn't check content
+  safety either: the #1 pick is a branding-iron threat, which the judge itself flagged as possibly too cruel for some ad platforms.</li>
+<li><b>The weights and floor are my judgment.</b> They are not yet tested by a human panel or against how posted promos
+  actually perform.</li>
+</ul>
+<p><b>How I'd know it works in production:</b> log each posted promo's 3-second hold rate and click-through, compare
+them with the tool's scores, and re-fit the weights and floor. I would also raise recall (more candidates per episode on
+a paid tier) and add multi-moment stitching.</p>
+
+<h2>5. AI tools I used, and where they got it wrong</h2>
+<p><b>Claude Code</b> pair-programmed the pipeline and its 134 tests with me. I made the design calls: a quality floor
+instead of a quota, code-owned timestamps, and two-order averaging. <b>Gemini 3.8 Flash</b> (free tier) is the judge. A separate, blind Claude agent was the second judge in &sect;4.</p>
+<p><b>Where AI got it wrong.</b> Claude's first version treated Gemini's "429 rate limit" errors as temporary and retried
+them with back-off. On the free tier the cap is 20 requests per model <i>per day</i>, so every retry burned quota, and a
+full run stalled partway. I changed it to recognise the daily-quota error and stop at once, to batch
+5 episodes per call (50 calls &rarr; 10), and to cache every answer so a stopped run resumes for free. Gemini also
+makes mistakes: half of its suggested trims were unusable (see above). This is why code checks every number it returns.</p>
+
+</body>
+</html>

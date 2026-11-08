@@ -120,24 +120,24 @@ def cmd_review_sheet(a):
 
 def cmd_human(a):
     cfg = load_config()
-    with open(os.path.join(EVAL, "review_sheet.csv")) as fh:
+    with open(a.sheet) as fh:
         rows = list(csv.DictReader(fh))
     runs = [(n, r) for n, r in (x.split("=", 1) for x in a.runs) if os.path.isdir(r)]
     out = {name: human_agreement(load(run), rows, cfg) for name, run in runs}
-    with open(os.path.join(EVAL, "human_agreement.json"), "w") as fh:
+    with open(os.path.join(EVAL, f"{a.name}.json"), "w") as fh:
         json.dump(out, fh, indent=2)
     n = max((m.get("n_scored", 0) for m in out.values()), default=0)
-    lines = ["# Human agreement", "",
-             f"Clips scored blind by a human: **{n}** (1-5, 'would I post this'; 4+ counts as good). "
+    lines = [f"# Agreement with {a.scorer}", "",
+             f"Clips scored blind by {a.scorer}: **{n}** (1-5, 'would I post this'; 4+ counts as good). "
              "The 25 mix the single-order top 10, its 5 weakest, and 10 random candidates.", "",
-             "| Judge | Spearman vs human | Floor precision | Floor recall |", "|---|---|---|---|"]
+             "| Judge | Spearman vs reviewer | Floor precision | Floor recall |", "|---|---|---|---|"]
     for name, m in out.items():
         lines.append(f"| {name} | {fmt(m.get('spearman'))} | {fmt(m.get('floor_precision'), True)} | "
                      f"{fmt(m.get('floor_recall'), True)} |")
-    lines += ["", "Floor precision: of clips the judge would post, the share the human rated 4+. "
-              "Floor recall: of clips the human rated 4+, the share the judge would post. "
+    lines += ["", "Floor precision: of clips the judge would post, the share the reviewer rated 4+. "
+              "Floor recall: of clips the reviewer rated 4+, the share the judge would post. "
               f"Small sample (n={n}): treat differences of a few points as noise."]
-    with open(os.path.join(EVAL, "human_agreement.md"), "w") as fh:
+    with open(os.path.join(EVAL, f"{a.name}.md"), "w") as fh:
         fh.write("\n".join(lines) + "\n")
     print("\n".join(lines))
 
@@ -158,6 +158,9 @@ def main():
     p.add_argument("--n-random", type=int, default=10)
     p.add_argument("--seed", type=int, default=7)
     p = sub.add_parser("human")
+    p.add_argument("--sheet", default=os.path.join(EVAL, "review_sheet.csv"))
+    p.add_argument("--name", default="human_agreement", help="output file stem in eval/")
+    p.add_argument("--scorer", default="a human", help="who filled in the sheet, for the report text")
     p.add_argument("--runs", nargs="+", default=["heuristic=outputs/heuristic",
                                                  "llm_single_order=outputs/gemini_single_order",
                                                  "llm_two_orders=outputs/gemini"])
